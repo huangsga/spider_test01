@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("main")
-public class UserController {
+public class HomeController {
     @Autowired
     private UserServiceImpl userService;
 
@@ -18,7 +18,13 @@ public class UserController {
      */
     @GetMapping("/login")
     public String getMain(){
-        return "index";
+        return "index-1";
+    }
+
+    @GetMapping("paper")
+    public String getPaper(){
+
+        return "blog-list";
     }
 
 }
