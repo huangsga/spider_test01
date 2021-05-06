@@ -13,11 +13,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @todo:
  */
 @Controller
-@ResponseBody
 public class baseController {
 
     @GetMapping("/")
-    public String mian(){
+    public String main(){
         return "index";
     }
 }
