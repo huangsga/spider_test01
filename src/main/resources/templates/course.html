@@ -745,13 +745,13 @@
 			<div class="row clearfix">
 				
 				<!-- Course Column -->
-				<div class="course-block col-lg-4 col-md-6 col-sm-12">
+				<div class="course-block col-lg-4 col-md-6 col-sm-12" th:each="ziliaohuizonglist:${ziliaohuizong}">
 					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
 						<div class="image">
-							<a href="course-detail.html"><img src="/images/resource/course-1.jpg" alt="" /></a>
+							<a href="course-detail.html"><img src="https://exp-picture.cdn.bcebos.com/76b6860e5f204371a58c3b93323acd8921c58fee.jpg?x-bce-process=image%2Fresize%2Cm_lfit%2Cw_500%2Climit_1%2Fformat%2Cf_jpg%2Fquality%2Cq_80" alt="" /></a>
 						</div>
 						<div class="lower-content">
-							<h4><a href="course-detail.html">Growth Mindsets for Teachers and Learners</a></h4>
+							<h4><a href="course-detail.html" th:text="${ziliaohuizonglist.title}">Growth Mindsets for Teachers and Learners</a></h4>
 							<div class="uni-name">University of Roehampton</div>
 							<div class="rating">
 								<span class="fa fa-star"></span>
@@ -765,7 +765,7 @@
 							<div class="price">$12 <span>$100.99</span></div>
 							<div class="clearfix">
 								<div class="pull-left">
-									<div class="hovers">11.5 total hours . All Levels  </div>
+									<div class="hovers" th:text="${ziliaohuizonglist.title}">11.5 total hours . All Levels  </div>
 								</div>
 								<div class="pull-right">
 									<a href="course-detail.html" class="enroll-now">ENROL NOW</a>
