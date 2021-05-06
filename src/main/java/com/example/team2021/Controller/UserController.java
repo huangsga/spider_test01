@@ -12,6 +12,10 @@ public class UserController {
     @Autowired
     private UserServiceImpl userService;
 
+    /**
+     * 转发到登录页面
+     * @return
+     */
     @GetMapping("/login")
     public String getMain(){
         return "index";
