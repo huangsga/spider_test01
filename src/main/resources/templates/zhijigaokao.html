@@ -1,7 +1,9 @@
 ﻿<!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="utf-8">
+<meta name="referrer" content="no-referrer" />
+<!--	403错误防盗链解决办法-->
 <title>LeBari Education HTML-5 Template | Blog List</title>
 <!-- Stylesheets -->
 <link href="/css/bootstrap.css" rel="stylesheet">
@@ -117,7 +119,7 @@
 								<li class="current dropdown"><a href="#">Blog</a>
 									<ul>
 										<li><a href="blog.html">Our Blog</a></li>
-										<li><a href="blog-list.html">Blog List</a></li>
+										<li><a href="zhijigaokao.html">Blog List</a></li>
 										<li><a href="blog-detail.html">Blog Detail</a></li>
 										<li><a href="not-found.html">Not Found</a></li>
 									</ul>
@@ -280,8 +282,8 @@
 				<li>Blog default</li>
 			</ul>
 			<div class="content-box">
-				<h2>Latest articles & news</h2>
-				<div class="text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Duis aute irure dolor in reprehenderit in </div>
+				<h2>2020全国高考卷一语文试题及答案</h2>
+				<div class="text">以下图片均来源于网络</div>
 			</div>
 		</div>
 	</section>
@@ -297,133 +299,16 @@
                 	<div class="blog-classic">
 						
 						<!--1 News Block Two -->
-						<div class="news-block-two">
+						<div class="news-block-two" th:each="zhijigaokaolist:${zhijigaokao}">
 							<div class="inner-box">
-								<div class="image">
-									<a href="blog-detail.html"><img src="/images/ZJGK/quanguo1/2020/ch/1.jpg" alt="" /></a>
-								</div>
-							</div>
-						</div>
-						
-						<!--2 News Block Two -->
-						<div class="news-block-two">
-							<div class="inner-box">
-								<div class="image">
-									<a href="blog-detail.html"><img src="/images/ZJGK/quanguo1/2020/ch/2.jpg" alt="" /></a>
-								</div>
-							</div>
-						</div>
-						
-						<!--3 News Block Two -->
-						<div class="news-block-two">
-							<div class="inner-box">
-								<div class="image">
-									<a href="blog-detail.html"><img src="/images/ZJGK/quanguo1/2020/ch/3.jpg" alt="" /></a>
+								<div class="image" >
+									<img referrer="no-referrer" th:src="${zhijigaokaolist.addtress}" alt="" style="height:1200px" />
+<!--									是:$别写错了 而且是th之后的那个名称 这个是自己取的名字 上下保持一致 用. 调用属性值-->
 								</div>
 							</div>
 						</div>
 
-						<!--4 News Block Two -->
-						<div class="news-block-two">
-							<div class="inner-box">
-								<div class="image">
-									<a href="blog-detail.html"><img src="/images/ZJGK/quanguo1/2020/ch/4.jpg" alt="" /></a>
-								</div>
-							</div>
-						</div>
 
-						<!--5 News Block Two -->
-						<div class="news-block-two">
-							<div class="inner-box">
-								<div class="image">
-									<a href="blog-detail.html"><img src="/images/ZJGK/quanguo1/2020/ch/5.jpg" alt="" /></a>
-								</div>
-							</div>
-						</div>
-
-						<!--6 News Block Two -->
-						<div class="news-block-two">
-							<div class="inner-box">
-								<div class="image">
-									<a href="blog-detail.html"><img src="/images/ZJGK/quanguo1/2020/ch/6.jpg" alt="" /></a>
-								</div>
-							</div>
-						</div>
-
-						<!--7 News Block Two -->
-						<div class="news-block-two">
-							<div class="inner-box">
-								<div class="image">
-									<a href="blog-detail.html"><img src="/images/ZJGK/quanguo1/2020/ch/7.jpg" alt="" /></a>
-								</div>
-							</div>
-						</div>
-
-						<!--8 News Block Two -->
-						<div class="news-block-two">
-							<div class="inner-box">
-								<div class="image">
-									<a href="blog-detail.html"><img src="/images/ZJGK/quanguo1/2020/ch/8.jpg" alt="" /></a>
-								</div>
-							</div>
-						</div>
-
-						<!--9 News Block Two -->
-						<div class="news-block-two">
-							<div class="inner-box">
-								<div class="image">
-									<a href="blog-detail.html"><img src="/images/ZJGK/quanguo1/2020/ch/9.jpg" alt="" /></a>
-								</div>
-							</div>
-						</div>
-
-						<!--10 News Block Two -->
-						<div class="news-block-two">
-							<div class="inner-box">
-								<div class="image">
-									<a href="blog-detail.html"><img src="/images/ZJGK/quanguo1/2020/ch/10.jpg" alt="" /></a>
-								</div>
-							</div>
-						</div>
-
-						<!--11 News Block Two -->
-						<div class="news-block-two">
-							<div class="inner-box">
-								<div class="image">
-									<a href="blog-detail.html"><img src="/images/ZJGK/quanguo1/2020/ch/11.jpg" alt="" /></a>
-								</div>
-							</div>
-						</div>
-
-						<!--12 News Block Two -->
-						<div class="news-block-two">
-							<div class="inner-box">
-								<div class="image">
-									<a href="blog-detail.html"><img src="/images/ZJGK/quanguo1/2020/ch/12.jpg" alt="" /></a>
-								</div>
-							</div>
-						</div>
-						
-						<!-- News Block Two -->
-						<div class="news-block-two">
-							<div class="inner-box">
-								<div class="image">
-									<a href="blog-detail.html"><img src="/images/resource/news-18.jpg" alt="" /></a>
-								</div>
-								<div class="lower-content">
-									<ul class="post-info">
-										<li><a href="blog-detail.html"><span class="icon fa fa-eye"></span>109 Views</a></li>
-										<li><a href="blog-detail.html"><span class="icon fa fa-comment"></span>12</a></li>
-										<li><a href="blog-detail.html"><span class="icon fa fa-bookmark-o"></span>Education, teach , Course</a></li>
-									</ul>
-									<h2><a href="blog-detail.html">A Guide for Beginners</a></h2>
-									<div class="text">Working in recruitment is rewarding, but it has some dark sides also. The blog contains the good, bad and ugly sides of recruitment job.</div>
-									<a href="blog-detail.html" class="learn-more">Learn More <span class="icon flaticon-right-arrow-1"></span></a>
-								</div>
-							</div>
-						</div>
-
-						
 						<!-- Post Share Options -->
 						<div class="styled-pagination-two">
 							<ul class="clearfix">

@@ -22,10 +22,5 @@ public class HomeController {
         return "index-1";
     }
 
-    @GetMapping("/paper")
-    public String getPaper(){
-
-        return "blog-list";
-    }
 
 }
