@@ -20,6 +20,6 @@ public class gaokaozixunController {
     public String getZixuntitle(Model model){
         List<gaokaozixun> gaokaozixun=gaokaozixunService.findAllpolicy();
         model.addAttribute("Gk",gaokaozixun);
-        return "zixunlist";
+        return "blog-list";
     }
 }
