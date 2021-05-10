@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -48,6 +49,11 @@ public class backController {
     @GetMapping("adduser")
     public String adduser(){
         return "add-student_b";
+    }
+    @PostMapping("adduser")
+    public String adduser(Back back){
+        backService.adduserinfo(back);
+        return "redirect:/back/alluser";
     }
     // 进入用户添加界面
     @GetMapping("edituser")
