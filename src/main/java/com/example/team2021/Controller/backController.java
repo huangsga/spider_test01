@@ -1,12 +1,20 @@
 package com.example.team2021.Controller;
 
+import com.example.team2021.Entity.Back;
+import com.example.team2021.Service.BackService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("back")
 public class backController {
+    @Autowired
+    private BackService backService;
     // 进入后台主页面
     @GetMapping("index")
     public String getIndex(){
@@ -31,7 +39,9 @@ public class backController {
     // --------------------------------------------------------------------------------
     // 进入用户管理界面
     @GetMapping("alluser")
-    public String alluser(){
+    public String alluser(Model model){
+        List<Back> userInfo =  backService.findalluser();
+        model.addAttribute("usrInfo",userInfo);
         return "all-students_b";
     }
     // 进入用户添加界面
