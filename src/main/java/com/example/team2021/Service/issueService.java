@@ -1,6 +1,8 @@
 package com.example.team2021.Service;
 
+import com.example.team2021.Entity.ViewIssue;
 import com.example.team2021.Entity.issue;
+import com.example.team2021.Entity.jiaoCai;
 
 import java.util.List;
 
@@ -14,4 +16,8 @@ import java.util.List;
  */
 public interface issueService {
     List<issue> findAllIssue();
+    List<ViewIssue> findAllIssueItem();
+    List<jiaoCai> findjiaoCaiBX();
+    List<jiaoCai> findjiaoCaiXX();
+    List<ViewIssue> findzhangJie();
 }
