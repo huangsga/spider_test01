@@ -16,4 +16,24 @@ public class BackServiceImpl implements BackService {
     public List<Back> findalluser() {
         return backMapper.findalluser();
     }
+
+    @Override
+    public Integer adduserinfo(Back back) {
+        return backMapper.adduserinfo(back);
+    }
+
+    @Override
+    public Integer edituserinfo(Back back) {
+        return backMapper.edituserinfo(back);
+    }
+
+    @Override
+    public Back findoneuser(Integer userid) {
+        return backMapper.findoneuser(userid);
+    }
+
+    @Override
+    public Integer deleteUserinfo(Integer userid) {
+        return backMapper.deleteUserinfo(userid);
+    }
 }
