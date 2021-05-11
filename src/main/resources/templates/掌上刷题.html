@@ -411,9 +411,9 @@
                                                         <input
                                                                 type="checkbox"
                                                                 name="payment-group"
-                                                                th:id="'radio-' + ${jiaoCaiBX.jiaocaiName}"
+                                                                th:id="'BXjiaocai-' + ${jiaoCaiBX.jiaocaiName}"
                                                         />
-                                                        <label th:for="'radio-' + ${jiaoCaiBX.jiaocaiName}">
+                                                        <label th:for="'BXjiaocai-' + ${jiaoCaiBX.jiaocaiName}">
                                                                     <span
                                                                             class="default-check"
                                                                     ></span>
@@ -435,9 +435,9 @@
                                                         <input
                                                                 type="checkbox"
                                                                 name="payment-group"
-                                                                th:id="'radio-' + ${jiaoCaiXX.jiaocaiName}"
+                                                                th:id="'XXjiaocai-' + ${jiaoCaiXX.jiaocaiName}"
                                                         />
-                                                        <label th:for="'radio-' + ${jiaoCaiXX.jiaocaiName}">
+                                                        <label th:for="'XXjiaocai-' + ${jiaoCaiXX.jiaocaiName}">
                                                                     <span
                                                                             class="default-check"
                                                                     ></span>
@@ -462,9 +462,9 @@
                                                         <input
                                                                 type="checkbox"
                                                                 name="payment-group"
-                                                                th:id="'radio-' + ${zhangjieItem.zhangjieName}"
+                                                                th:id="'zhangjie-' + ${zhangjieItem.zhangjieName}"
                                                         />
-                                                        <label th:for="'radio-' + ${zhangjieItem.zhangjieName}">
+                                                        <label th:for="'zhangjie-' + ${zhangjieItem.zhangjieName}">
                                                                     <span
                                                                             class="default-check"
                                                                     ></span>
@@ -478,276 +478,37 @@
                                                 </div>
                                             </div>
 
-                                            <!-- 知识点 -->
+                                            <!-- 小节 -->
                                             <div class="column">
-                                                <h6>知识点</h6>
+                                                <h6>小节</h6>
                                                 <!-- Form Group -->
                                                 <div class="form-group">
-                                                    <div class="select-box">
+                                                    <div class="select-box" th:each="issueList:${issue}">
                                                         <input
                                                                 type="checkbox"
                                                                 name="payment-group"
-                                                                id="radio-nineteen"
+                                                                th:id="'xioajie-' + ${issueList.shitiKaodian}"
                                                         />
-                                                        <label for="radio-nineteen">
+                                                        <label th:for="'xiaojie-' + ${issueList.shitiKaodian}">
                                                                     <span
                                                                             class="default-check"
                                                                     ></span>
                                                             <span
                                                                     class="check-icon fa fa-check"
                                                             ></span>
-                                                            知识点一
-                                                        </label>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Form Group -->
-                                                <div class="form-group">
-                                                    <div class="select-box">
-                                                        <input
-                                                                type="checkbox"
-                                                                name="payment-group"
-                                                                id="radio-twenty"
-                                                        />
-                                                        <label for="radio-twenty">
-                                                                    <span
-                                                                            class="default-check"
-                                                                    ></span>
-                                                            <span
-                                                                    class="check-icon fa fa-check"
-                                                            ></span>
-                                                            知识点二
-                                                        </label>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Form Group -->
-                                                <div class="form-group">
-                                                    <div class="select-box">
-                                                        <input
-                                                                type="checkbox"
-                                                                name="payment-group"
-                                                                id="radio-twentyone"
-                                                        />
-                                                        <label for="radio-twentyone">
-                                                                    <span
-                                                                            class="default-check"
-                                                                    ></span>
-                                                            <span
-                                                                    class="check-icon fa fa-check"
-                                                            ></span>
-                                                            知识点三
-                                                        </label>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Form Group -->
-                                                <div class="form-group">
-                                                    <div class="select-box">
-                                                        <input
-                                                                type="checkbox"
-                                                                name="payment-group"
-                                                                id="radio-twentytwo"
-                                                        />
-                                                        <label for="radio-twentytwo">
-                                                                    <span
-                                                                            class="default-check"
-                                                                    ></span>
-                                                            <span
-                                                                    class="check-icon fa fa-check"
-                                                            ></span>
-                                                            知识点四
-                                                        </label>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Form Group -->
-                                                <div class="form-group">
-                                                    <div class="select-box">
-                                                        <input
-                                                                type="checkbox"
-                                                                name="payment-group"
-                                                                id="radio-twentythree"
-                                                        />
-                                                        <label for="radio-twentythree">
-                                                                    <span
-                                                                            class="default-check"
-                                                                    ></span>
-                                                            <span
-                                                                    class="check-icon fa fa-check"
-                                                            ></span>
-                                                            知识点五
-                                                        </label>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Form Group -->
-                                                <div class="form-group">
-                                                    <div class="select-box">
-                                                        <input
-                                                                type="checkbox"
-                                                                name="payment-group"
-                                                                id="radio-twentyfour"
-                                                        />
-                                                        <label for="radio-twentyfour">
-                                                                    <span
-                                                                            class="default-check"
-                                                                    ></span>
-                                                            <span
-                                                                    class="check-icon fa fa-check"
-                                                            ></span>
-                                                            知识点六
+                                                            <span th:text="${issueList.shitiKaodian}">
+                                                                知识点一
+                                                            </span>
                                                         </label>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <!-- 暂时没有用的 -->
-                                            <div class="column">
-                                                <h6>Price</h6>
-                                                <!-- Form Group -->
-                                                <div class="form-group">
-                                                    <div class="select-box">
-                                                        <input
-                                                                type="checkbox"
-                                                                name="payment-group"
-                                                                id="radio-twentyfive"
-                                                        />
-                                                        <label for="radio-twentyfive">
-                                                                    <span
-                                                                            class="default-check"
-                                                                    ></span>
-                                                            <span
-                                                                    class="check-icon fa fa-check"
-                                                            ></span>
-                                                            All (90)
-                                                        </label>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Form Group -->
-                                                <div class="form-group">
-                                                    <div class="select-box">
-                                                        <input
-                                                                type="checkbox"
-                                                                name="payment-group"
-                                                                id="radio-twentysix"
-                                                        />
-                                                        <label for="radio-twentysix">
-                                                                    <span
-                                                                            class="default-check"
-                                                                    ></span>
-                                                            <span
-                                                                    class="check-icon fa fa-check"
-                                                            ></span>
-                                                            Paid (70)
-                                                        </label>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Form Group -->
-                                                <div class="form-group">
-                                                    <div class="select-box">
-                                                        <input
-                                                                type="checkbox"
-                                                                name="payment-group"
-                                                                id="radio-twentyseven"
-                                                        />
-                                                        <label for="radio-twentyseven">
-                                                                    <span
-                                                                            class="default-check"
-                                                                    ></span>
-                                                            <span
-                                                                    class="check-icon fa fa-check"
-                                                            ></span>
-                                                            Free (12)
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <br/>
-                                                <h6>Level</h6>
-                                                <!-- Form Group -->
-                                                <div class="form-group">
-                                                    <div class="select-box">
-                                                        <input
-                                                                type="checkbox"
-                                                                name="payment-group"
-                                                                id="radio-twentyeight"
-                                                        />
-                                                        <label for="radio-twentyeight">
-                                                                    <span
-                                                                            class="default-check"
-                                                                    ></span>
-                                                            <span
-                                                                    class="check-icon fa fa-check"
-                                                            ></span>
-                                                            Beginner (21)
-                                                        </label>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Form Group -->
-                                                <div class="form-group">
-                                                    <div class="select-box">
-                                                        <input
-                                                                type="checkbox"
-                                                                name="payment-group"
-                                                                id="radio-twentynine"
-                                                        />
-                                                        <label for="radio-twentynine">
-                                                                    <span
-                                                                            class="default-check"
-                                                                    ></span>
-                                                            <span
-                                                                    class="check-icon fa fa-check"
-                                                            ></span>
-                                                            Intermediate (10)
-                                                        </label>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Form Group -->
-                                                <div class="form-group">
-                                                    <div class="select-box">
-                                                        <input
-                                                                type="checkbox"
-                                                                name="payment-group"
-                                                                id="radio-thirty"
-                                                        />
-                                                        <label for="radio-thirty">
-                                                                    <span
-                                                                            class="default-check"
-                                                                    ></span>
-                                                            <span
-                                                                    class="check-icon fa fa-check"
-                                                            ></span>
-                                                            Expert (4)
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <ul class="view-list">
-                            <form class="form-inline">
-                                <div class="form-group">
-                                    <label class="sr-only" for="exampleInputPassword3">Password</label>
-                                    <select name="jiaocaiId" class="form-control">
-                                        <option>化学必修一</option>
-                                    </select>
-
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="exampleInputPassword3">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword3"
-                                           placeholder="Password">
-                                </div>
-                                <button type="submit" class="btn btn-default">提交</button>
-                            </form>
-                        </ul>
                         <div class="pull-right">
                             <div class="total-course">
                                 为您查找到 <span>39</span> 条数据！

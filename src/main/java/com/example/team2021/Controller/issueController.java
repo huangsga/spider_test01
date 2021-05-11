@@ -3,6 +3,7 @@ package com.example.team2021.Controller;
 import com.example.team2021.Entity.ViewIssue;
 import com.example.team2021.Entity.issue;
 import com.example.team2021.Entity.jiaoCai;
+import com.example.team2021.Entity.kemu;
 import com.example.team2021.Service.issueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,13 +30,16 @@ public class issueController {
     @GetMapping("/main")
     public String getIssue(Model model){
 //        试题内容展示
-        List<ViewIssue> allIssue = issueService.findAllIssueItem();
+        List<ViewIssue> allIssue = issueService.findAllIssue();
         model.addAttribute("issue",allIssue);
+//
+//        List<issue> allIssueItem = issueService.findAllIssue();
+//        model.addAttribute("issueItem",allIssueItem);
 //        必修教材内容展示
-        List<jiaoCai> jiaoCaiBX = issueService.findjiaoCaiBX();
+        List<ViewIssue> jiaoCaiBX = issueService.findjiaoCaiBX();
         model.addAttribute("jiaoCaiBX",jiaoCaiBX);
 //        选修教材内容展示
-        List<jiaoCai> jiaoCaiXX = issueService.findjiaoCaiXX();
+        List<ViewIssue> jiaoCaiXX = issueService.findjiaoCaiXX();
         model.addAttribute("jiaoCaiXX",jiaoCaiXX);
 //        章节内容展示
         List<ViewIssue> zhangjieItem = issueService.findzhangJie();
