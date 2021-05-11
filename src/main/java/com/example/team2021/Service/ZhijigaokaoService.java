@@ -10,4 +10,5 @@ public interface ZhijigaokaoService {
     List<Zhijigaokao> findSubjectLabelNo();
     List<Zhijigaokao> findSubjectLabel(String subject);
     List<Zhijigaokao> findSubjectAll();
+    List<Zhijigaokao> findDetail(String test_id);
 }

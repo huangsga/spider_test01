@@ -33,4 +33,9 @@ public class ZhijigaokaoImpl implements ZhijigaokaoService {
     public List<Zhijigaokao> findSubjectAll() {
         return zhijigaokaoMapper.findSubjectAll();
     }
+
+    @Override
+    public List<Zhijigaokao> findDetail(String test_id) {
+        return zhijigaokaoMapper.findDetail(test_id);
+    }
 }

@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8">
+	<meta name="referrer" content="no-referrer" />
 	<title>直击高考</title>
 	<!-- Stylesheets -->
 	<link href="/css/bootstrap.css" rel="stylesheet">
@@ -308,7 +309,7 @@
 				<div class="news-block style-two col-lg-4 col-md-6 col-sm-12" th:each="Contentlist:${SubjectList}">
 					<div class="inner-box">
 						<div class="image">
-							<a href="blog-detail.html"><img th:src="${Contentlist.address}" alt="" /></a>
+							<a th:href="@{'/zjgk/subjectDetail/'+${Contentlist.test_id}}" class="more"><img th:src="${Contentlist.address}" alt="" /></a>
 						</div>
 						<div class="lower-content">
 							<div class="border-layer"></div>
@@ -316,8 +317,8 @@
 								<li>高考真题</li>
 								<li>更新于2021年5月</li>
 							</ul>
-							<h4><a href="blog-detail.html" th:text="${Contentlist.title}">All The Security & Privacy <br> Updates From Amazon’s</a></h4>
-							<a href="blog-detail.html" class="more">点击查看详情页面<span class="fa fa-angle-double-right"></span></a>
+							<h4><a th:href="@{'/zjgk/subjectDetail/'+${Contentlist.test_id}}" th:text="${Contentlist.title}">All The Security & Privacy <br> Updates From Amazon’s</a></h4>
+							<a th:href="@{'/zjgk/subjectDetail/'+${Contentlist.test_id}}" class="more">点击查看详情页面<span class="fa fa-angle-double-right"></span></a>
 						</div>
 					</div>
 				</div>

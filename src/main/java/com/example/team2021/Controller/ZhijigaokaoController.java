@@ -39,7 +39,6 @@ public class ZhijigaokaoController {
     @GetMapping("/subject/{subject}")
     public String getALLSubject(@PathVariable("subject")String subject,Model model){
         List<Zhijigaokao> SubjectList = zhijigaokaoService.findSubjectLabel(subject);
-//        System.out.println(SubjectList);
         List<Zhijigaokao> SubjectnameList = zhijigaokaoService.findSubjectLabelNo();
         model.addAttribute("SubjectList",SubjectList);
         model.addAttribute("SubjectnameList",SubjectnameList);
@@ -47,6 +46,13 @@ public class ZhijigaokaoController {
     }
 
 
+
+    @GetMapping("/subjectDetail/{test_id}")
+    public String getDetail(@PathVariable("test_id")String test_id,Model model){
+        List<Zhijigaokao> DetailList = zhijigaokaoService.findDetail(test_id);
+        model.addAttribute("DetailList",DetailList);
+        return "zhijigaokao-detail";
+    }
 
 
 }

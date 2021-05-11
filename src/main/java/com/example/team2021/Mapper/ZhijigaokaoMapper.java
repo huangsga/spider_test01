@@ -21,4 +21,7 @@ public interface ZhijigaokaoMapper {
 
     @Select("select * from team01.zhijigaokao where cover=1")
     List<Zhijigaokao> findSubjectAll();
+
+    @Select("select * from team01.zhijigaokao where test_id=#{test_id}")
+    List<Zhijigaokao> findDetail(String test_id);
 }
