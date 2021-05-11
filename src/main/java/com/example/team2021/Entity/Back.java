@@ -16,6 +16,15 @@ public class Back {
     private String power;
     private String level;
     private String user_img;
+    private String birthday;
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
 
     public Date getCreatDate() {
         return creatDate;

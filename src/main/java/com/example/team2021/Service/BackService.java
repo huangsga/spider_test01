@@ -6,4 +6,8 @@ import java.util.List;
 
 public interface BackService {
     List<Back> findalluser();
+    Integer adduserinfo(Back back);
+    Integer edituserinfo(Back back);
+    Back findoneuser(Integer userid);
+    Integer deleteUserinfo(Integer userid);
 }
