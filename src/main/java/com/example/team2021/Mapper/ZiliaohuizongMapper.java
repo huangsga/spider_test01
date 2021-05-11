@@ -10,4 +10,5 @@ import java.util.List;
 public interface ZiliaohuizongMapper {
     @Select("select * from ziliao where subject='语文'")
     List<Ziliaohuizong> findAllziliao();
+
 }

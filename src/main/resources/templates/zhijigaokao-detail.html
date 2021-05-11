@@ -2,9 +2,7 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="utf-8">
-<meta name="referrer" content="no-referrer" />
-<!--	403错误防盗链解决办法-->
-<title>LeBari Education HTML-5 Template | Blog List</title>
+<title>LeBari Education HTML-5 Template | Blog</title>
 <!-- Stylesheets -->
 <link href="/css/bootstrap.css" rel="stylesheet">
 <link href="/css/style.css" rel="stylesheet">
@@ -249,7 +247,7 @@
 								<ul class="list-style-two">
 									<li><span class="icon fa fa-location-arrow"></span>Chicago 12, Melborne City, USA</li>
 									<li><span class="icon fa fa-phone"></span>(111) 111-111-1111</li>
-									<li><span class="icon fa fa-envelope"></span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fb979e999a8992bb9c969a9297d5989496">[email&#160;protected]</a></li>
+									<li><span class="icon fa fa-envelope"></span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1478717675667d547379757d783a777b79">[email&#160;protected]</a></li>
 									<li><span class="icon fa fa-clock-o"></span>Week Days: 09.00 to 18.00 Sunday: Closed</li>
 								</ul>
 							</div>
@@ -270,132 +268,204 @@
 	</div>
 	<!-- END sidebar widget item -->
 	
-	<!-- Blog Detail Section / Style Two -->
-    <section class="blog-page-section style-two">
-		<div class="pattern-layer-one" style="background-image: url(images/icons/icon-5.png)"></div>
-		<div class="pattern-layer-two" style="background-image: url(images/icons/icon-6.png)"></div>
-		<div class="pattern-layer-three" style="background-image: url(images/icons/icon-4.png)"></div>
+	<!-- Blog Detail Section -->
+    <section class="blog-page-section">
+		<div class="pattern-layer-one" style="background-image: url(/images/icons/icon-5.png)"></div>
+		<div class="pattern-layer-two" style="background-image: url(/images/icons/icon-6.png)"></div>
+		<div class="pattern-layer-three" style="background-image: url(/images/icons/icon-4.png)"></div>
 		<div class="auto-container">
 			<!-- Page Breadcrumb -->
 			<ul class="page-breadcrumb">
-				<li><a href="index-1.html">Home</a></li>
-				<li>Blog default</li>
+				<li><a href="index-1.html">主页</a></li>
+				<li>直击高考</li>
 			</ul>
 			<div class="content-box">
-				<h2>2020全国高考卷一语文试题及答案</h2>
-				<div class="text">以下图片均来源于网络</div>
+				<div class="title">高考真题</div>
+				<h2>书山有路勤为径，学海无涯苦作舟。</h2>
 			</div>
 		</div>
-	</section>
-	<!-- End Blog Page Section -->
-	
-	<!--Sidebar Page Container-->
-    <div class="sidebar-page-container">
-    	<div class="auto-container">
-        	<div class="row clearfix">
+
+		<div class="outer-container">
+
+			<!-- Post Share Options-->
+			<div class="post-share-options">
+				<ul class="tags">
+					<li th:each="SubjectList:${SubjectList}" >
+						<a th:href="@{'/zjgk/subject/'+${SubjectList.subject}}" th:text="${SubjectList.subject}">语文</a>
+					</li>
+					<!--								<li><a href="#">数学</a></li>-->
+					<!--								<li><a href="#">英语</a></li>-->
+					<!--								<li><a href="#">物理</a></li>-->
+					<!--								<li><a href="#">化学</a></li>-->
+				</ul>
+			</div>
+
+			<div class="row clearfix">
+
+				content-box
 				
-				<!-- Content Side -->
-                <div class="content-side col-lg-9 col-md-12 col-sm-12">
-                	<div class="blog-classic">
-						
-						<!--1 News Block Two -->
-						<div class="news-block-two" th:each="zhijigaokaolist:${zhijigaokao}">
-							<div class="inner-box">
-								<div class="image" >
-									<img referrer="no-referrer" th:src="${zhijigaokaolist.address}" alt="" style="height:1200px" />
-<!--									是:$别写错了 而且是th之后的那个名称 这个是自己取的名字 上下保持一致 用. 调用属性值-->
-							</div>
-							</div>
+				<!-- News Block / Style Two -->
+				<div class="news-block style-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="image">
+							<a href="blog-detail.html"><img src="/images/resource/news-7.jpg" alt="" /></a>
 						</div>
-
-
-						<!-- Post Share Options -->
-						<div class="styled-pagination-two">
-							<ul class="clearfix">
-								<li><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li class="active"><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li class="next"><a href="#"><span class="fa fa-angle-right"></span> </a></li>
+						<div class="lower-content">
+							<div class="border-layer"></div>
+							<ul class="post-info">
+								<li>Education</li>
+								<li>Updated  Sep 26, 2020</li>
 							</ul>
+							<h4><a href="blog-detail.html">How to become a motivational life coach</a></h4>
+							<a href="blog-detail.html" class="more">More <span class="fa fa-angle-double-right"></span></a>
 						</div>
-						
 					</div>
 				</div>
 				
-				<!-- Sidebar Side -->
-                <div class="sidebar-side col-lg-3 col-md-12 col-sm-12">
-                	<aside class="sidebar sticky-top">
-						
-						<!-- Search -->
-						<div class="sidebar-widget search-box">
-							<form method="post" action="contact.html">
-								<div class="form-group">
-									<input type="search" name="search-field" value="" placeholder="Search" required>
-									<button type="submit"><span class="icon fa fa-search"></span></button>
-								</div>
-							</form>
+				<!-- News Block / Style Two -->
+				<div class="news-block style-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="image">
+							<a href="blog-detail.html"><img src="/images/resource/news-8.jpg" alt="" /></a>
 						</div>
-
-						
-						<!-- Archive Widget -->
-						<div class="sidebar-widget archive-widget">
-							<div class="sidebar-title">
-								<h4>科目-类型-年份</h4>
-							</div>
-							<div class="widget-content">
-								<!-- 科目Form Group -->
-								<div class="form-group">
-									<select name="country" class="custom-select-box">
-										<option>语文</option>
-										<option>数学</option>
-										<option>英语</option>
-										<option>物理</option>
-										<option>化学</option>
-									</select>
-								</div>
-								<!-- 类型Form Group -->
-								<div class="form-group">
-									<select name="country" class="custom-select-box">
-										<option>全国一卷</option>
-										<option>全国二卷</option>
-										<option>全国三卷</option>
-										<option>北京卷</option>
-										<option>天津卷</option>
-										<option>上海卷</option>
-										<option>浙江卷</option>
-										<option>山东卷</option>
-										<option>江苏卷</option>
-										<option>海南卷</option>
-									</select>
-								</div>
-								<!-- 年份Form Group -->
-								<div class="form-group">
-									<select name="country" class="custom-select-box">
-										<option>2020</option>
-										<option>2019</option>
-										<option>2018</option>
-									</select>
-								</div>
-
-								<button type="submit" class="btn btn-success btn-sm">查询</button>
-
-							</div>
+						<div class="lower-content">
+							<div class="border-layer"></div>
+							<ul class="post-info">
+								<li>Education</li>
+								<li>Updated  Sep 26, 2020</li>
+							</ul>
+							<h4><a href="blog-detail.html">7 Benefits of Becoming a Pharmacy Technician in the UK</a></h4>
+							<a href="blog-detail.html" class="more">More <span class="fa fa-angle-double-right"></span></a>
 						</div>
-					</aside>
+					</div>
+				</div>
+				
+				<!-- News Block / Style Two -->
+				<div class="news-block style-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="image">
+							<a href="blog-detail.html"><img src="/images/resource/news-9.jpg" alt="" /></a>
+						</div>
+						<div class="lower-content">
+							<div class="border-layer"></div>
+							<ul class="post-info">
+								<li>Technology</li>
+								<li>Updated  Sep 26, 2020</li>
+							</ul>
+							<h4><a href="blog-detail.html">Essential Laboratory Skills: A Guide for Beginners</a></h4>
+							<a href="blog-detail.html" class="more">More <span class="fa fa-angle-double-right"></span></a>
+						</div>
+					</div>
+				</div>
+				
+				<!-- News Block / Style Two -->
+				<div class="news-block style-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="image">
+							<a href="blog-detail.html"><img src="/images/resource/news-10.jpg" alt="" /></a>
+						</div>
+						<div class="lower-content">
+							<div class="border-layer"></div>
+							<ul class="post-info">
+								<li>Education</li>
+								<li>Updated  Sep 26, 2020</li>
+							</ul>
+							<h4><a href="blog-detail.html">Working in Recruitment: The Good, The Bad and The Ugly </a></h4>
+							<a href="blog-detail.html" class="more">More <span class="fa fa-angle-double-right"></span></a>
+						</div>
+					</div>
+				</div>
+				
+				<!-- News Block / Style Two -->
+				<div class="news-block style-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="image">
+							<a href="blog-detail.html"><img src="/images/resource/news-11.jpg" alt="" /></a>
+						</div>
+						<div class="lower-content">
+							<div class="border-layer"></div>
+							<ul class="post-info">
+								<li>Education</li>
+								<li>Updated  Sep 26, 2020</li>
+							</ul>
+							<h4><a href="blog-detail.html">How to Become a Recruitment Consultant: Explore Jobs & </a></h4>
+							<a href="blog-detail.html" class="more">More <span class="fa fa-angle-double-right"></span></a>
+						</div>
+					</div>
+				</div>
+				
+				<!-- News Block / Style Two -->
+				<div class="news-block style-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="image">
+							<a href="blog-detail.html"><img src="/images/resource/news-12.jpg" alt="" /></a>
+						</div>
+						<div class="lower-content">
+							<div class="border-layer"></div>
+							<ul class="post-info">
+								<li>Technology</li>
+								<li>Updated  Sep 26, 2020</li>
+							</ul>
+							<h4><a href="blog-detail.html">5 Ways to Prevent Cakes from Sinking in the Middle</a></h4>
+							<a href="blog-detail.html" class="more">More <span class="fa fa-angle-double-right"></span></a>
+						</div>
+					</div>
+				</div>
+				
+				<!-- News Block / Style Two -->
+				<div class="news-block style-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="image">
+							<a href="blog-detail.html"><img src="/images/resource/news-13.jpg" alt="" /></a>
+						</div>
+						<div class="lower-content">
+							<div class="border-layer"></div>
+							<ul class="post-info">
+								<li>Education</li>
+								<li>Updated  Sep 26, 2020</li>
+							</ul>
+							<h4><a href="blog-detail.html">A Complete List of Cake Baking Equipment that Every Baker </a></h4>
+							<a href="blog-detail.html" class="more">More <span class="fa fa-angle-double-right"></span></a>
+						</div>
+					</div>
+				</div>
+				
+				<!-- News Block / Style Two -->
+				<div class="news-block style-two col-lg-4 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<div class="image">
+							<a href="blog-detail.html"><img src="/images/resource/news-14.jpg" alt="" /></a>
+						</div>
+						<div class="lower-content">
+							<div class="border-layer"></div>
+							<ul class="post-info">
+								<li>Education</li>
+								<li>Updated  Sep 26, 2020</li>
+							</ul>
+							<h4><a href="blog-detail.html">How to Start a Bakery Business: Step by Step Guide</a></h4>
+							<a href="blog-detail.html" class="more">More <span class="fa fa-angle-double-right"></span></a>
+						</div>
+					</div>
 				</div>
 				
 			</div>
+			
+			<!-- Button Box -->
+			<div class="btn-box text-center">
+				<a href="#" class="theme-btn btn-style-five">View More Artical</a>
+			</div>
+			
 		</div>
-	</div>
+	</section>
+	<!-- End Cource Detail Banner Section -->
 	
 	<!-- Main Footer -->
     <footer class="main-footer">
 		<div class="circle-layer"></div>
 		<div class="pattern-layer-one" style="background-image: url(images/background/pattern-12.png)"></div>
-		<div class="pattern-layer-two" style="background-image: url(images/background/pattern-13.png)"></div>
-		<div class="pattern-layer-three" style="background-image: url(images/background/pattern-14.png)"></div>
-		<div class="pattern-layer-four" style="background-image: url(images/background/pattern-13.png)"></div>
+		<div class="pattern-layer-two" style="background-image: url(/images/background/pattern-13.png)"></div>
+		<div class="pattern-layer-three" style="background-image: url(/images/background/pattern-14.png)"></div>
+		<div class="pattern-layer-four" style="background-image: url(/images/background/pattern-13.png)"></div>
     	<div class="auto-container">
         	<!--Widgets Section-->
             <div class="widgets-section">
@@ -409,7 +479,7 @@
 							</div>
 							<ul class="info-list">
 								<li>Tel:<a href="tel:+0845-371-02-02"> 0845 371 02 02</a></li>
-								<li>Email:<a href="/cdn-cgi/l/email-protection#7910171f163900160c0b0a100d1c571a16570c12"> <span class="__cf_email__" data-cfemail="60090e060f20190f">[email&#160;protected]</span>ursite.co.uk</a></li>
+								<li>Email:<a href="/cdn-cgi/l/email-protection#553c3b333a152c3a2027263c21307b363a7b203e"> <span class="__cf_email__" data-cfemail="8ae3e4ece5caf3e5fff8f9e3feefa4e9e5a4ffe1">[email&#160;protected]</span></a></li>
 							</ul>
 							<!-- Social Box -->
 							<ul class="social-box">
