@@ -8,6 +8,6 @@ import java.util.List;
 
 @Mapper
 public interface ZiliaohuizongMapper {
-    @Select("select * from ziliao where subject='语文'")
+    @Select("select * from ziliao where subject='语文' and photo is not null")
     List<Ziliaohuizong> findAllziliao();
 }

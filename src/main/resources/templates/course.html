@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="utf-8">
 <title>LeBari Education HTML-5 Template | Course</title>
@@ -7,6 +7,8 @@
 <link href="/css/bootstrap.css" rel="stylesheet">
 <link href="/css/style.css" rel="stylesheet">
 <link href="/css/responsive.css" rel="stylesheet">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
@@ -745,10 +747,10 @@
 			<div class="row clearfix">
 				
 				<!-- Course Column -->
-				<div class="course-block col-lg-4 col-md-6 col-sm-12" th:each="ziliaohuizonglist:${ziliaohuizong}">
+				<div class="course-block col-lg-4 col-md-6 col-sm-12" th:each="ziliaohuizonglist:${ziliaohuizongs.list}">
 					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
 						<div class="image">
-							<a href="course-detail.html"><img src="https://exp-picture.cdn.bcebos.com/76b6860e5f204371a58c3b93323acd8921c58fee.jpg?x-bce-process=image%2Fresize%2Cm_lfit%2Cw_500%2Climit_1%2Fformat%2Cf_jpg%2Fquality%2Cq_80" alt="" /></a>
+							<a href=""><img th:src="${ziliaohuizonglist.photo}" alt="" /></a>
 						</div>
 						<div class="lower-content">
 							<h4><a href="course-detail.html" th:text="${ziliaohuizonglist.title}">Growth Mindsets for Teachers and Learners</a></h4>
@@ -774,269 +776,41 @@
 						</div>
 					</div>
 				</div>
-				
-				<!-- Course Column -->
-				<div class="course-block col-lg-4 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="image">
-							<a href="course-detail.html"><img src="/images/resource/course-2.jpg" alt="" /></a>
-						</div>
-						<div class="lower-content">
-							<h4><a href="course-detail.html">Programming for Everybody Getting Started with Python</a></h4>
-							<div class="uni-name">University of Roehampton</div>
-							<div class="rating">
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star-o"></span>
-								<strong>4.9</strong>
-								<i>(70 Review)</i>
-							</div>
-							<div class="price">$12 <span>$100.99</span></div>
-							<div class="clearfix">
-								<div class="pull-left">
-									<div class="hovers">11.5 total hours . All Levels  </div>
-								</div>
-								<div class="pull-right">
-									<a href="course-detail.html" class="enroll-now">ENROL NOW</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Course Column -->
-				<div class="course-block col-lg-4 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="image">
-							<a href="course-detail.html"><img src="/images/resource/course-3.jpg" alt="" /></a>
-						</div>
-						<div class="lower-content">
-							<h4><a href="course-detail.html">Introduction to Forensic Science</a></h4>
-							<div class="uni-name">University of Roehampton</div>
-							<div class="rating">
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star-o"></span>
-								<strong>4.9</strong>
-								<i>(70 Review)</i>
-							</div>
-							<div class="price">$12 <span>$100.99</span></div>
-							<div class="clearfix">
-								<div class="pull-left">
-									<div class="hovers">11.5 total hours . All Levels  </div>
-								</div>
-								<div class="pull-right">
-									<a href="course-detail.html" class="enroll-now">ENROL NOW</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Course Column -->
-				<div class="course-block col-lg-4 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="image">
-							<a href="course-detail.html"><img src="/images/resource/course-8.jpg" alt="" /></a>
-						</div>
-						<div class="lower-content">
-							<h4><a href="course-detail.html">Growth Mindsets for Teachers and Learners</a></h4>
-							<div class="uni-name">University of Roehampton</div>
-							<div class="rating">
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star-o"></span>
-								<strong>4.9</strong>
-								<i>(70 Review)</i>
-							</div>
-							<div class="price">$12 <span>$100.99</span></div>
-							<div class="clearfix">
-								<div class="pull-left">
-									<div class="hovers">11.5 total hours . All Levels  </div>
-								</div>
-								<div class="pull-right">
-									<a href="course-detail.html" class="enroll-now">ENROL NOW</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Course Column -->
-				<div class="course-block col-lg-4 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="image">
-							<a href="course-detail.html"><img src="/images/resource/course-9.jpg" alt="" /></a>
-						</div>
-						<div class="lower-content">
-							<h4><a href="course-detail.html">Programming for Everybody Getting Started with Python</a></h4>
-							<div class="uni-name">University of Roehampton</div>
-							<div class="rating">
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star-o"></span>
-								<strong>4.9</strong>
-								<i>(70 Review)</i>
-							</div>
-							<div class="price">$12 <span>$100.99</span></div>
-							<div class="clearfix">
-								<div class="pull-left">
-									<div class="hovers">11.5 total hours . All Levels  </div>
-								</div>
-								<div class="pull-right">
-									<a href="course-detail.html" class="enroll-now">ENROL NOW</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Course Column -->
-				<div class="course-block col-lg-4 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="image">
-							<a href="course-detail.html"><img src="/images/resource/course-10.jpg" alt="" /></a>
-						</div>
-						<div class="lower-content">
-							<h4><a href="course-detail.html">Introduction to Forensic Science</a></h4>
-							<div class="uni-name">University of Roehampton</div>
-							<div class="rating">
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star-o"></span>
-								<strong>4.9</strong>
-								<i>(70 Review)</i>
-							</div>
-							<div class="price">$12 <span>$100.99</span></div>
-							<div class="clearfix">
-								<div class="pull-left">
-									<div class="hovers">11.5 total hours . All Levels  </div>
-								</div>
-								<div class="pull-right">
-									<a href="course-detail.html" class="enroll-now">ENROL NOW</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Course Column -->
-				<div class="course-block col-lg-4 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="image">
-							<a href="course-detail.html"><img src="/images/resource/course-11.jpg" alt="" /></a>
-						</div>
-						<div class="lower-content">
-							<h4><a href="course-detail.html">Growth Mindsets for Teachers and Learners</a></h4>
-							<div class="uni-name">University of Roehampton</div>
-							<div class="rating">
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star-o"></span>
-								<strong>4.9</strong>
-								<i>(70 Review)</i>
-							</div>
-							<div class="price">$12 <span>$100.99</span></div>
-							<div class="clearfix">
-								<div class="pull-left">
-									<div class="hovers">11.5 total hours . All Levels  </div>
-								</div>
-								<div class="pull-right">
-									<a href="course-detail.html" class="enroll-now">ENROL NOW</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Course Column -->
-				<div class="course-block col-lg-4 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="image">
-							<a href="course-detail.html"><img src="/images/resource/course-12.jpg" alt="" /></a>
-						</div>
-						<div class="lower-content">
-							<h4><a href="course-detail.html">Programming for Everybody Getting Started with Python</a></h4>
-							<div class="uni-name">University of Roehampton</div>
-							<div class="rating">
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star-o"></span>
-								<strong>4.9</strong>
-								<i>(70 Review)</i>
-							</div>
-							<div class="price">$12 <span>$100.99</span></div>
-							<div class="clearfix">
-								<div class="pull-left">
-									<div class="hovers">11.5 total hours . All Levels  </div>
-								</div>
-								<div class="pull-right">
-									<a href="course-detail.html" class="enroll-now">ENROL NOW</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Course Column -->
-				<div class="course-block col-lg-4 col-md-6 col-sm-12">
-					<div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-						<div class="image">
-							<a href="course-detail.html"><img src="/images/resource/course-13.jpg" alt="" /></a>
-						</div>
-						<div class="lower-content">
-							<h4><a href="course-detail.html">Introduction to Forensic Science</a></h4>
-							<div class="uni-name">University of Roehampton</div>
-							<div class="rating">
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star-o"></span>
-								<strong>4.9</strong>
-								<i>(70 Review)</i>
-							</div>
-							<div class="price">$12 <span>$100.99</span></div>
-							<div class="clearfix">
-								<div class="pull-left">
-									<div class="hovers">11.5 total hours . All Levels  </div>
-								</div>
-								<div class="pull-right">
-									<a href="course-detail.html" class="enroll-now">ENROL NOW</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				
+				<nav aria-label="Page navigation">
+					<ul class="pagination">
+						<li>
+							<a th:href="@{/ziliaozongjie/yuwen(pageIndex=${ziliaohuizongs.pageNum-1},pageSize=3)}" aria-label="Previous"> <!-- admin_name=${admin_name} ,admin_tel =${admin_tel} -->
+								<span aria-hidden="true">&laquo;</span>
+							</a>
+						</li>
+						<th:block th:each="nav:${ziliaohuizongs.navigatepageNums}">
+							<li th:class="${nav==ziliaohuizongs.pageNum}?'active':''">
+								<a th:href="@{/ziliaozongjie/yuwen(pageIndex=${nav},pageSize=3)}" th:text="${nav}"></a>
+								<!-- ,admin_name=${admin_name} ,admin_tel=${admin_tel} -->
+							</li>
+						</th:block>
+						<li>
+							<a th:href="@{/ziliaozongjie/yuwen(pageIndex=${ziliaohuizongs.pageNum+1},pageSize=3)}" aria-label="Next">
+								<!-- ,admin_name=${admin_name} ,admin_tel=${admin_tel} -->
+								<span aria-hidden="true">&raquo;</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
 			</div>
 			
 			<!-- Post Share Options -->
-			<div class="styled-pagination text-center">
-				<ul class="clearfix">
-					<li><a href="#">01</a></li>
-					<li><a href="#">02</a></li>
-					<li class="active"><a href="#">03</a></li>
-					<li><a href="#">04</a></li>
-					<li><a href="#">05</a></li>
-					<li class="next"><a href="#"><span class="fa fa-angle-double-right"></span> </a></li>
-				</ul>
-			</div>
-			
+<!--			<div class="styled-pagination text-center">-->
+<!--				<ul class="clearfix">-->
+<!--					<li><a href="#">01</a></li>-->
+<!--					<li><a href="#">02</a></li>-->
+<!--					<li class="active"><a href="#">03</a></li>-->
+<!--					<li><a href="#">04</a></li>-->
+<!--					<li><a href="#">05</a></li>-->
+<!--					<li class="next"><a href="#"><span class="fa fa-angle-double-right"></span> </a></li>-->
+<!--				</ul>-->
+<!--			</div>-->
+
 		</div>
 	</section>
 	<!-- End Courses Page Section -->

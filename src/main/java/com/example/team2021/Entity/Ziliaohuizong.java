@@ -10,6 +10,15 @@ public class Ziliaohuizong {
     private String subject;
     private Date createdate;
     private String isdelete;
+    private String photo;
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
 
     public Integer getZiliaoID() {
         return ziliaoID;
