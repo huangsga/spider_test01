@@ -50,4 +50,9 @@ public class issueServiceImpl implements issueService {
         return issueMapper.findZhangjieName(kemuId, jiaocaiId);
     }
 
+    @Override
+    public List<ViewIssue> findIssueDetails(Integer shitiId) {
+        return issueMapper.findIssueDetails(shitiId);
+    }
+
 }

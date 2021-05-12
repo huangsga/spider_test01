@@ -71,7 +71,9 @@ public class issueController {
 //    }
 
     @GetMapping("/details/{shitiId}")
-    public String getIssueDetails(@PathVariable("shitiId") String shitiId,Model model){
+    public String getIssueDetails(@PathVariable("shitiId") Integer shitiId,Model model){
+        List<ViewIssue> issueDetails = issueService.findIssueDetails(shitiId);
+        model.addAttribute("issueDetails",issueDetails);
         return "刷题详情.html";
     }
 }

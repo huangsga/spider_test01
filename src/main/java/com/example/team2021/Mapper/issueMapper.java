@@ -32,10 +32,12 @@ public interface issueMapper {
     @Select("select distinct shiti01.jiaocai_id,jiaocai.jiaocai_name,shiti01.kemu_id from shiti01 join jiaocai on shiti01.jiaocai_id = jiaocai.jiaocai_id where jiaocai_type = #{jiaocaiType} and shiti01.kemu_id = #{kemuId}")
     List<ViewIssue> findJC(String jiaocaiType,String kemuId);
 
-//    展示章节名称
+//展示章节名称
     @Select("SELECT shiti01.zhangjie_id,shiti01.jiaocai_id,zhangjie.zhangjie_name from shiti01 join zhangjie on shiti01.zhangjie_id = zhangjie.zhangjie_id where kemu_id = #{kemuId} and jiaocai_id = #{jiaocaiId}")
     List<ViewIssue> findZhangjieName(String kemuId,String jiaocaiId);
-
+//通过试题ID，展示试题详情
+    @Select("select * from shiti01 join jiaocai on shiti01.jiaocai_id =jiaocai.jiaocai_id and shiti01.shiti_id = #{shitiId}")
+    List<ViewIssue> findIssueDetails(Integer shitiId);
 
 
     @Select("select * from jiaocai where kemu_id = 'A001'")

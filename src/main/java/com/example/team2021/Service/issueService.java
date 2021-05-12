@@ -22,4 +22,6 @@ public interface issueService {
     List<ViewIssue> findJC(String jiaocaiType,String kemuId);
     List<ViewIssue> findZhangjieName(String kemuId,String jiaocaiId);
 
+    List<ViewIssue> findIssueDetails(Integer shitiId);
+
 }
