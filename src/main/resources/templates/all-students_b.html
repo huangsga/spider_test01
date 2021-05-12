@@ -194,7 +194,7 @@
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/back/index">Home</a></li>
                             <li class="breadcrumb-item active"><a href="javascript:void(0);">Students</a></li>
                             <li class="breadcrumb-item active"><a href="javascript:void(0);">All Student</a></li>
                         </ol>
@@ -204,8 +204,8 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<ul class="nav nav-pills mb-3">
-							<li class="nav-item"><a href="#list-view" data-toggle="tab" class="nav-link btn-primary mr-1 show active">List View</a></li>
-							<li class="nav-item"><a href="#grid-view" data-toggle="tab" class="nav-link btn-primary">Grid View</a></li>
+							<li class="nav-item"><a href="#list-view" data-toggle="tab" class="nav-link btn-primary mr-1 show active">列表视图</a></li>
+							<li class="nav-item"><a href="#grid-view" data-toggle="tab" class="nav-link btn-primary">网格视图</a></li>
 						</ul>
 					</div>
 					<div class="col-lg-12">
@@ -214,7 +214,7 @@
 								<div class="card">
 									<div class="card-header">
 										<h4 class="card-title">All Students List  </h4>
-										<a href="add-student.html" class="btn btn-primary">+ Add new</a>
+										<a href="/back/adduser" class="btn btn-primary">+ 添加用户</a>
 									</div>
 									<div class="card-body">
 										<div class="table-responsive">
@@ -245,8 +245,8 @@
 														<td th:text="${userInfo.email}"><a href="javascript:void(0);"><strong>info@example.com</strong></a></td>
 														<td th:text="${#dates.format(userInfo.creatDate,'yyyy/MM/dd HH:mm:ss')}">2011/04/25</td>
 														<td>
-															<a href="javascript:void(0);" class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
-															<a href="javascript:void(0);" class="btn btn-sm btn-danger"><i class="la la-trash-o"></i></a>
+															<a th:href="@{'/back/edituser/'+${userInfo.userid}}" class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
+															<a th:href="@{'/back/delete/'+${userInfo.userid}}" class="btn btn-sm btn-danger"><i class="la la-trash-o"></i></a>
 														</td>												
 													</tr>
 												</tbody>

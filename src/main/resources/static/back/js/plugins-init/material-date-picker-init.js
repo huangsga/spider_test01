@@ -7,16 +7,16 @@
         time: false
     });
     $('#timepicker').bootstrapMaterialDatePicker({
-        format: 'HH:mm',
+        format: 'YYYY-MM-DD',
         time: true,
         date: false
     });
     $('#date-format').bootstrapMaterialDatePicker({
-        format: 'dddd DD MMMM YYYY - HH:mm'
+        format: 'YYYY-MM-DD'
     });
 
     $('#min-date').bootstrapMaterialDatePicker({
-        format: 'DD/MM/YYYY HH:mm',
+        format: 'YYYY-MM-DD',
         minDate: new Date()
     });
 
