@@ -21,38 +21,33 @@ import java.util.List;
  */
 @Service
 public class issueServiceImpl implements issueService {
+
     @Autowired
     private issueMapper issueMapper;
 
     @Override
-    public List<ViewIssue> findAllIssue() {
+    public List<ViewIssue> findAllIssue(){
         return issueMapper.findAllIssue();
     }
 
-//    @Override
-//    public List<ViewIssue> findAllIssueItem(){
-//        return issueMapper.findAllIssueItem();
-//    }
-
     @Override
-    public List<ViewIssue> findjiaoCaiBX() {
-        return issueMapper.findjiaoCaiBX();
+    public List<ViewIssue> findIssueList(String kemuId) {
+        return issueMapper.findIssueList(kemuId);
     }
 
     @Override
-    public List<ViewIssue> findjiaoCaiXX() {
-        return issueMapper.findjiaoCaiXX();
+    public List<ViewIssue> findKemuName(){
+        return issueMapper.findKemuName();
     }
 
     @Override
-    public List<ViewIssue> findzhangJie() {
-        return issueMapper.findzhangJie();
+    public List<ViewIssue> findJC(String jiaocaiType, String kemuId) {
+        return issueMapper.findJC(jiaocaiType, kemuId);
     }
 
     @Override
-    public List<kemu> findAllKemu() {
-        return issueMapper.findAllKemu();
+    public List<ViewIssue> findZhangjieName(String kemuId, String jiaocaiId) {
+        return issueMapper.findZhangjieName(kemuId, jiaocaiId);
     }
 
-    ;
 }

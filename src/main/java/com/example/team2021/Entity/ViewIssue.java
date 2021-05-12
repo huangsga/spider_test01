@@ -36,4 +36,6 @@ public class ViewIssue {
 
     private String jiaocaiName;
     private String zhangjieName;
+    private String kemuName;
+    private String jiaocaiType;
 }

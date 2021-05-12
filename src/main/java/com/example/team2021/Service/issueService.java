@@ -17,9 +17,9 @@ import java.util.List;
  */
 public interface issueService {
     List<ViewIssue> findAllIssue();
-//    List<ViewIssue> findAllIssueItem();
-    List<ViewIssue> findjiaoCaiBX();
-    List<ViewIssue> findjiaoCaiXX();
-    List<ViewIssue> findzhangJie();
-    List<kemu> findAllKemu();
+    List<ViewIssue> findIssueList(String kemuId);
+    List<ViewIssue> findKemuName();
+    List<ViewIssue> findJC(String jiaocaiType,String kemuId);
+    List<ViewIssue> findZhangjieName(String kemuId,String jiaocaiId);
+
 }
