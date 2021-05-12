@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="utf-8">
@@ -310,7 +310,7 @@
 									</ul>
 									<h2><a href="blog-detail.html" th:text="${Gk.zixun_title}">Interior Design Principles and Elements</a></h2>
 									<div class="text">了解更多</div>
-									<a href="blog-detail.html" class="learn-more">Learn More <span class="icon flaticon-right-arrow-1"></span></a>
+									<a th:href="@{/gaokaozixun/zixundetail(zixun_id=${Gk.zixun_id})}" class="learn-more">Learn More <span class="icon flaticon-right-arrow-1"></span></a>
 								</div>
 							</div>
 						</div>
@@ -344,30 +344,7 @@
 								</div>
 							</form>
 						</div>
-						
-						<!-- Popular Post Widget -->
-						<div class="sidebar-widget popular-posts">
-							<div class="sidebar-title">
-								<h4>Recent Post</h4>
-							</div>
-							<div class="widget-content">
-								<article class="post">
-									<figure class="post-thumb"><img src="/images/resource/post-thumb-3.jpg" alt=""><a href="blog-detail.html" class="overlay-box"><span class="icon fa fa-link"></span></a></figure>
-									<div class="post-info">Octobar 20, 2020</div>
-									<div class="text"><a href="blog-detail.html">Is Baking a Good career? 15 Reasons </a></div>
-								</article>
-								<article class="post">
-									<div class="post-info">Octobar 20, 2020</div>
-									<figure class="post-thumb"><img src="/images/resource/post-thumb-4.jpg" alt=""><a href="blog-detail.html" class="overlay-box"><span class="icon fa fa-link"></span></a></figure>
-									<div class="text"><a href="blog-detail.html">Best Practices: SEO For <br> Syndicated Content</a></div>
-								</article>
-								<article class="post">
-									<div class="post-info">Octobar 20, 2020</div>
-									<figure class="post-thumb"><img src="/images/resource/post-thumb-5.jpg" alt=""><a href="blog-detail.html" class="overlay-box"><span class="icon fa fa-link"></span></a></figure>
-									<div class="text"><a href="blog-detail.html">A Guide to Google SEO <br> Algorithm Updates</a></div>
-								</article>
-							</div>
-						</div>
+
 						
 						<!-- Links Widget -->
 						<div class="sidebar-widget links-widget">

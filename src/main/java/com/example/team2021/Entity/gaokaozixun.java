@@ -10,6 +10,24 @@ public class gaokaozixun {
     private String zixun_content;
     private String zixun_type;
     private Date createdate;
+    private String description;
+    private String imgsrc;
+
+    public String getImgsrc() {
+        return imgsrc;
+    }
+
+    public void setImgsrc(String imgsrc) {
+        this.imgsrc = imgsrc;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public Integer getZixun_id() {
         return zixun_id;

@@ -16,8 +16,24 @@ public class gaokaozixunServiceImpl implements gaokaozixunService {
     private gaokaozixunMapper gaokaozixunMapper;
 
     @Override
-    public List<gaokaozixun> findAllpolicy() {
-        return gaokaozixunMapper.findAllpolicy();
+    public List<gaokaozixun> findAlltype() {
+        return gaokaozixunMapper.findAlltype();
     }
+
+    @Override
+    public List<gaokaozixun> findAlltitle(String zixun_type) {
+        return gaokaozixunMapper.findAlltitle(zixun_type);
+    }
+
+    @Override
+    public List<gaokaozixun> findAllbyid(Integer zixun_id) {
+        return gaokaozixunMapper.findAllbyid(zixun_id);
+    }
+
+    @Override
+    public List<gaokaozixun> findAlldes() {
+        return gaokaozixunMapper.findAlldes();
+    }
+
 
 }

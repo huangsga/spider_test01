@@ -6,6 +6,9 @@ import java.util.List;
 
 //黄偲佳修改了
 public interface gaokaozixunService {
-    List<gaokaozixun> findAllpolicy();
+    List<gaokaozixun> findAlltype();
+    List<gaokaozixun> findAlltitle(String zixun_type);
+    List<gaokaozixun> findAllbyid(Integer zixun_id);
+    List<gaokaozixun> findAlldes();
 
 }
