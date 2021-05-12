@@ -750,7 +750,7 @@
 				<div class="course-block col-lg-4 col-md-6 col-sm-12" th:each="ziliaohuizonglist:${ziliaohuizongs.list}">
 					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
 						<div class="image">
-							<a href=""><img th:src="${ziliaohuizonglist.photo}" alt="" /></a>
+							<a th:href="@{'courseDetail/'+${ziliaohuizonglist.ziliaoID}}"><img th:src="${ziliaohuizonglist.photo}" alt="" /></a>
 						</div>
 						<div class="lower-content">
 							<h4><a href="course-detail.html" th:text="${ziliaohuizonglist.title}">Growth Mindsets for Teachers and Learners</a></h4>
@@ -764,13 +764,13 @@
 								<strong>4.9</strong>
 								<i>(70 Review)</i>
 							</div>
-							<div class="price">$12 <span>$100.99</span></div>
+							<div class="price">$0.01 <span>$100.99</span></div>
 							<div class="clearfix">
 								<div class="pull-left">
-									<div class="hovers" th:text="${ziliaohuizonglist.title}">11.5 total hours . All Levels  </div>
+									<div class="hovers" th:text="${ziliaohuizonglist.time}">11.5 total hours . All Levels  </div>
 								</div>
 								<div class="pull-right">
-									<a href="course-detail.html" class="enroll-now">ENROL NOW</a>
+									<a href="/ziliaozongjie/courseDetail" class="enroll-now">进入阅读</a>
 								</div>
 							</div>
 						</div>
