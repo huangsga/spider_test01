@@ -1,6 +1,7 @@
 package com.example.team2021.ServiceImpl;
 
 import com.example.team2021.Entity.Back;
+import com.example.team2021.Entity.Zhijigaokao;
 import com.example.team2021.Mapper.BackMapper;
 import com.example.team2021.Service.BackService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,5 +36,15 @@ public class BackServiceImpl implements BackService {
     @Override
     public Integer deleteUserinfo(Integer userid) {
         return backMapper.deleteUserinfo(userid);
+    }
+
+    @Override
+    public List<Zhijigaokao> findAllzhenti() {
+        return backMapper.findAllzhenti();
+    }
+
+    @Override
+    public Integer deleteZhenti(Integer pic_id) {
+        return backMapper.deleteZhenti(pic_id);
     }
 }
