@@ -21,7 +21,7 @@ public class ziliaozongjieController {
 
     @GetMapping("yuwen")
     public String getziliaozongjieyunwen(@RequestParam(value = "pageIndex",defaultValue = "1")Integer pageIndex,
-                                         @RequestParam(value = "pageSize",defaultValue = "3")Integer pageSize,
+                                         @RequestParam(value = "pageSize",defaultValue = "6")Integer pageSize,
 //                                         @RequestParam(value = "admin_name",defaultValue = "")String admin_name ,
 //                                         @RequestParam(value ="admin_tel",defaultValue = "")String admin_tel ,
                                          Model model){
@@ -31,7 +31,7 @@ public class ziliaozongjieController {
     }
     @GetMapping("yingyu")
     public String getziliaoyingyu(@RequestParam(value = "pageIndex",defaultValue = "1")Integer pageIndex,
-                                  @RequestParam(value = "pageSize",defaultValue = "3")Integer pageSize,
+                                  @RequestParam(value = "pageSize",defaultValue = "6")Integer pageSize,
 //                                         @RequestParam(value = "admin_name",defaultValue = "")String admin_name ,
 //                                         @RequestParam(value ="admin_tel",defaultValue = "")String admin_tel ,
                                   Model model){
@@ -41,7 +41,7 @@ public class ziliaozongjieController {
     }
     @GetMapping("shuxue")
     public String getziliaoshuxue(@RequestParam(value = "pageIndex",defaultValue = "1")Integer pageIndex,
-                                  @RequestParam(value = "pageSize",defaultValue = "3")Integer pageSize,
+                                  @RequestParam(value = "pageSize",defaultValue = "6")Integer pageSize,
 //                                         @RequestParam(value = "admin_name",defaultValue = "")String admin_name ,
 //                                         @RequestParam(value ="admin_tel",defaultValue = "")String admin_tel ,
                                   Model model){
@@ -51,7 +51,7 @@ public class ziliaozongjieController {
     }
     @GetMapping("wuli")
     public String getziliaowuli(@RequestParam(value = "pageIndex",defaultValue = "1")Integer pageIndex,
-                                @RequestParam(value = "pageSize",defaultValue = "3")Integer pageSize,
+                                @RequestParam(value = "pageSize",defaultValue = "6")Integer pageSize,
 //                                         @RequestParam(value = "admin_name",defaultValue = "")String admin_name ,
 //                                         @RequestParam(value ="admin_tel",defaultValue = "")String admin_tel ,
                                 Model model){
@@ -61,7 +61,7 @@ public class ziliaozongjieController {
     }
     @GetMapping("huaxue")
     public String getziliaohuaxue(@RequestParam(value = "pageIndex",defaultValue = "1")Integer pageIndex,
-                                  @RequestParam(value = "pageSize",defaultValue = "3")Integer pageSize,
+                                  @RequestParam(value = "pageSize",defaultValue = "6")Integer pageSize,
 //                                         @RequestParam(value = "admin_name",defaultValue = "")String admin_name ,
 //                                         @RequestParam(value ="admin_tel",defaultValue = "")String admin_tel ,
                                   Model model){
@@ -71,7 +71,7 @@ public class ziliaozongjieController {
     }
     @GetMapping("lizong")
     public String getziliaoLizong(@RequestParam(value = "pageIndex",defaultValue = "1")Integer pageIndex,
-                                   @RequestParam(value = "pageSize",defaultValue = "3")Integer pageSize,
+                                   @RequestParam(value = "pageSize",defaultValue = "6")Integer pageSize,
 //                                         @RequestParam(value = "admin_name",defaultValue = "")String admin_name ,
 //                                         @RequestParam(value ="admin_tel",defaultValue = "")String admin_tel ,
                                    Model model){
@@ -81,7 +81,7 @@ public class ziliaozongjieController {
     }
     @GetMapping("wenzong")
     public String getziliaohuizong(@RequestParam(value = "pageIndex",defaultValue = "1")Integer pageIndex,
-                                   @RequestParam(value = "pageSize",defaultValue = "3")Integer pageSize,
+                                   @RequestParam(value = "pageSize",defaultValue = "6")Integer pageSize,
 //                                         @RequestParam(value = "admin_name",defaultValue = "")String admin_name ,
 //                                         @RequestParam(value ="admin_tel",defaultValue = "")String admin_tel ,
                                    Model model){
