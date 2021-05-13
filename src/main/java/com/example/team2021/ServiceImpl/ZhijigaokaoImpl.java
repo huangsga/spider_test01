@@ -35,7 +35,7 @@ public class ZhijigaokaoImpl implements ZhijigaokaoService {
     }
 
     @Override
-    public List<Zhijigaokao> findDetail(String test_id) {
-        return zhijigaokaoMapper.findDetail(test_id);
+    public List<Zhijigaokao> findDetail(String testId) {
+        return zhijigaokaoMapper.findDetail(testId);
     }
 }

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8"/>
-    <title>掌上刷题-语文试题</title>
+    <title>掌上刷题</title>
     <!-- Stylesheets -->
     <link href="/css/bootstrap.css" rel="stylesheet"/>
     <link href="/css/style.css" rel="stylesheet"/>
@@ -93,8 +93,8 @@
         <div class="auto-container">
             <!-- Page Breadcrumb -->
             <ul class="page-breadcrumb">
-                <li><a href="index.html">Home</a></li>
-                <li>Courses v1</li>
+                <li><a href="/main/index">主页</a></li>
+                <li>掌上刷题</li>
             </ul>
             <div class="row clearfix">
                 <!-- Content Column -->
@@ -183,27 +183,21 @@
                                             <!-- 必修教材 -->
                                             <div class="column">
                                                 <h6>必修教材</h6>
-                                            <!--Form Group -->
+                                                <!--Form Group -->
                                                 <div class="form-group">
                                                     <div class="select-box" th:each="ChineseBX:${BXJiaocai}">
                                                         <input
                                                                 type="radio"
-                                                                name="payment-group"
+                                                                name="jiaocai-group"
+                                                                th:value="${ChineseBX.jiaocaiId}"
                                                                 th:id="'BXjiaocai-' + ${ChineseBX.jiaocaiId}"
                                                         />
-                                                        <label th:for="'BXjiaocai-' + ${ChineseBX.jiaocaiId}" th:onclick="clikeBtn([[${ChineseBX.kemuId}]],[[${ChineseBX.jiaocaiId}]])"
-                                                        >
+                                                        <label th:for="'BXjiaocai-' + ${ChineseBX.jiaocaiId}" >
                                                                     <span
                                                                             class="default-check"
                                                                     ></span>
                                                             <a th:text="${ChineseBX.jiaocaiName}">必修一</a>
                                                         </label>
-                                                        <script>
-                                                            function clikeBtn(kemuId,jiaocaiId){
-                                                                var url = '/issue/main/'+kemuId+'/'+jiaocaiId;
-                                                                $('#div-issue').load(url);
-                                                            }
-                                                        </script>
                                                     </div>
                                                 </div>
                                             </div>
@@ -215,7 +209,8 @@
                                                     <div class="select-box" th:each="ChineseBX:${XXJiaocai}">
                                                         <input
                                                                 type="radio"
-                                                                name="payment-group"
+                                                                name="jiaocai-group"
+                                                                th:value="${ChineseBX.jiaocaiId}"
                                                                 th:id="'BXjiaocai-' + ${ChineseBX.jiaocaiId}"
                                                         />
                                                         <label th:for="'BXjiaocai-' + ${ChineseBX.jiaocaiId}">
@@ -232,37 +227,50 @@
                                                 <h6>章节</h6>
                                                 <!-- Form Group -->
                                                 <div class="form-group">
-                                                    <div class="select-box" th:each="zhangjieNames:${zhangjieName}">
+                                                    <div class="select-box"  th:each="zhangjieNames:${zhangjieNames}">
                                                         <input
-                                                                type="checkbox"
-                                                                name="payment-group"
-                                                                th:id="'zhangjie-' + ${zhangjieNames.zhangjieId}"
+                                                                type="radio"
+                                                                name="zhangjie-group"
+                                                                th:value="${zhangjieNames.zhangJieId}"
+                                                                th:id="'zhangjie-' + ${zhangjieNames.zhangJieId}"
                                                         />
-                                                        <label th:for="'zhangjie-' + ${zhangjieNames.zhangjieId}">
+                                                        <label th:for="'zhangjie-' + ${zhangjieNames.zhangJieId}">
                                                                     <span
                                                                             class="default-check"
                                                                     ></span>
-                                                            <span
-                                                                    class="check-icon fa fa-check"
-                                                            ></span>
-                                                            <span th:text="${zhangjieNames.zhangjieName}">
-                                                                章节一</span>
+                                                            <span th:text="${zhangjieNames.zhangJieName}">章节一</span>
                                                         </label>
                                                     </div>
                                                 </div>
                                             </div>
-
+                                            <button id="clickName">查询</button>
+                                            <script>
+                                                document.getElementById("clickName").onclick = function() {
+                                                    let jiaocaiId = $("input[name='jiaocai-group']:checked").val();
+                                                    let zhangjieId = $("input[name='zhangjie-group']:checked").val();
+                                                    console.log(jiaocaiId);
+                                                    console.log(zhangjieId);
+                                                    console.log()
+                                                    // let url = "/issue/timu/"+jiaocaiId+'/'+zhangjieId;
+                                                    // $.get(url);
+                                                    window.location.href="/issue/timu/"+jiaocaiId+'/'+zhangjieId;
+                                                };
+                                            </script>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="pull-left">
-                            <button type="submit" class="btn btn-outline-default">提交 </button>
+
+                        <!-- Button Box -->
+                        <div class="btn-box text-center">
+                            <a th:each="labelName:${kemuName}" th:href="@{'/issue/main/'+${labelName.kemuId}}" th:text="${labelName.kemuName}" class="theme-btn btn-style-five">View More Artical</a>
                         </div>
+
+
                         <div class="pull-right">
                             <div class="total-course">
-                                为您查找到 <span>39</span> 条数据！
+                                为您查找到 <span th:text="${issueSize}"></span> 条数据！
                             </div>
                         </div>
                     </div>
@@ -289,23 +297,18 @@
                                 <div class="uni-name" th:text="${issue.shitiOption}">试题选项</div>
                             </h5>
                             <div class="rating">
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star-o"></span>
-                                <strong th:text="${issue.shitiHard}">4.9</strong>
-                                <i>(难度)</i>
+                                <span class="fa fa-star-half-o" aria-hidden="true"></span>难度 :
+                                <span th:text="${issue.shitiHard}">4.9</span>
                             </div>
-                            <div class="price" th:text="${issue.shitiType}">选择题</div>
                             <div class="clearfix">
                                 <div class="pull-left">
-                                    <div class="hovers" th:text="${issue.jiaocaiName}">教材名称</div>
+                                    <div class="hovers">教材名称</div>
                                 </div>
+
                                 <div class="pull-right">
-                                    <a th:href="@{'/issue/details/'+${issue.shitiId}}" class="enroll-now"
-                                    >查看解析</a
-                                    >
+                                    <a th:href="@{'/issue/details/'+${issue.shitiId}}" class="enroll-now">
+                                        查看解析
+                                    </a>
                                 </div>
                             </div>
                         </div>

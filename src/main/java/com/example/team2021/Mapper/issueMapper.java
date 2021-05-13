@@ -30,18 +30,18 @@ public interface issueMapper {
     List<ViewIssue> findKemuName();
 //展示必修教材名称
     @Select("select distinct shiti01.jiaocai_id,jiaocai.jiaocai_name,shiti01.kemu_id from shiti01 join jiaocai on shiti01.jiaocai_id = jiaocai.jiaocai_id where jiaocai_type = #{jiaocaiType} and shiti01.kemu_id = #{kemuId}")
-    List<ViewIssue> findJC(String jiaocaiType,String kemuId);
+    List<ViewIssue> findJC(String jiaocaiType, String kemuId);
 
 //展示章节名称
     @Select("SELECT shiti01.zhangjie_id,shiti01.jiaocai_id,zhangjie.zhangjie_name from shiti01 join zhangjie on shiti01.zhangjie_id = zhangjie.zhangjie_id where kemu_id = #{kemuId} and jiaocai_id = #{jiaocaiId}")
-    List<ViewIssue> findZhangjieName(String kemuId,String jiaocaiId);
+    List<ViewIssue> findZhangjieName(String kemuId, String jiaocaiId);
 //通过试题ID，展示试题详情
     @Select("select * from shiti01 join jiaocai on shiti01.jiaocai_id =jiaocai.jiaocai_id and shiti01.shiti_id = #{shitiId}")
     List<ViewIssue> findIssueDetails(Integer shitiId);
 
-
-    @Select("select * from jiaocai where kemu_id = 'A001'")
-    List<jiaoCai> findChineseBX();
+//详情页面，根据科目ID,教材ID，章节ID，举一反三
+    @Select("SELECT * FROM shiti01 where kemu_id = #{kemuId} and jiaocai_id = #{jiaocaiId} and zhangjie_id = #{zhangjieId} order by rand() limit 3")
+    List<ViewIssue> findIssueRand(String kemuId, String jiaocaiId, String zhangjieId);
 
     @Select("select shiti01.*,jiaocai_name from shiti01 join jiaocai on shiti01.jiaocai_id = jiaocai.jiaocai_id where shiti01.kemu_id = 'A001' and shiti01.jiaocai_id = #{jiaocaiId}")
     List<ViewIssue> findChineseByJiaocai(String jiaocaiId);
@@ -56,5 +56,12 @@ public interface issueMapper {
             "on shiti01.zhangjie_id = zhangjie.zhangjie_id \n" +
             "where kemu_id = '#{kemuId}' \n" +
             "and jiaocai_id = '#{jiaocaiId}'")
-    List<zhangjieSearch> listZhangjie(String kemuId,String jiaocaiId);
+    List<zhangjieSearch> listZhangjie(String kemuId, String jiaocaiId);
+
+
+    @Select("select * from shiti01 where kemu_id = #{kemuId} and jiaocai_id = #{jiaocaiId} and zhangjie_id = #{zhangjieId}")
+    List<ViewIssue> loadIssues(String kemuId, String jiaocaiId, String zhangjieId);
+
+    @Select("SELECT * from zhangjie")
+    List<zhangJie> listZhangJie();
 }

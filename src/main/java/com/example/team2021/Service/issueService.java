@@ -1,9 +1,7 @@
 package com.example.team2021.Service;
 
 import com.example.team2021.Entity.ViewIssue;
-import com.example.team2021.Entity.issue;
-import com.example.team2021.Entity.jiaoCai;
-import com.example.team2021.Entity.kemu;
+import com.example.team2021.Entity.zhangJie;
 
 import java.util.List;
 
@@ -19,9 +17,11 @@ public interface issueService {
     List<ViewIssue> findAllIssue();
     List<ViewIssue> findIssueList(String kemuId);
     List<ViewIssue> findKemuName();
-    List<ViewIssue> findJC(String jiaocaiType,String kemuId);
-    List<ViewIssue> findZhangjieName(String kemuId,String jiaocaiId);
+    List<ViewIssue> findJC(String jiaocaiType, String kemuId);
+    List<ViewIssue> findZhangjieName(String kemuId, String jiaocaiId);
 
     List<ViewIssue> findIssueDetails(Integer shitiId);
-
+    List<ViewIssue> findIssueRand(String kemuId, String jiaocaiId, String zhangjieId);
+    List<ViewIssue> loadIssues(String kemuId, String jiaocaiId, String zhangjieId);
+    List<zhangJie> listZhangJie();
 }

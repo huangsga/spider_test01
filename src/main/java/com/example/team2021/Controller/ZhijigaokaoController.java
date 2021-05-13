@@ -47,9 +47,9 @@ public class ZhijigaokaoController {
 
 
 
-    @GetMapping("/subjectDetail/{test_id}")
-    public String getDetail(@PathVariable("test_id")String test_id,Model model){
-        List<Zhijigaokao> DetailList = zhijigaokaoService.findDetail(test_id);
+    @GetMapping("/subjectDetail/{testId}")
+    public String getDetail(@PathVariable("testId")String testId,Model model){
+        List<Zhijigaokao> DetailList = zhijigaokaoService.findDetail(testId);
         model.addAttribute("DetailList",DetailList);
         return "zhijigaokao-detail";
     }

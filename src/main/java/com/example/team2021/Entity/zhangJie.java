@@ -1,5 +1,7 @@
 package com.example.team2021.Entity;
 
+import lombok.Data;
+
 /**
  * @className: com.example.team2021.Entity-> zhangJie
  * @description: 试题对应章节表
@@ -8,7 +10,8 @@ package com.example.team2021.Entity;
  * @version: 1.0
  * @todo:
  */
+@Data
 public class zhangJie {
-    private String zhangjieId;
-    private String zhangjieName;
+    private String zhangJieId;
+    private String zhangJieName;
 }

@@ -1,9 +1,7 @@
 package com.example.team2021.ServiceImpl;
 
 import com.example.team2021.Entity.ViewIssue;
-import com.example.team2021.Entity.issue;
-import com.example.team2021.Entity.jiaoCai;
-import com.example.team2021.Entity.kemu;
+import com.example.team2021.Entity.zhangJie;
 import com.example.team2021.Mapper.issueMapper;
 import com.example.team2021.Service.issueService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +51,22 @@ public class issueServiceImpl implements issueService {
     @Override
     public List<ViewIssue> findIssueDetails(Integer shitiId) {
         return issueMapper.findIssueDetails(shitiId);
+    }
+
+    @Override
+    public List<ViewIssue> findIssueRand(String kemuId,String jiaocaiId,String zhangjieId) {
+        return issueMapper.findIssueRand(kemuId,jiaocaiId,zhangjieId);
+    }
+
+
+    @Override
+    public List<ViewIssue> loadIssues(String kemuId, String jiaocaiId, String zhangjieId) {
+        return issueMapper.loadIssues(kemuId, jiaocaiId, zhangjieId);
+    }
+
+    @Override
+    public List<zhangJie> listZhangJie() {
+        return issueMapper.listZhangJie();
     }
 
 }

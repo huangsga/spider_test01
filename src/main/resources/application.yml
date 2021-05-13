@@ -20,5 +20,18 @@ pagehelper:
                     params: count==countSql
                     page-size-zero: true
 
+## mybatis 配置
+mybatis:
+  mapper-locations: classpath:/mappers/*.xml # 扫描mybatis的实现dao接口*.xml文件
+  type-aliases-package: com.example.team2021.Entity #实体类取别名
+  configuration:
+    ## 下划线转驼峰配置
+    map-underscore-to-camel-case: true
+## 显示dao 执⾏sql语句
+logging:
+  level:
+    com.ppl.springboot.dao: debug # 改成你的dao接口文件所在包路径可以打印出sql语句
+
+
 
 

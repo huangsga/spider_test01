@@ -21,13 +21,13 @@ public class gaokaozixunServiceImpl implements gaokaozixunService {
     }
 
     @Override
-    public List<gaokaozixun> findAlltitle(String zixun_type) {
-        return gaokaozixunMapper.findAlltitle(zixun_type);
+    public List<gaokaozixun> findAlltitle(String zixunType) {
+        return gaokaozixunMapper.findAlltitle(zixunType);
     }
 
     @Override
-    public List<gaokaozixun> findAllbyid(Integer zixun_id) {
-        return gaokaozixunMapper.findAllbyid(zixun_id);
+    public List<gaokaozixun> findAllbyid(Integer zixunId) {
+        return gaokaozixunMapper.findAllbyid(zixunId);
     }
 
     @Override

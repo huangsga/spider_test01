@@ -27,23 +27,23 @@ public class gaokaozixunController {
         return "blog";
     }
 
-    @RequestMapping("/zixunlist/{zixun_type}")
-    public String getZixunValue(@PathVariable("zixun_type")String zixun_type, Model model){
-        List<gaokaozixun> gaokaozixun=gaokaozixunService.findAlltitle(zixun_type);
+    @RequestMapping("/zixunlist/{zixunType}")
+    public String getZixunValue(@PathVariable("zixunType")String zixunType, Model model){
+        List<gaokaozixun> gaokaozixun=gaokaozixunService.findAlltitle(zixunType);
         model.addAttribute("Gk",gaokaozixun);
         return "blog-list";
     }
 
     @GetMapping("zixundetail")
-    public String details(@RequestParam("zixun_id") Integer zixun_id,Model model){
-        List<gaokaozixun> gaokaozixun=gaokaozixunService.findAllbyid(zixun_id);
+    public String details(@RequestParam("zixunId") Integer zixunId,Model model){
+        List<gaokaozixun> gaokaozixun=gaokaozixunService.findAllbyid(zixunId);
         model.addAttribute("Di",gaokaozixun);
         return "blog-detail";
     }
 
-    @GetMapping("/zixundetail/{zixun_id}")
-    public String getZixundetail(@PathVariable("zixun_id")Integer zixun_id,Model model){
-//        List<gaokaozixun> gaokaozixun=gaokaozixunService.findAllbyid(zixun_id);
+    @GetMapping("/zixundetail/{zixunId}")
+    public String getZixundetail(@PathVariable("zixunId")Integer zixunId,Model model){
+//        List<gaokaozixun> gaokaozixun=gaokaozixunService.findAllbyid(zixunId);
 //        model.addAttribute("Di",gaokaozixun);
         return "blog-detail";
     }
