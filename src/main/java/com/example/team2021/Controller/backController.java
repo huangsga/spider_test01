@@ -1,6 +1,7 @@
 package com.example.team2021.Controller;
 
 import com.example.team2021.Entity.Back;
+import com.example.team2021.Entity.Zhijigaokao;
 import com.example.team2021.Service.BackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -83,7 +84,9 @@ public class backController {
     // --------------------------------------------------------------------------------
     // 进入试题管理界面
     @GetMapping("courses")
-    public String courses(){
+    public String courses(Model model){
+        List<Zhijigaokao> zhentiList = backService.findAllzhenti();
+        model.addAttribute("zhentiList",zhentiList);
         return "all-courses_b";
     }
     // 进入试题添加界面
@@ -91,6 +94,15 @@ public class backController {
     public String addcourses(){
         return "add-courses_b";
     }
+    // 删除试题
+    @GetMapping("/deleteZhenti/{pic_id}")
+    public String deleteZhenti(@PathVariable("pic_id") Integer pic_id){
+        backService.deleteZhenti(pic_id);
+        return "redirect:/back/courses";
+    }
+
+
+
     // 进入用户添加界面
     @GetMapping("editcourses")
     public String editcourses(){

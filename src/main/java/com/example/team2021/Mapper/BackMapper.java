@@ -1,6 +1,7 @@
 package com.example.team2021.Mapper;
 
 import com.example.team2021.Entity.Back;
+import com.example.team2021.Entity.Zhijigaokao;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -24,4 +25,10 @@ public interface BackMapper {
     // 删除用户信息
     @Select("delete from userinfo where userid=#{userid}")
     Integer deleteUserinfo(Integer userid);
+    //查找试题
+    @Select("select * from team01.zhijigaokao")
+    List<Zhijigaokao> findAllzhenti();
+    // 删除试题信息
+    @Select("delete from zhijigaokao where pic_id=#{pic_id}")
+    Integer deleteZhenti(Integer pic_id);
 }
