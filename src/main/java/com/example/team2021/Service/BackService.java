@@ -2,6 +2,7 @@ package com.example.team2021.Service;
 
 import com.example.team2021.Entity.Back;
 import com.example.team2021.Entity.Zhijigaokao;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
@@ -12,6 +13,6 @@ public interface BackService {
     Back findoneuser(Integer userid);
     Integer deleteUserinfo(Integer userid);
 
-    List<Zhijigaokao> findAllzhenti();
+    PageInfo<Zhijigaokao> findAllzhenti(Integer pageIndex,Integer pageSize);
     Integer deleteZhenti(Integer pic_id);
 }

@@ -4,6 +4,8 @@ import com.example.team2021.Entity.Back;
 import com.example.team2021.Entity.Zhijigaokao;
 import com.example.team2021.Mapper.BackMapper;
 import com.example.team2021.Service.BackService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,9 +41,14 @@ public class BackServiceImpl implements BackService {
     }
 
     @Override
-    public List<Zhijigaokao> findAllzhenti() {
-        return backMapper.findAllzhenti();
+    public PageInfo<Zhijigaokao> findAllzhenti(Integer pageIndex,Integer pageSize) {
+        PageHelper.startPage(pageIndex,pageSize);
+        List<Zhijigaokao> lists = backMapper.findAllzhenti();
+        PageInfo<Zhijigaokao> info = new PageInfo<Zhijigaokao>(lists);
+        return info;
     }
+
+
 
     @Override
     public Integer deleteZhenti(Integer pic_id) {

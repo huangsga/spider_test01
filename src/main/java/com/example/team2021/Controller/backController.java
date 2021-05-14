@@ -3,13 +3,11 @@ package com.example.team2021.Controller;
 import com.example.team2021.Entity.Back;
 import com.example.team2021.Entity.Zhijigaokao;
 import com.example.team2021.Service.BackService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -84,8 +82,10 @@ public class backController {
     // --------------------------------------------------------------------------------
     // 进入试题管理界面
     @GetMapping("courses")
-    public String courses(Model model){
-        List<Zhijigaokao> zhentiList = backService.findAllzhenti();
+    public String courses(@RequestParam(value = "pageIndex",defaultValue = "1")Integer pageIndex,
+                          @RequestParam(value = "pageSize",defaultValue = "6")Integer pageSize,
+                          Model model){
+        PageInfo<Zhijigaokao> zhentiList = backService.findAllzhenti(pageIndex,pageSize);
         model.addAttribute("zhentiList",zhentiList);
         return "all-courses_b";
     }
