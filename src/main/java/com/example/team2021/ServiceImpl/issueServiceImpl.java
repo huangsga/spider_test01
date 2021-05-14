@@ -4,6 +4,8 @@ import com.example.team2021.Entity.ViewIssue;
 import com.example.team2021.Entity.zhangJie;
 import com.example.team2021.Mapper.issueMapper;
 import com.example.team2021.Service.issueService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,13 +26,19 @@ public class issueServiceImpl implements issueService {
     private issueMapper issueMapper;
 
     @Override
-    public List<ViewIssue> findAllIssue(){
-        return issueMapper.findAllIssue();
+    public PageInfo<ViewIssue> findAllIssue(Integer pageIndex, Integer pageSize){
+        PageHelper.startPage(pageIndex,pageSize);//一个设置
+        List<ViewIssue> lists = issueMapper.findAllIssue();
+        PageInfo<ViewIssue> info=new PageInfo<ViewIssue>(lists);
+        return info;
     }
 
     @Override
-    public List<ViewIssue> findIssueList(String kemuId) {
-        return issueMapper.findIssueList(kemuId);
+    public PageInfo<ViewIssue> findIssueList(String kemuId,Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex,pageSize);//一个设置
+        List<ViewIssue> lists = issueMapper.findIssueList(kemuId);
+        PageInfo<ViewIssue> info=new PageInfo<ViewIssue>(lists);
+        return info;
     }
 
     @Override
@@ -58,10 +66,12 @@ public class issueServiceImpl implements issueService {
         return issueMapper.findIssueRand(kemuId,jiaocaiId,zhangjieId);
     }
 
-
     @Override
-    public List<ViewIssue> loadIssues(String kemuId, String jiaocaiId, String zhangjieId) {
-        return issueMapper.loadIssues(kemuId, jiaocaiId, zhangjieId);
+    public PageInfo<ViewIssue> loadIssues(String kemuId, String jiaocaiId, String zhangjieId, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex,pageSize);//一个设置
+        List<ViewIssue> lists = issueMapper.loadIssues(kemuId,jiaocaiId,zhangjieId);
+        PageInfo<ViewIssue> info=new PageInfo<ViewIssue>(lists);
+        return info;
     }
 
     @Override

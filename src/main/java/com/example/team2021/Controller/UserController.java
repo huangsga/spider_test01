@@ -23,7 +23,7 @@ public class UserController {
      */
     @GetMapping("/login")
     public String toLogin(){
-        return "login.html";
+        return "login";
     }
 
     /**

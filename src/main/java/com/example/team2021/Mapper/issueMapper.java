@@ -43,25 +43,11 @@ public interface issueMapper {
     @Select("SELECT * FROM shiti01 where kemu_id = #{kemuId} and jiaocai_id = #{jiaocaiId} and zhangjie_id = #{zhangjieId} order by rand() limit 3")
     List<ViewIssue> findIssueRand(String kemuId, String jiaocaiId, String zhangjieId);
 
-    @Select("select shiti01.*,jiaocai_name from shiti01 join jiaocai on shiti01.jiaocai_id = jiaocai.jiaocai_id where shiti01.kemu_id = 'A001' and shiti01.jiaocai_id = #{jiaocaiId}")
-    List<ViewIssue> findChineseByJiaocai(String jiaocaiId);
-//
-//    @Select("select shiti01.*,zhangjie_name from shiti01 join zhangjie on shiti01.zhangjie_id = zhangjie.zhangjie_id")
-//    List<ViewIssue> findzhangJie();
-//
-//    @Select("select * from kemu")
-//    List<kemu> findAllKemu();
-
-    @Select("SELECT shiti01.zhangjie_id,shiti01.jiaocai_id,zhangjie.zhangjie_name from shiti01 join zhangjie \n" +
-            "on shiti01.zhangjie_id = zhangjie.zhangjie_id \n" +
-            "where kemu_id = '#{kemuId}' \n" +
-            "and jiaocai_id = '#{jiaocaiId}'")
-    List<zhangjieSearch> listZhangjie(String kemuId, String jiaocaiId);
-
-
+//二级查询
     @Select("select * from shiti01 where kemu_id = #{kemuId} and jiaocai_id = #{jiaocaiId} and zhangjie_id = #{zhangjieId}")
     List<ViewIssue> loadIssues(String kemuId, String jiaocaiId, String zhangjieId);
 
+//获取所有章节名称
     @Select("SELECT * from zhangjie")
     List<zhangJie> listZhangJie();
 }

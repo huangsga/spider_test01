@@ -40,17 +40,19 @@ public class UserServiceImpl implements UserService {
         System.out.println(username+"  ==   "+password);
         User user = userMapper.findUserByUsername(username);
         if (user != null){
-            //判断权限
-            if (!user.getPower().equals("admin")){
-                model.addAttribute("accountNotAllow","账户权限不足");
-                return "redirect:/user/login";
-            }
             //解密
             String passwordFromDb = user.getPassword();
             boolean matches = bCryptPasswordEncoder.matches(password, passwordFromDb);
             if (matches) {
+                //判断权限,如果管理员登录成功转发到管理后台
+                if (user.getPower().equals("admin")){
+                    model.addAttribute("accountNotAllow","管理员登录成功");
+                    return "redirect:/user/login";
+                }
+                //如果不是管理员则跳转到前台
                 model.addAttribute("loginSuccess","登录成功");
-                return "index-1.html";
+                //把用户信息加到session里面
+                return "redirect:/main/index";
             }else{
                 model.addAttribute("loginFailed","登录失败，用户名或者密码错误");
                 return "redirect:/user/login";
@@ -76,6 +78,12 @@ public class UserServiceImpl implements UserService {
         }
         if (password.isEmpty()){
             model.addAttribute("usernameIsEmpty","密码为空");
+            return "redirect:/user/register";
+        }
+        //判断当前用户名是否已经注册
+        User userFromDb = userMapper.findUserByUsername(username);
+        if (userFromDb !=null){
+            model.addAttribute("userIsRegistered","用户名已经注册");
             return "redirect:/user/register";
         }
         //创建一个新的用户

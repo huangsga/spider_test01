@@ -3,12 +3,14 @@ package com.example.team2021.Controller;
 import com.example.team2021.Entity.ViewIssue;
 import com.example.team2021.Entity.zhangJie;
 import com.example.team2021.Service.issueService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -31,17 +33,18 @@ public class issueController {
     private issueService issueService;
 
     @GetMapping("/main")
-    public String getIssue(Model model) {
+    public String getIssue(@RequestParam(value = "pageIndex",defaultValue = "1")Integer pageIndex,
+                           @RequestParam(value = "pageSize",defaultValue = "6")Integer pageSize,
+                           Model model) {
         /**
          * 查询所有题目
          * @param model
          * @return
          */
-
-        List<ViewIssue> allIssue = issueService.findAllIssue();
-        System.out.println(allIssue);
-        int size = allIssue.size();
-        model.addAttribute("issueSize",size);
+        PageInfo<ViewIssue> allIssue = issueService.findAllIssue(pageIndex,pageSize);
+//        System.out.println(allIssue);
+        long total = allIssue.getTotal();
+        model.addAttribute("issueSize",total);
         model.addAttribute("issue", allIssue);
         /**
          * 获取科目名字
@@ -52,15 +55,18 @@ public class issueController {
     }
 
     @GetMapping("/main/{kemuId}")
-    public String getIssueList(@PathVariable("kemuId") String kemuId, Model model,HttpServletRequest request) {
+    public String getIssueList(@RequestParam(value = "pageIndex",defaultValue = "1")Integer pageIndex,
+                               @RequestParam(value = "pageSize",defaultValue = "6")Integer pageSize,
+                               @PathVariable("kemuId") String kemuId,
+                               Model model,HttpServletRequest request) {
         /**
          *带科目参数获取题目
          */
         HttpSession session = request.getSession(true);
         session.setAttribute("kemuId",kemuId);//把用户数据保存到session对象中
-        List<ViewIssue> issueList = issueService.findIssueList(kemuId);
-        int size = issueList.size();
-        model.addAttribute("issueSize",size);
+        PageInfo<ViewIssue> issueList = issueService.findIssueList(kemuId,pageIndex,pageSize);
+        long total = issueList.getTotal();
+        model.addAttribute("issueSize",total);
         model.addAttribute("issue", issueList);
         /**
          * 获取到科目名称
@@ -107,11 +113,17 @@ public class issueController {
     public String getIssueDetails(@PathVariable("shitiId") Integer shitiId,Model model){
         List<ViewIssue> issueDetails = issueService.findIssueDetails(shitiId);
         model.addAttribute("issueDetails",issueDetails);
-        //随机的三道举一反三的题目传进去
         /**
+         * 详情页举一反三
          * 获取三个ID kemuID,jiocaiId,zhangjieId
          * 从三个ID 查到的题目中随机获取三个数据
+         * @param kemuId
+         * @param jiaocaiId
+         * @param zhangjieId
+         * @param model
+         * @return
          */
+
         /**
          * 获取刷题的科目名称
          */
@@ -136,15 +148,19 @@ public class issueController {
      * @return
      */
     @GetMapping("/timu/{jiaocaiId}/{zhangjieId}")
-    public String loadIssues(@PathVariable("jiaocaiId")String jiaocaiId, @PathVariable("zhangjieId")String zhangjieId, Model model, HttpServletRequest request){
+    public String loadIssues(@RequestParam(value = "pageIndex",defaultValue = "1")Integer pageIndex,
+                             @RequestParam(value = "pageSize",defaultValue = "6")Integer pageSize,
+                             @PathVariable("jiaocaiId")String jiaocaiId,
+                             @PathVariable("zhangjieId")String zhangjieId,
+                             Model model, HttpServletRequest request){
         HttpSession session = request.getSession();
         String kemuId = (String) session.getAttribute("kemuId");
-        System.out.println(kemuId);
-        System.out.println(jiaocaiId);
-        System.out.println(zhangjieId);
-        List<ViewIssue> viewIssues = issueService.loadIssues(kemuId, jiaocaiId, zhangjieId);
-        int size = viewIssues.size();
-        model.addAttribute("issueSize",size);
+//        System.out.println(kemuId);
+//        System.out.println(jiaocaiId);
+//        System.out.println(zhangjieId);
+        PageInfo<ViewIssue> viewIssues = issueService.loadIssues(kemuId, jiaocaiId, zhangjieId,pageIndex,pageSize);
+        long total = viewIssues.getTotal();
+        model.addAttribute("issueSize",total);
         model.addAttribute("issue", viewIssues);
         /**
          * 获取到科目名称
@@ -170,22 +186,5 @@ public class issueController {
         return "刷题.html";
     }
 
-    /**
-     * 详情页举一反三
-     * @param kemuId
-     * @param jiaocaiId
-     * @param zhangjieId
-     * @param model
-     * @return
-     */
-    @GetMapping("/details/{kemuId}/{jiaocaiId}/{zhangjieId}")
-    public String getIssueRand(@PathVariable("kemuId")String kemuId,
-                               @PathVariable("jiaocaiId")String jiaocaiId,
-                               @PathVariable("zhangjieId")String zhangjieId,
-                               Model model){
-        List<ViewIssue> issueRand = issueService.findIssueRand(kemuId,jiaocaiId,zhangjieId);
-        model.addAttribute("issue",issueRand);
-        return "刷题详情.html";
-    }
 
 }
