@@ -3,6 +3,7 @@ package com.example.team2021.Controller;
 import com.example.team2021.Entity.Back;
 import com.example.team2021.Entity.ViewIssue;
 import com.example.team2021.Entity.Zhijigaokao;
+import com.example.team2021.Entity.gaokaozixun;
 import com.example.team2021.Service.BackService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -144,6 +145,17 @@ public class backController {
     public String aboutIssues(){
         return "about-subjects_b";
     }
+
+    // --------------------------------------------------------------------------------
+    // 进入资讯管理界面
+    @GetMapping("department")
+    public String findzixun(Model model){
+        List<gaokaozixun> gaokaozixun=backService.findAllzixun();
+        model.addAttribute("gaokaozixun",gaokaozixun);
+        return "all-departments_b";}
+
+
+
 
 
 }

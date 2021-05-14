@@ -3,6 +3,7 @@ package com.example.team2021.ServiceImpl;
 import com.example.team2021.Entity.Back;
 import com.example.team2021.Entity.ViewIssue;
 import com.example.team2021.Entity.Zhijigaokao;
+import com.example.team2021.Entity.gaokaozixun;
 import com.example.team2021.Mapper.BackMapper;
 import com.example.team2021.Mapper.issueMapper;
 import com.example.team2021.Service.BackService;
@@ -68,6 +69,11 @@ public class BackServiceImpl implements BackService {
     @Override
     public Integer deleteIssue(Integer shitiId) {
         return backMapper.deleteIssue(shitiId);
+    }
+
+    @Override
+    public List<gaokaozixun> findAllzixun() {
+        return backMapper.findAllzixun();
     }
 
 

@@ -3,6 +3,7 @@ package com.example.team2021.Mapper;
 import com.example.team2021.Entity.Back;
 import com.example.team2021.Entity.ViewIssue;
 import com.example.team2021.Entity.Zhijigaokao;
+import com.example.team2021.Entity.gaokaozixun;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -40,4 +41,8 @@ public interface BackMapper {
     // 删除shiti01表信息
     @Select("delete from shiti01 where shiti_id=#{shitiId}")
     Integer deleteIssue(Integer shitiId);
+
+    //查找资讯表所有资讯
+    @Select("select * from gaokaozixun")
+    List<gaokaozixun> findAllzixun();
 }
