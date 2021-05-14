@@ -15,6 +15,12 @@ import java.util.List;
  * @todo:
  */
 public interface issueService {
+    /**
+     * 前端页面
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
     PageInfo<ViewIssue> findAllIssue(Integer pageIndex, Integer pageSize);
     PageInfo<ViewIssue> findIssueList(String kemuId,Integer pageIndex, Integer pageSize);
     List<ViewIssue> findKemuName();
@@ -25,4 +31,7 @@ public interface issueService {
     List<ViewIssue> findIssueRand(String kemuId, String jiaocaiId, String zhangjieId);
     PageInfo<ViewIssue> loadIssues(String kemuId, String jiaocaiId, String zhangjieId,Integer pageIndex, Integer pageSize);
     List<zhangJie> listZhangJie();
+    /**
+     * 后端页面
+     */
 }
