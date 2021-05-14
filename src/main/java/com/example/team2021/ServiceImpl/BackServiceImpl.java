@@ -1,8 +1,10 @@
 package com.example.team2021.ServiceImpl;
 
 import com.example.team2021.Entity.Back;
+import com.example.team2021.Entity.ViewIssue;
 import com.example.team2021.Entity.Zhijigaokao;
 import com.example.team2021.Mapper.BackMapper;
+import com.example.team2021.Mapper.issueMapper;
 import com.example.team2021.Service.BackService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -15,6 +17,7 @@ import java.util.List;
 public class BackServiceImpl implements BackService {
     @Autowired
     private BackMapper backMapper;
+
     @Override
     public List<Back> findalluser() {
         return backMapper.findalluser();
@@ -48,10 +51,24 @@ public class BackServiceImpl implements BackService {
         return info;
     }
 
+    @Override
+    public Integer deleteZhenti(Integer picId) {
+        return backMapper.deleteZhenti(picId);
+    }
 
 
     @Override
-    public Integer deleteZhenti(Integer pic_id) {
-        return backMapper.deleteZhenti(pic_id);
+    public PageInfo<ViewIssue> findAllIssue(Integer pageIndex, Integer pageSize){
+        PageHelper.startPage(pageIndex,pageSize);//一个设置
+        List<ViewIssue> lists = backMapper.findAllIssue();
+        PageInfo<ViewIssue> info=new PageInfo<ViewIssue>(lists);
+        return info;
     }
+
+    @Override
+    public Integer deleteIssue(Integer shitiId) {
+        return backMapper.deleteIssue(shitiId);
+    }
+
+
 }

@@ -1,6 +1,7 @@
 package com.example.team2021.Controller;
 
 import com.example.team2021.Entity.Back;
+import com.example.team2021.Entity.ViewIssue;
 import com.example.team2021.Entity.Zhijigaokao;
 import com.example.team2021.Service.BackService;
 import com.github.pagehelper.PageInfo;
@@ -79,8 +80,9 @@ public class backController {
         backService.deleteUserinfo(userid);
         return "redirect:/back/alluser";
     }
+
     // --------------------------------------------------------------------------------
-    // 进入试题管理界面
+    // 进入真题管理界面
     @GetMapping("courses")
     public String courses(@RequestParam(value = "pageIndex",defaultValue = "1")Integer pageIndex,
                           @RequestParam(value = "pageSize",defaultValue = "6")Integer pageSize,
@@ -89,28 +91,59 @@ public class backController {
         model.addAttribute("zhentiList",zhentiList);
         return "all-courses_b";
     }
-    // 进入试题添加界面
+    // 进入真题添加界面
     @GetMapping("addcourses")
     public String addcourses(){
         return "add-courses_b";
     }
-    // 删除试题
-    @GetMapping("/deleteZhenti/{pic_id}")
-    public String deleteZhenti(@PathVariable("pic_id") Integer pic_id){
-        backService.deleteZhenti(pic_id);
+    // 删除真题
+    @GetMapping("/deleteZhenti/{picId}")
+    public String deleteZhenti(@PathVariable("picId") Integer picId){
+        backService.deleteZhenti(picId);
         return "redirect:/back/courses";
     }
-
-
-
-    // 进入用户添加界面
+    // 进入真题添加界面
     @GetMapping("editcourses")
     public String editcourses(){
         return "edit-courses_b";
     }
-    // 进入用户详细界面
+    // 进入真题详细界面
     @GetMapping("aboutcourses")
     public String aboutcourses(){
         return "about-courses_b";
     }
+
+    // --------------------------------------------------------------------------------
+    // 进入试题管理界面
+    @GetMapping("backIssues")
+    public String getBackIssues(@RequestParam(value = "pageIndex",defaultValue = "1")Integer pageIndex,
+                                @RequestParam(value = "pageSize",defaultValue = "6")Integer pageSize,
+                                Model model){
+        PageInfo<ViewIssue> issuesList = backService.findAllIssue(pageIndex,pageSize);
+        model.addAttribute("issuesList",issuesList);
+        return "all-subjects_b";
+    }
+    // 进入试题添加界面
+    @GetMapping("addIssues")
+    public String addIssues(){
+        return "add-subjects_b";
+    }
+    // 删除试题
+    @GetMapping("/deleteIssues/{shitiId}")
+    public String deleteIssues(@PathVariable("shitiId") Integer shitiId){
+        backService.deleteIssue(shitiId);
+        return "redirect:/back/backIssues";
+    }
+    // 进入试题添加界面
+    @GetMapping("editIssues")
+    public String editIssues(){
+        return "edit-subjects_b";
+    }
+    // 进入试题详细界面
+    @GetMapping("aboutIssues")
+    public String aboutIssues(){
+        return "about-subjects_b";
+    }
+
+
 }

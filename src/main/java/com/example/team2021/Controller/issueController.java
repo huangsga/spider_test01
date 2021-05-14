@@ -43,6 +43,7 @@ public class issueController {
          */
         PageInfo<ViewIssue> allIssue = issueService.findAllIssue(pageIndex,pageSize);
 //        System.out.println(allIssue);
+        model.addAttribute("isShow",false);
         long total = allIssue.getTotal();
         model.addAttribute("issueSize",total);
         model.addAttribute("issue", allIssue);
@@ -62,6 +63,7 @@ public class issueController {
         /**
          *带科目参数获取题目
          */
+        model.addAttribute("isShow",true);
         HttpSession session = request.getSession(true);
         session.setAttribute("kemuId",kemuId);//把用户数据保存到session对象中
         PageInfo<ViewIssue> issueList = issueService.findIssueList(kemuId,pageIndex,pageSize);

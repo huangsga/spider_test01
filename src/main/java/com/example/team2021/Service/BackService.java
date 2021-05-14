@@ -1,6 +1,7 @@
 package com.example.team2021.Service;
 
 import com.example.team2021.Entity.Back;
+import com.example.team2021.Entity.ViewIssue;
 import com.example.team2021.Entity.Zhijigaokao;
 import com.github.pagehelper.PageInfo;
 
@@ -14,5 +15,10 @@ public interface BackService {
     Integer deleteUserinfo(Integer userid);
 
     PageInfo<Zhijigaokao> findAllzhenti(Integer pageIndex,Integer pageSize);
-    Integer deleteZhenti(Integer pic_id);
+    Integer deleteZhenti(Integer picId);
+
+
+    PageInfo<ViewIssue> findAllIssue(Integer pageIndex, Integer pageSize);
+    Integer deleteIssue(Integer shitiId);
+
 }

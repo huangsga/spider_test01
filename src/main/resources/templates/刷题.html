@@ -170,7 +170,7 @@
             <div class="filter-box">
                 <div class="box-inner">
                     <div class="clearfix">
-                        <div class="pull-left clearfix">
+                        <div id="searchBox" class="pull-left clearfix">
                             <div class="dropdown-outer">
                                 <div class="filter-dropdown">
                                             <span
@@ -244,7 +244,7 @@
                                                 </div>
                                             </div>
                                             <h6>
-                                                <button id="clickName">查询 </button>
+                                                <button id="clickName" type="button" class="btn btn-success btn-sm">查询</button>
                                             </h6>
                                             <script>
                                                 document.getElementById("clickName").onclick = function() {
@@ -263,6 +263,16 @@
                                 </div>
                             </div>
                         </div>
+                        <script>
+                            let  searchBox = document.getElementById("searchBox");
+                            let isShow = [[${isShow}]];
+                            console.log(isShow);
+                            if (isShow){
+                                searchBox.style.display="block";
+                            }else{
+                                searchBox.style.display="none";
+                            }
+                        </script>
 
                         <!-- 科目选项 -->
                         <div class="btn-box text-center pull-left">
