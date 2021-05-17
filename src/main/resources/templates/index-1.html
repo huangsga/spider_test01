@@ -27,6 +27,12 @@
             ]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script
         ><![endif]-->
         <!--[if lt IE 9]><script src="/js/respond.js"></script><![endif]-->
+        <script th:inline="javascript">
+            window.onload = checkLogin =  () =>{
+                var isLogin = [[${session.loginState}]];  // session(后台是user)
+                console.log("登录="+isLogin)
+            }
+        </script>
     </head>
 
     <body class="hidden-bar-wrapper">
@@ -36,49 +42,7 @@
 
             <!-- 头部-->
             <header class="main-header">
-                <!--Header-Upper-->
-                <div th:replace="index-menu::indexmenu"></div>
-                <!--End Header Upper-->
-
-                <!-- Sticky Header  -->
-                <div class="sticky-header">
-                    <div class="auto-container clearfix">
-                        <!--Logo-->
-                        <div class="logo pull-left">
-                            <a href="index-1.html" title=""
-                                ><img src="/images/logo.png" alt="" title=""
-                            /></a>
-                        </div>
-                        <!--Right Col-->
-                        <div class="pull-right">
-                            <!-- Main Menu -->
-                            <nav class="main-menu">
-                                <!--Keep This Empty / Menu will come through Javascript-->
-                            </nav>
-                            <!-- Main Menu End-->
-
-                            <!-- Main Menu End-->
-                            <div class="outer-box clearfix"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Sticky Menu -->
-
-                <!-- Mobile Menu  -->
-                <div class="mobile-menu">
-                    <div class="menu-backdrop"></div>
-                    <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
-
-                    <nav class="menu-box">
-                        <div class="nav-logo">
-                            <a href="index-1.html"><img src="/images/logo.png" alt="" title="" /></a>
-                        </div>
-                        <div class="menu-outer">
-                            <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
-                        </div>
-                    </nav>
-                </div>
-                <!-- End Mobile Menu -->
+                <div th:replace="menu::indexmenu"></div>
             </header>
             <!-- End Main Header -->
 
@@ -192,7 +156,7 @@
                                                 <div class="icon flaticon-verify"></div>
                                             </div>
                                             <h4>
-                                                <a href="course-detail.html">国家专项计划</a>
+                                                <a href="/gaokaozixun/zixunall">国家专项计划</a>
                                             </h4>
                                             <div class="text">
                                                 国家专项计划定向招收集中连片特殊困难县、国家级扶贫开发重点县以及新疆南疆四地州学生。报考学生须同时具备下列三项条件︰<br />
@@ -215,7 +179,7 @@
                                                 <div class="icon flaticon-heart-box"></div>
                                             </div>
                                             <h4>
-                                                <a href="course-detail.html">高考新规定3+2+1</a>
+                                                <a href="/gaokaozixun/zixunall">高考新规定3+2+1</a>
                                             </h4>
                                             <div class="text">
                                                 高考新规定3+2+1有哪些科目?<br />
@@ -482,13 +446,13 @@
                                     data-wow-duration="1500ms"
                             >
                                 <div class="image">
-                                    <a href="course-detail.html"
+                                    <a href="/ziliaozongjie/shuxue"
                                     ><img src="/images/resource/course-1.jpg" alt=""
                                     /></a>
                                 </div>
                                 <div class="lower-content">
                                     <h4>
-                                        <a href="course-detail.html"
+                                        <a href="/ziliaozongjie/shuxue"
                                         > 举例1 集合的含义及表示</a
                                         >
                                     </h4>
@@ -506,7 +470,7 @@
                                             <div class="hovers">1 total hours . All Levels</div>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="course-detail.html" class="enroll-now"
+                                            <a href="/ziliaozongjie/shuxue" class="enroll-now"
                                             >详细预览</a
                                             >
                                         </div>
@@ -523,13 +487,13 @@
                                     data-wow-duration="1500ms"
                             >
                                 <div class="image">
-                                    <a href="course-detail.html"
+                                    <a href="/ziliaozongjie/wuli"
                                     ><img src="/images/resource/course-2.jpg" alt=""
                                     /></a>
                                 </div>
                                 <div class="lower-content">
                                     <h4>
-                                        <a href="course-detail.html"
+                                        <a href="/ziliaozongjie/wuli"
                                         > 举例2 牛顿第一定律</a
                                         >
                                     </h4>
@@ -547,7 +511,7 @@
                                             <div class="hovers">1 total hours . All Levels</div>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="course-detail.html" class="enroll-now"
+                                            <a href="/ziliaozongjie/wuli" class="enroll-now"
                                             >详细预览</a
                                             >
                                         </div>
@@ -565,13 +529,13 @@
                                     data-wow-duration="1500ms"
                             >
                                 <div class="image">
-                                    <a href="course-detail.html"
+                                    <a href="/ziliaozongjie/huaxue"
                                     ><img src="/images/resource/course-3.jpg" alt=""
                                     /></a>
                                 </div>
                                 <div class="lower-content">
                                     <h4>
-                                        <a href="course-detail.html"
+                                        <a href="/ziliaozongjie/huaxue"
                                         >举例3 溶液和胶体</a
                                         >
                                     </h4>
@@ -589,7 +553,7 @@
                                             <div class="hovers">11.5 total hours . All Levels</div>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="course-detail.html" class="enroll-now"
+                                            <a href="/ziliaozongjie/huaxue" class="enroll-now"
                                             >详细预览</a
                                             >
                                         </div>
@@ -639,7 +603,7 @@
                                         data-wow-duration="1500ms"
                                 >
                                     <div class="image">
-                                        <a href="#"
+                                        <a href="/gaokaozixun/zixunall"
                                         ><img src="/images/resource/news-1.jpg" alt=""
                                         /></a>
                                     </div>
@@ -649,13 +613,13 @@
                                             <li>高校信息</li>
                                         </ul>
                                         <h4>
-                                            <a href="#"
+                                            <a href="/gaokaozixun/zixunall"
                                             >
                                                 全国2000多所学校信息一览</a
                                             >
                                         </h4>
-                                        <a href="#" class="more"
-                                        >More <span class="fa fa-angle-double-right"></span
+                                        <a href="/gaokaozixun/zixunall" class="more"
+                                        >查看更多 <span class="fa fa-angle-double-right"></span
                                         ></a>
                                     </div>
                                 </div>
@@ -669,7 +633,7 @@
                                         data-wow-duration="1500ms"
                                 >
                                     <div class="image">
-                                        <a href="#"
+                                        <a href="/gaokaozixun/zixunall"
                                         ><img src="/images/resource/news-2.jpg" alt=""
                                         /></a>
                                     </div>
@@ -680,13 +644,13 @@
 
                                         </ul>
                                         <h4>
-                                            <a href="#"
+                                            <a href="/gaokaozixun/zixunall"
                                             >模拟志愿填报 <br />
                                                 数据预测更靠谱</a
                                             >
                                         </h4>
-                                        <a href="#" class="more"
-                                        >More <span class="fa fa-angle-double-right"></span
+                                        <a href="/gaokaozixun/zixunall" class="more"
+                                        >查看更多 <span class="fa fa-angle-double-right"></span
                                         ></a>
                                     </div>
                                 </div>
@@ -744,7 +708,7 @@
                                                 <img src="/userimgs/赵轩/zx.png" alt="" />
                                             </div>
                                             <h6>赵轩</h6>
-                                            <div class="designation">Nacl？</div>
+                                            <div class="designation">Nacl?</div>
                                         </div>
                                     </div>
                                     <div class="quote-icon flaticon-quote-2"></div>
@@ -976,185 +940,7 @@
 
             <!-- 底部 -->
             <footer class="main-footer">
-                <div class="circle-layer"></div>
-                <div
-                    class="pattern-layer-one"
-                    style="background-image: url(/images/background/pattern-12.png)"
-                ></div>
-                <div
-                    class="pattern-layer-two"
-                    style="background-image: url(/images/background/pattern-13.png)"
-                ></div>
-                <div
-                    class="pattern-layer-three"
-                    style="background-image: url(/images/background/pattern-14.png)"
-                ></div>
-                <div
-                    class="pattern-layer-four"
-                    style="background-image: url(/images/background/pattern-13.png)"
-                ></div>
-                <div class="auto-container">
-                    <!--Widgets Section-->
-                    <div class="widgets-section">
-                        <div class="row clearfix">
-                            <!-- Footer Column -->
-                            <div class="footer-column col-lg-5 col-md-12 col-sm-12">
-                                <div class="footer-widget logo-widget">
-                                    <div class="logo">
-                                        <a href="index-1.html"
-                                            ><img src="/images/logo.png" alt=""
-                                        /></a>
-                                    </div>
-                                    <ul class="info-list">
-                                        <li>
-                                            Tel:<a href="tel:+0845-371-02-02"> 0845 371 02 02</a>
-                                        </li>
-                                        <li>
-                                            Email:<a
-                                                href="/cdn-cgi/l/email-protection#e78e898188a79e889295948e9382c98488c9928c"
-                                            >
-                                                <span
-                                                    class="__cf_email__"
-                                                    data-cfemail="630a0d050c231a0c1611100a17064d000c4d1608"
-                                                    >[email&#160;protected]</span
-                                                ></a
-                                            >
-                                        </li>
-                                    </ul>
-                                    <!-- Social Box -->
-                                    <ul class="social-box">
-                                        <li class="twitter">
-                                            <a
-                                                target="_blank"
-                                                href="http://twitter.com/"
-                                                class="fa fa-twitter"
-                                            ></a>
-                                        </li>
-                                        <li class="pinterest">
-                                            <a
-                                                target="_blank"
-                                                href="http://pinterest.com/"
-                                                class="fa fa-pinterest-p"
-                                            ></a>
-                                        </li>
-                                        <li class="facebook">
-                                            <a
-                                                target="_blank"
-                                                href="http://facebook.com/"
-                                                class="fa fa-facebook-f"
-                                            ></a>
-                                        </li>
-                                        <li class="dribbble">
-                                            <a
-                                                target="_blank"
-                                                href="http://dribbble.com/"
-                                                class="fa fa-dribbble"
-                                            ></a>
-                                        </li>
-                                    </ul>
-                                    <div class="text">
-                                        Get started now and take advantage of <br />
-                                        our 30 day free trial today.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Footer Column -->
-                            <div class="footer-column col-lg-7 col-md-12 col-sm-12">
-                                <div class="row clearfix">
-                                    <!-- Column -->
-                                    <div class="column col-lg-4 col-md-4 col-sm-12">
-                                        <h5>About</h5>
-                                        <ul class="list">
-                                            <li><a href="#">About</a></li>
-                                            <li><a href="#">News</a></li>
-                                            <li><a href="#">Impact</a></li>
-                                            <li><a href="#">Our team</a></li>
-                                            <li><a href="#">Our interns</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- Column -->
-                                    <div class="column col-lg-4 col-md-4 col-sm-12">
-                                        <h5>Need some help?</h5>
-                                        <ul class="list">
-                                            <li><a href="#">FAQs</a></li>
-                                            <li><a href="#">Child safety</a></li>
-                                            <li><a href="#">Help Centre</a></li>
-                                            <li><a href="#">Contact</a></li>
-                                            <li><a href="#">Academy</a></li>
-                                        </ul>
-                                    </div>
-                                    <!-- Column -->
-                                    <div class="column col-lg-4 col-md-4 col-sm-12">
-                                        <h5>Courses</h5>
-                                        <ul class="list">
-                                            <li><a href="#">Khan Kids app</a></li>
-                                            <li><a href="#">Science & engineering</a></li>
-                                            <li><a href="#">Computing</a></li>
-                                            <li><a href="#">Arts & humanities</a></li>
-                                            <li><a href="#">Economics & finance</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Lower Box -->
-                    <div class="lower-box">
-                        <div class="row clearfix">
-                            <div class="col-lg-6 col-lg-6 col-sm-12">
-                                <!-- Subscribe Form -->
-                                <div class="subscribe-form">
-                                    <h6>Newsletter</h6>
-                                    <form method="post" action="contact.html">
-                                        <div class="form-group">
-                                            <input
-                                                type="email"
-                                                name="email"
-                                                value=""
-                                                placeholder="Your email"
-                                                required
-                                            />
-                                            <button type="submit" class="submit-btn">
-                                                <span class="icon flaticon-right-arrow-2"></span>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-lg-6 col-sm-12">
-                                <div class="text">
-                                    Need to train your team? We offer flexible, cost-effective
-                                    <br />
-                                    group memberships for your business, school,
-                                </div>
-                                <a href="#" class="singup">Free Singup</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Footer Bottom -->
-                    <div class="footer-bottom">
-                        <div class="row clearfix">
-                            <!-- Copyright Column -->
-                            <div class="copyright-column col-lg-6 col-md-12 col-sm-12">
-                                <div class="copyright">
-                                    Copyright 2020, All Right By
-                                    <a href="http://www.bootstrapmb.com/">bootstrapmb</a>
-                                </div>
-                            </div>
-
-                            <!-- Nav Column -->
-                            <div class="nav-column col-lg-6 col-md-12 col-sm-12">
-                                <ul>
-                                    <li><a href="about.html">SiteMap</a></li>
-                                    <li><a href="about.html">Privacy Policy</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div th:replace="menu::indexfooter"></div>
             </footer>
         </div>
         <!--End pagewrapper-->
