@@ -171,7 +171,7 @@
     ***********************************-->
 
     <!--**********************************
-        Sidebar start
+        后端侧边栏
     ***********************************-->
     <div th:replace="menu::mymenu">	</div>
     <!--**********************************
@@ -234,14 +234,14 @@
                                             </thead>
                                             <tbody>
                                             <tr th:each="issuesList:${issuesList.list}">
-                                                <td th:text="${issuesList.shitiId}">Tiger Nixon</td>
-                                                <td th:text="${issuesList.jiaocaiName}">M.COM., P.H.D.</td>
-                                                <td th:text="${issuesList.shitiTimu}">M.COM., P.H.D.</td>
-                                                <td th:text="${issuesList.shitiOption}">M.COM., P.H.D.</td>
+                                                <td th:text="${issuesList.shitiId}"></td>
+                                                <td th:text="${issuesList.jiaocaiName}"></td>
+                                                <td th:utext="${issuesList.shitiTimu}"></td>
+                                                <td th:utext="${issuesList.shitiOption}"></td>
                                                 <td><a target="_blank" th:href="${issuesList.shitiDaanHref}">查看答案</a></td>
-                                                <td th:text="${issuesList.shitiKaodian}">M.COM., P.H.D.</td>
-                                                <td th:text="${issuesList.shitiHard}"><a href="javascript:void(0);"><strong>123 456 7890</strong></a></td>
-                                                <td th:text="${issuesList.shitiTime}"><a href="javascript:void(0);"><strong>info@example.com</strong></a></td>
+                                                <td th:utext="${issuesList.shitiKaodian}"></td>
+                                                <td th:text="${issuesList.shitiHard}"><a href="javascript:void(0);"><strong></strong></a></td>
+                                                <td th:text="${issuesList.shitiTime}"><a href="javascript:void(0);"><strong></strong></a></td>
                                                 <td>
                                                     <a th:href="@{'/back/deleteIssues/'+${issuesList.shitiId}}" class="btn btn-sm btn-danger"><i class="la la-trash-o"></i></a>
                                                 </td>
@@ -300,12 +300,12 @@
                                                 <div class="profile-photo">
                                                     <!--题目内容-->
                                                 </div>
-                                                <h4 class="mt-4 mb-1" th:text="${issuesList.shitiTimu}">Alexander</h4>
-                                                <p style="font-size: medium" class="text-muted" th:text="${issuesList.shitiOption}">M.COM., P.H.D.</p>
+                                                <h4 class="mt-4 mb-1" th:utext="${issuesList.shitiTimu}"></h4>
+                                                <p style="font-size: medium" class="text-muted" th:utext="${issuesList.shitiOption}"></p>
                                                 <ul class="list-group mb-3 list-group-flush">
                                                     <li class="list-group-item px-0 d-flex justify-content-between">
                                                         <span class="mb-0">考点: </span>
-                                                        <strong><span th:text="${issuesList.shitiKaodian}">+01 123 456 7890</span></strong>
+                                                        <strong><span th:utext="${issuesList.shitiKaodian}"></span></strong>
                                                     </li>
                                                 </ul>
                                                 <a class="btn btn-outline-primary btn-rounded mt-3 px-4" target="_blank" th:href="${issuesList.shitiDaanHref}">查看答案 </a>

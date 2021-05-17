@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Service
@@ -27,6 +28,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String doLogin(Model model, HttpServletRequest request) {
+        HttpSession session = request.getSession(true);
+
+        System.out.println("登录之前：="+session.getAttribute("loginState"));
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         if (username.isEmpty()){
@@ -52,6 +56,8 @@ public class UserServiceImpl implements UserService {
                 //如果不是管理员则跳转到前台
                 model.addAttribute("loginSuccess","登录成功");
                 //把用户信息加到session里面
+                session.setAttribute("loginState",true);//把用户数据保存到session对象中
+                System.out.println("登录之后：="+session.getAttribute("loginState"));
                 return "redirect:/main/index";
             }else{
                 model.addAttribute("loginFailed","登录失败，用户名或者密码错误");
