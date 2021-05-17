@@ -2,6 +2,7 @@ package com.example.team2021.Controller;
 
 import com.example.team2021.Entity.gaokaozixun;
 import com.example.team2021.Service.gaokaozixunService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,8 +29,11 @@ public class gaokaozixunController {
     }
 
     @RequestMapping("/zixunlist/{zixunType}")
-    public String getZixunValue(@PathVariable("zixunType")String zixunType, Model model){
-        List<gaokaozixun> gaokaozixun=gaokaozixunService.findAlltitle(zixunType);
+    public String getZixunValue(@RequestParam(value = "pageIndex",defaultValue = "1")Integer pageIndex,
+                                @RequestParam(value = "pageSize",defaultValue = "6")Integer pageSize,
+                                @PathVariable("zixunType")String zixunType,
+                                Model model){
+        PageInfo<gaokaozixun> gaokaozixun=gaokaozixunService.findAlltitle(zixunType,pageIndex,pageSize);
         model.addAttribute("Gk",gaokaozixun);
         return "blog-list";
     }

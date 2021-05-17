@@ -3,6 +3,8 @@ package com.example.team2021.ServiceImpl;
 import com.example.team2021.Entity.gaokaozixun;
 import com.example.team2021.Mapper.gaokaozixunMapper;
 import com.example.team2021.Service.gaokaozixunService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,8 +23,11 @@ public class gaokaozixunServiceImpl implements gaokaozixunService {
     }
 
     @Override
-    public List<gaokaozixun> findAlltitle(String zixunType) {
-        return gaokaozixunMapper.findAlltitle(zixunType);
+    public PageInfo<gaokaozixun> findAlltitle(String zixunType,Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex,pageSize);
+        List<gaokaozixun> lists = gaokaozixunMapper.findAlltitle(zixunType);
+        PageInfo<gaokaozixun> info=new PageInfo<gaokaozixun>(lists);
+        return info;
     }
 
     @Override
@@ -34,6 +39,8 @@ public class gaokaozixunServiceImpl implements gaokaozixunService {
     public List<gaokaozixun> findAlldes() {
         return gaokaozixunMapper.findAlldes();
     }
+
+
 
 
 }
