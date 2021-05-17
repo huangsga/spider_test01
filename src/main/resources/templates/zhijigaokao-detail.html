@@ -92,13 +92,10 @@
 		<div class="auto-container">
 			<!-- Page Breadcrumb -->
 			<ul class="page-breadcrumb">
-				<li><a href="index-1.html">Home</a></li>
-				<li>Blog default</li>
+				<li><a href="/main/index">主页</a></li>
+				<li>直击高考</li>
 			</ul>
-			<div class="content-box">
-				<h2>2020全国高考卷一语文试题及答案</h2>
-				<div class="text">以下图片均来源于网络</div>
-			</div>
+
 		</div>
 	</section>
 	<!-- End Blog Page Section -->
@@ -114,6 +111,10 @@
 
 						<!--1 News Block Two -->
 						<div class="news-block-two" th:each="DetailList:${DetailList}">
+							<div class="content-box" th:each="DetailList:${DetailList}">
+								<h2 th:text="${DetailList.title}">2020全国高考卷一语文试题及答案</h2>
+								<div class="text">以下图片均来源于网络</div>
+							</div>
 							<div class="inner-box">
 								<div class="image" >
 									<img referrer="no-referrer" th:src="${DetailList.address}" alt="" style="height:1200px" />
@@ -153,49 +154,49 @@
 
 
 						<!-- Archive Widget -->
-						<div class="sidebar-widget archive-widget">
-							<div class="sidebar-title">
-								<h4>科目-类型-年份</h4>
-							</div>
-							<div class="widget-content">
-								<!-- 科目Form Group -->
-								<div class="form-group">
-									<select name="country" class="custom-select-box">
-										<option>语文</option>
-										<option>数学</option>
-										<option>英语</option>
-										<option>物理</option>
-										<option>化学</option>
-									</select>
-								</div>
-								<!-- 类型Form Group -->
-								<div class="form-group">
-									<select name="country" class="custom-select-box">
-										<option>全国一卷</option>
-										<option>全国二卷</option>
-										<option>全国三卷</option>
-										<option>北京卷</option>
-										<option>天津卷</option>
-										<option>上海卷</option>
-										<option>浙江卷</option>
-										<option>山东卷</option>
-										<option>江苏卷</option>
-										<option>海南卷</option>
-									</select>
-								</div>
-								<!-- 年份Form Group -->
-								<div class="form-group">
-									<select name="country" class="custom-select-box">
-										<option>2020</option>
-										<option>2019</option>
-										<option>2018</option>
-									</select>
-								</div>
+<!--						<div class="sidebar-widget archive-widget">-->
+<!--							<div class="sidebar-title">-->
+<!--								<h4>科目-类型-年份</h4>-->
+<!--							</div>-->
+<!--							<div class="widget-content">-->
+<!--								&lt;!&ndash; 科目Form Group &ndash;&gt;-->
+<!--								<div class="form-group">-->
+<!--									<select name="country" class="custom-select-box">-->
+<!--										<option>语文</option>-->
+<!--										<option>数学</option>-->
+<!--										<option>英语</option>-->
+<!--										<option>物理</option>-->
+<!--										<option>化学</option>-->
+<!--									</select>-->
+<!--								</div>-->
+<!--								&lt;!&ndash; 类型Form Group &ndash;&gt;-->
+<!--								<div class="form-group">-->
+<!--									<select name="country" class="custom-select-box">-->
+<!--										<option>全国一卷</option>-->
+<!--										<option>全国二卷</option>-->
+<!--										<option>全国三卷</option>-->
+<!--										<option>北京卷</option>-->
+<!--										<option>天津卷</option>-->
+<!--										<option>上海卷</option>-->
+<!--										<option>浙江卷</option>-->
+<!--										<option>山东卷</option>-->
+<!--										<option>江苏卷</option>-->
+<!--										<option>海南卷</option>-->
+<!--									</select>-->
+<!--								</div>-->
+<!--								&lt;!&ndash; 年份Form Group &ndash;&gt;-->
+<!--								<div class="form-group">-->
+<!--									<select name="country" class="custom-select-box">-->
+<!--										<option>2020</option>-->
+<!--										<option>2019</option>-->
+<!--										<option>2018</option>-->
+<!--									</select>-->
+<!--								</div>-->
 
-								<button type="submit" class="btn btn-success btn-sm">查询</button>
+<!--								<button type="submit" class="btn btn-success btn-sm">查询</button>-->
 
-							</div>
-						</div>
+<!--							</div>-->
+<!--						</div>-->
 					</aside>
 				</div>
 

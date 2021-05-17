@@ -50,4 +50,8 @@ public interface issueMapper {
 //获取所有章节名称
     @Select("SELECT * from zhangjie")
     List<zhangJie> listZhangJie();
+
+    //删除试题
+    @Select("delete from shiti01 where shitiId=#{shitiId}")
+    Integer deleteIssue(Integer shitiId);
 }

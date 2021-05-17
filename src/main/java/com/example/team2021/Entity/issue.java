@@ -34,5 +34,4 @@ public class issue {
     private Integer isdelete;
     private String remark;
 
-
 }

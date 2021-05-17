@@ -156,8 +156,8 @@ public class issueController {
                              @RequestParam(value = "pageSize",defaultValue = "6")Integer pageSize,
                              @PathVariable("jiaocaiId")String jiaocaiId,
                              @PathVariable("zhangjieId")String zhangjieId,
-                             Model model, HttpServletRequest request){
-        HttpSession session = request.getSession();
+                             Model model, HttpServletRequest request){HttpSession session = request.getSession();
+
         String kemuId = (String) session.getAttribute("kemuId");
 //        System.out.println(kemuId);
 //        System.out.println(jiaocaiId);
