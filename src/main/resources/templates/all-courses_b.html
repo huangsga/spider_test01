@@ -6,10 +6,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Edumin - Bootstrap Admin Dashboard </title>
+    <title>后端真题表删除添加 </title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/back/images/favicon.png">
     <link rel="stylesheet" href="/back/vendor/bootstrap-select/dist/css/bootstrap-select.min.css">
+    <link href="/css/style.css" rel="stylesheet"/>
     <!-- Datatable -->
     <link href="/back/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/back/css/style.css">
@@ -248,28 +249,8 @@
                                             </tbody>
                                         </table>
                                     </div>
-<!--                                    <nav aria-label="Page navigation">-->
-<!--                                        <ul class="pagination">-->
-<!--                                            <li>-->
-<!--                                                <a th:href="@{/back/courses(pageIndex=${zhentiList.pageNum-1},pageSize=6)}" aria-label="Previous"> &lt;!&ndash; admin_name=${admin_name} ,admin_tel =${admin_tel} &ndash;&gt;-->
-<!--                                                    <span aria-hidden="true">&laquo;</span>-->
-<!--                                                </a>-->
-<!--                                            </li>-->
-<!--                                            <th:block th:each="nav:${zhentiList.navigatepageNums}">-->
-<!--                                                <li th:class="${nav==zhentiList.pageNum}?'active':''">-->
-<!--                                                    <a th:href="@{/back/courses(pageIndex=${nav},pageSize=3)}" th:text="${nav}"></a>-->
-<!--                                                    &lt;!&ndash; ,admin_name=${admin_name} ,admin_tel=${admin_tel} &ndash;&gt;-->
-<!--                                                </li>-->
-<!--                                            </th:block>-->
-<!--                                            <li>-->
-<!--                                                <a th:href="@{/back/courses(pageIndex=${zhentiList.pageNum+1},pageSize=6)}" aria-label="Next">-->
-<!--                                                    &lt;!&ndash; ,admin_name=${admin_name} ,admin_tel=${admin_tel} &ndash;&gt;-->
-<!--                                                    <span aria-hidden="true">&raquo;</span>-->
-<!--                                                </a>-->
-<!--                                            </li>-->
-<!--                                        </ul>-->
-<!--                                    </nav>-->
-                                    <div class="styled-pagination text-center centered">
+                                    <!--分页部分-->
+                                    <div class="styled-pagination text-center" style="margin-top: 20px">
                                         <nav aria-label="Page navigation text-center">
                                             <ul class="pagination">
                                                 <li>
@@ -330,30 +311,6 @@
                                         </div>
                                     </div>
                                 </div>
-<!--                                <nav aria-label="Page navigation">-->
-<!--                                    <ul class="pagination">-->
-<!--                                        <li>-->
-<!--                                            <a th:href="@{/back/courses(pageIndex=${zhentiList.pageNum-1},pageSize=6)}" aria-label="Previous"> &lt;!&ndash; admin_name=${admin_name} ,admin_tel =${admin_tel} &ndash;&gt;-->
-<!--                                                <span aria-hidden="true">&laquo;</span>-->
-<!--                                            </a>-->
-<!--                                        </li>-->
-<!--                                        <th:block th:each="nav:${zhentiList.navigatepageNums}">-->
-<!--                                            <li th:class="${nav==zhentiList.pageNum}?'active':''">-->
-<!--                                                <a th:href="@{/back/courses(pageIndex=${nav},pageSize=3)}" th:text="${nav}"></a>-->
-<!--                                                &lt;!&ndash; ,admin_name=${admin_name} ,admin_tel=${admin_tel} &ndash;&gt;-->
-<!--                                            </li>-->
-<!--                                        </th:block>-->
-<!--                                        <li>-->
-<!--                                            <a th:href="@{/back/courses(pageIndex=${zhentiList.pageNum+1},pageSize=6)}" aria-label="Next">-->
-<!--                                                &lt;!&ndash; ,admin_name=${admin_name} ,admin_tel=${admin_tel} &ndash;&gt;-->
-<!--                                                <span aria-hidden="true">&raquo;</span>-->
-<!--                                            </a>-->
-<!--                                        </li>-->
-<!--                                    </ul>-->
-<!--                                </nav>-->
-
-
-
 
                             </div>
                         </div>

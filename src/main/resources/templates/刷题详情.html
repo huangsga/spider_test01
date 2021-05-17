@@ -132,7 +132,6 @@
                             <span class="fa fa-star"></span>
                             <span class="fa fa-star-o"></span>
                             <strong th:text="${issueDetails.shitiHard}">4.9</strong>
-                            <i>(70 Review)</i>
                         </div>
                         <div class="hovers">持续更新，敬请期待...</div>
 
@@ -146,7 +145,7 @@
                 <div class="auto-container">
                     <div class="row clearfix">
                         <!-- Content Column -->
-                        <div class="content-column col-lg-8 col-md-12 col-sm-12" th:each="issueDetails:${issueDetails}">
+                        <div class="content-column col-lg-7 col-md-12 col-sm-12" th:each="issueDetails:${issueDetails}">
                             <div class="inner-column">
                                 <h5>题目再现</h5>
                                 <p th:text="${issueDetails.shitiTimu}">
@@ -164,8 +163,7 @@
                                             strings, etc.
                                         </li>
                                         <li>
-<!--                                            <a th:text="${issueDetails.shitiDaanHref}"></a>-->
-                                        答案链接
+                                            <a target="_blank" th:href="${issueDetails.shitiDaanHref}">答案链接</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -226,10 +224,10 @@
                         </div>
 
                         <!-- 大图片旁边的盒子 -->
-                        <div class="info-column col-lg-4 col-md-12 col-sm-12" th:each="issueDetails:${issueDetails}">
+                        <div class="info-column col-lg-5 col-md-12 col-sm-12" th:each="issueDetails:${issueDetails}">
                             <div class="inner-column">
                                 <div class="price">答案预览</div>
-                                <iframe th:src="${issueDetails.shitiDaanHref}" width="350" height="400">
+                                <iframe th:src="${issueDetails.shitiDaanHref}" width="400" height="500">
                                 </iframe>
                             </div>
                         </div>

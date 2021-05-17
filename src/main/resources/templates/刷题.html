@@ -300,7 +300,7 @@
                     >
                         <div class="lower-content">
                             <h6>
-                                <a href="#" th:text="${issue.shitiTimu}">试题题目</a>
+                                <a th:href="@{'/issue/details/'+${issue.shitiId}}" th:text="${issue.shitiTimu}">试题题目</a>
                             </h6>
                             <h6>
                                 <div class="uni-name" th:text="${issue.shitiOption}">试题选项</div>
