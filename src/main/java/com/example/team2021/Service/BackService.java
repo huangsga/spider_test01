@@ -15,12 +15,17 @@ public interface BackService {
     Back findoneuser(Integer userid);
     Integer deleteUserinfo(Integer userid);
 
-    PageInfo<Zhijigaokao> findAllzhenti(Integer pageIndex,Integer pageSize);
+    PageInfo<Zhijigaokao> findAllzhenti(Integer pageIndex, Integer pageSize);
+    Zhijigaokao findOneCourse(Integer picId);
     Integer deleteZhenti(Integer picId);
 
 
-    PageInfo<ViewIssue> findAllIssue(Integer pageIndex, Integer pageSize);
+//    PageInfo<ViewIssue> findAllIssue(Integer pageIndex, Integer pageSize);
+    List<ViewIssue> findAllIssue();
+    Integer editIssue(ViewIssue viewIssue);
+    ViewIssue findOneIssue(Integer shitiId);
     Integer deleteIssue(Integer shitiId);
+
 
     PageInfo<gaokaozixun> findAllzixun(Integer pageIndex, Integer pageSize);
 

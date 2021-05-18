@@ -92,54 +92,63 @@ public class backController {
         model.addAttribute("zhentiList",zhentiList);
         return "all-courses_b";
     }
-    // 进入真题添加界面
-    @GetMapping("addcourses")
-    public String addcourses(){
-        return "add-courses_b";
+
+    // 进入试题修改界面
+    @GetMapping("/editCourse/{picId}")
+    public String editCourse(@PathVariable("picId")Integer picId,Model model){
+        Zhijigaokao oneCourse = backService.findOneCourse(picId);
+        model.addAttribute("zhentiList",oneCourse);
+        return "edit-courses_b";
     }
+
     // 删除真题
     @GetMapping("/deleteZhenti/{picId}")
     public String deleteZhenti(@PathVariable("picId") Integer picId){
         backService.deleteZhenti(picId);
         return "redirect:/back/courses";
     }
-    // 进入真题添加界面
-    @GetMapping("editcourses")
-    public String editcourses(){
-        return "edit-courses_b";
-    }
-    // 进入真题详细界面
-    @GetMapping("aboutcourses")
-    public String aboutcourses(){
-        return "about-courses_b";
-    }
 
     // --------------------------------------------------------------------------------
+//    进入试题管理界面
+//    @GetMapping("backIssue")
+//    public String getBackIssues(@RequestParam(value = "pageIndex",defaultValue = "1")Integer pageIndex,
+//                                @RequestParam(value = "pageSize",defaultValue = "6")Integer pageSize,
+//                                Model model){
+//        PageInfo<ViewIssue> issuesList = backService.findAllIssue(pageIndex,pageSize);
+//        model.addAttribute("issuesList",issuesList);
+//        return "all-subjects_b";
+//    }
+
     // 进入试题管理界面
-    @GetMapping("backIssues")
-    public String getBackIssues(@RequestParam(value = "pageIndex",defaultValue = "1")Integer pageIndex,
-                                @RequestParam(value = "pageSize",defaultValue = "6")Integer pageSize,
-                                Model model){
-        PageInfo<ViewIssue> issuesList = backService.findAllIssue(pageIndex,pageSize);
+    @RequestMapping("backIssue")
+    public String getBackIssues(Model model){
+        List<ViewIssue> issuesList = backService.findAllIssue();
         model.addAttribute("issuesList",issuesList);
         return "all-subjects_b";
     }
+
     // 删除试题
-    @GetMapping("/deleteIssues/{shitiId}")
-    public String deleteIssues(@PathVariable("shitiId") Integer shitiId){
+    @GetMapping("/deleteIssue/{shitiId}")
+    public String deleteIssue(@PathVariable("shitiId") Integer shitiId){
         backService.deleteIssue(shitiId);
-        return "redirect:/back/backIssues";
+        return "redirect:/back/backIssue";
     }
-    // 进入试题添加界面
-    @GetMapping("editIssues")
-    public String editIssues(){
+
+    // 进入试题修改界面
+    @GetMapping("/editIssue/{shitiId}")
+    public String editIssue(@PathVariable("shitiId") Integer shitiId,Model model){
+        ViewIssue oneIssue=backService.findOneIssue(shitiId);
+//        System.out.println(oneIssue);
+        model.addAttribute("issuesList",oneIssue);
         return "edit-subjects_b";
     }
-    // 进入试题详细界面
-    @GetMapping("aboutIssues")
-    public String aboutIssues(){
-        return "about-subjects_b";
+    // 提交试题信息修改
+    @PostMapping("editIssue")
+    public String editIssues(ViewIssue viewIssue){
+        backService.editIssue(viewIssue);
+        return "redirect:/back/backIssue";
     }
+
 
     // --------------------------------------------------------------------------------
     // 进入资讯管理界面
