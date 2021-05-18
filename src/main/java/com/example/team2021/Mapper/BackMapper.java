@@ -36,10 +36,10 @@ public interface BackMapper {
     Integer deleteZhenti(Integer picId);
 
     //查找shiti01表所有试题
-    @Select("select * from shiti01 join jiaocai on shiti01.jiaocai_id = jiaocai.jiaocai_id")
+    @Select("select * from shiti01 join jiaocai on shiti01.jiaocai_id = jiaocai.jiaocai_id where isdelete = 0")
     List<ViewIssue> findAllIssue();
     // 删除shiti01表信息
-    @Select("delete from shiti01 where shiti_id=#{shitiId}")
+    @Select("delete from shiti01 where shiti_id=#{shitiId} where isdelete = 0")
     Integer deleteIssue(Integer shitiId);
 
     //查找资讯表所有资讯

@@ -68,14 +68,14 @@
             <div class="row page-titles mx-0">
                 <div class="col-sm-6 p-md-0">
                     <div class="welcome-text">
-                        <h4>All Student</h4>
+                        <h4>模拟试题 </h4>
                     </div>
                 </div>
                 <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/back/index">Home</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0);">Students</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0);">All Student</a></li>
+                        <li class="breadcrumb-item"><a href="/back/index">主页</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0);">模拟试题</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0);">所有试题</a></li>
                     </ol>
                 </div>
             </div>
@@ -92,38 +92,38 @@
                         <div id="list-view" class="tab-pane fade active show col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">All Students List  </h4>
-                                    <a href="/back/adduser" class="btn btn-primary">+ 添加用户</a>
+                                    <h4 class="card-title">试题列表 </h4>
+                                    <a href="/back/adduser" class="btn btn-primary">+ 添加试题</a>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
                                         <table id="example3" class="display" style="min-width: 845px">
                                             <thead>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th style="min-width: 100px">教材</th>
-                                                <th style="min-width: 250px">题目</th>
-                                                <th style="min-width: 150px">选项</th>
-                                                <th style="min-width: 80px">答案链接</th>
-                                                <th style="min-width: 150px">考点</th>
-                                                <th>难度</th>
-                                                <th>时间</th>
-                                            </tr>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th style="min-width: 100px">教材</th>
+                                                    <th style="min-width: 250px">题目</th>
+                                                    <th style="min-width: 150px">选项</th>
+                                                    <th style="min-width: 80px">答案链接</th>
+                                                    <th style="min-width: 150px">考点</th>
+                                                    <th>难度</th>
+                                                    <th>时间</th>
+                                                </tr>
                                             </thead>
                                             <tbody>
-                                            <tr th:each="issuesList:${issuesList.list}">
-                                                <td th:text="${issuesList.shitiId}"></td>
-                                                <td th:text="${issuesList.jiaocaiName}"></td>
-                                                <td th:utext="${issuesList.shitiTimu}"></td>
-                                                <td th:utext="${issuesList.shitiOption}"></td>
-                                                <td><a target="_blank" th:href="${issuesList.shitiDaanHref}">查看答案</a></td>
-                                                <td th:utext="${issuesList.shitiKaodian}"></td>
-                                                <td th:text="${issuesList.shitiHard}"><a href="javascript:void(0);"><strong></strong></a></td>
-                                                <td th:text="${issuesList.shitiTime}"><a href="javascript:void(0);"><strong></strong></a></td>
-                                                <td>
-                                                    <a th:href="@{'/back/deleteIssues/'+${issuesList.shitiId}}" class="btn btn-sm btn-danger"><i class="la la-trash-o"></i></a>
-                                                </td>
-                                            </tr>
+                                                <tr th:each="issuesList:${issuesList.list}">
+                                                    <td th:text="${issuesList.shitiId}"></td>
+                                                    <td th:text="${issuesList.jiaocaiName}"></td>
+                                                    <td th:utext="${issuesList.shitiTimu}"></td>
+                                                    <td th:utext="${issuesList.shitiOption}"></td>
+                                                    <td><a target="_blank" th:href="${issuesList.shitiDaanHref}">查看答案</a></td>
+                                                    <td th:utext="${issuesList.shitiKaodian}"></td>
+                                                    <td th:text="${issuesList.shitiHard}"><a href="javascript:void(0);"><strong></strong></a></td>
+                                                    <td th:text="${issuesList.shitiTime}"><a href="javascript:void(0);"><strong></strong></a></td>
+                                                    <td>
+                                                        <a th:href="@{'/back/deleteIssues/'+${issuesList.shitiId}}" class="btn btn-sm btn-danger"><i class="la la-trash-o"></i></a>
+                                                    </td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -167,8 +167,8 @@
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-right border py-0">
                                                     <div class="py-2">
-                                                        <a class="dropdown-item" href="javascript:void(0);">Edit</a>
-                                                        <a class="dropdown-item text-danger" href="javascript:void(0);">Delete</a>
+                                                        <a class="dropdown-item" href="javascript:void(0);">编辑</a>
+                                                        <a class="dropdown-item text-danger" href="javascript:void(0);">删除</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -209,18 +209,6 @@
     <div class="footer">
         <div th:replace="menu::backfooter"></div>
     </div>
-    <!--**********************************
-        Footer end
-    ***********************************-->
-
-    <!--**********************************
-       Support ticket button start
-    ***********************************-->
-
-    <!--**********************************
-       Support ticket button end
-    ***********************************-->
-
 
 </div>
 <!--**********************************
