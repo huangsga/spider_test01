@@ -12,4 +12,6 @@ public interface EchartsService {
 
     List<Echarts> findMath2();
 
+//    List<Echarts> findALL();
+
 }

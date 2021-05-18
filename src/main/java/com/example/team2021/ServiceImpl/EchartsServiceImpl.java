@@ -24,4 +24,11 @@ public class EchartsServiceImpl implements EchartsService {
     public List<Echarts> findMath2() {
         return echartsMapper.findMath2();
     }
+
+//    @Override
+//    public List<Echarts> findALL() {
+//        return echartsMapper.findALL();
+//    }
 }
+
+
