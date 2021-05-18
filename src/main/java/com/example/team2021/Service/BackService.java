@@ -22,6 +22,6 @@ public interface BackService {
     PageInfo<ViewIssue> findAllIssue(Integer pageIndex, Integer pageSize);
     Integer deleteIssue(Integer shitiId);
 
-    List<gaokaozixun> findAllzixun();
+    PageInfo<gaokaozixun> findAllzixun(Integer pageIndex, Integer pageSize);
 
 }

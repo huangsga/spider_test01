@@ -72,8 +72,11 @@ public class BackServiceImpl implements BackService {
     }
 
     @Override
-    public List<gaokaozixun> findAllzixun() {
-        return backMapper.findAllzixun();
+    public PageInfo<gaokaozixun> findAllzixun(Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex,pageSize);//一个设置
+        List<gaokaozixun> lists=backMapper.findAllzixun();
+        PageInfo<gaokaozixun> info=new PageInfo<gaokaozixun>(lists);
+        return info;
     }
 
 

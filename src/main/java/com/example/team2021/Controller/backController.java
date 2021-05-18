@@ -144,10 +144,13 @@ public class backController {
     // --------------------------------------------------------------------------------
     // 进入资讯管理界面
     @GetMapping("department")
-    public String findzixun(Model model){
-        List<gaokaozixun> gaokaozixun=backService.findAllzixun();
+    public String findzixun(@RequestParam(value = "pageIndex",defaultValue = "1")Integer pageIndex,
+                            @RequestParam(value = "pageSize",defaultValue = "6")Integer pageSize,
+                            Model model){
+        PageInfo<gaokaozixun> gaokaozixun=backService.findAllzixun(pageIndex,pageSize);
         model.addAttribute("gaokaozixun",gaokaozixun);
         return "all-departments_b";}
+
 
 
 
