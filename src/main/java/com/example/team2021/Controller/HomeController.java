@@ -34,7 +34,7 @@ public class HomeController {
     private UserLogService userLogService;
 
     @GetMapping("/index")
-    public String getIssue(Model model, HttpServletRequest request){
+    public String getIssue(HttpSession session, HttpServletRequest request,Model model){
         /**
          * 获取刷题的科目名称
          */
@@ -48,7 +48,8 @@ public class HomeController {
 //                session.setAttribute("loginState",false);//把用户数据保存到session对象中
 //            }
 //        }
-
+        User user=(User)session.getAttribute("us");
+        model.addAttribute("user",user);
         return "index-1";
     }
     @GetMapping("/register")
