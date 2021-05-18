@@ -32,31 +32,31 @@ public class UserController {
      * @param request
      * @return
      */
-    @PostMapping("/doLogin")
-    public String doLogin(Model model,HttpServletRequest request){
-
-        return userService.doLogin(model,request);
-    }
+//    @PostMapping("/doLogin")
+//    public String doLogin(Model model,HttpServletRequest request){
+//
+//        return userService.doLogin(model,request);
+//    }
 
     /**
      * 转发到注册页面
      * @return
-     */
-    @GetMapping("/register")
-    public String toRegister(){
-        return "register.html";
-    }
+//     */
+//    @GetMapping("/register")
+//    public String toRegister(){
+//        return "register.html";
+//    }
 
     /**
-     * 用户注册事件
-     * @param model
-     * @param request
-     * @return
-     */
-    @PostMapping("/doRegister")
-    public String doRegister(Model model, HttpServletRequest request){
-        return  userService.doRegister(model,request);
-    }
+//     * 用户注册事件
+//     * @param model
+//     * @param request
+//     * @return
+//     */
+//    @PostMapping("/doRegister")
+//    public String doRegister(Model model, HttpServletRequest request){
+//        return  userService.doRegister(model,request);
+//    }
 
 
     @GetMapping("all")
