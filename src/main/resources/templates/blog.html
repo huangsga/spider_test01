@@ -90,8 +90,8 @@
 		<div class="auto-container">
 			<!-- Page Breadcrumb -->
 			<ul class="page-breadcrumb">
-				<li><a href="index.html">Home</a></li>
-				<li>Blog default</li>
+				<li><a href="/main/index">Home</a></li>
+				<li>最新资讯</li>
 			</ul>
 			<div class="content-box">
 				<h2>高考最新资讯</h2>
@@ -114,7 +114,7 @@
 							</ul>
 							<h4><a th:text="${Des.zixunType}">高考政策 <br></a></h4>
 							<h5><a th:text="${Des.description}" class="more"> 新高考怎么办？</a></h5>
-							<a th:href="@{'/gaokaozixun/zixunlist/'+${Des.zixunType}}" class="more">More <span class="fa fa-angle-double-right"></span></a>
+							<a th:href="@{/gaokaozixun/zixunlist/(type=${Des.zixunType})}" class="more">More <span class="fa fa-angle-double-right"></span></a>
 						</div>
 					</div>
 				</div>

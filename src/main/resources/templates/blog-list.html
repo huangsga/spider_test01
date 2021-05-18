@@ -90,8 +90,8 @@
 		<div class="auto-container">
 			<!-- Page Breadcrumb -->
 			<ul class="page-breadcrumb">
-				<li><a href="index-1.html">Home</a></li>
-				<li>Blog default</li>
+				<li><a href="/gaokaozixun/zixunall">zixunall</a></li>
+				<li>list</li>
 			</ul>
 			<div class="content-box">
 				<h2>详细列表</h2>
@@ -110,93 +110,72 @@
                 	<div class="blog-classic" th:each="gk:${Gk.list}">
 						
 						<!-- News Block Two -->
-						<div class="news-block-two">
+						<div class="news-block-two" style="padding-top: 50px">
 							<div class="inner-box">
 								<div class="image">
-									<a href="blog-detail.html"><img src="${gk.imgsrc}" alt="" /></a>
+									<a href="blog-detail.html"><img th:src="${gk.imgsrc}" alt="" /></a>
 								</div>
 								<div class="lower-content">
 									<ul class="post-info">
-										<li><a href="blog-detail.html"><span class="icon fa fa-eye"></span>109 Views</a></li>
-										<li><a href="blog-detail.html"><span class="icon fa fa-comment"></span>12</a></li>
-										<li><a href="blog-detail.html"><span class="icon fa fa-bookmark-o"></span>Education, teach , Course</a></li>
+										<li><a href="blog-detail.html"><span class="icon fa fa-bookmark-o"></span>Education, teach</a></li>
 									</ul>
-									<h2><a href="blog-detail.html" th:text="${gk.zixunTitle}">Interior Design Principles and Elements</a></h2>
-									<div class="text">了解更多</div>
-									<a th:href="@{/gaokaozixun/zixundetail(zixunId=${gk.zixunId})}" class="learn-more">Learn More <span class="icon flaticon-right-arrow-1"></span></a>
+									<h2><a th:href="@{/gaokaozixun/zixundetail(zixunId=${gk.zixunId})}" th:text="${gk.zixunTitle}">Interior Design Principles and Elements</a></h2>
+<!--									<div class="text">了解更多</div>-->
 								</div>
 							</div>
 
-							<div class="styled-pagination-two">
-								<ul class="clearfix">
-									<li class="active">
-										<a th:href="@{/gaokaozixun/zixunlist(pageIndex=${Gk.pageNum-1},pageSize=6)}" aria-label="Previous"><span aria-hidden="true">&laquo;</span>
-										</a>
-									</li>
-									<th:block th:each="nav:${Gk.navigatepageNums}">
-										<li th:class="${nav==Gk.pageNum}?'active':''">
-											<a th:href="@{/gaokaozixun/zixunlist(pageIndex=${nav},pageSize=3)}" th:text="${nav}"></a>
-										</li>
-									</th:block>
-									<li >
-										<a th:href="@{/gaokaozixun/zixunlist(pageIndex=${Gk.pageNum+1},pageSize=6)}" aria-label="Next"><span aria-hidden="true">&raquo;</span>
-										</a>
-									</li>
-									<li class="next"><a href="#"><span class="fa fa-angle-right"></span> </a></li>
-								</ul>
-							</div>
+
 						</div>
+					</div>
+					<div class="styled-pagination-two">
+						<ul class="clearfix">
+							<li > <!-- zixunType=${zixunType}, -->
+								<a th:href="@{/gaokaozixun/zixunlist/(type=${typename},pageIndex=${Gk.pageNum-1},pageSize=6)}" aria-label="Previous"><span aria-hidden="true">&laquo;</span>
+								</a>
+							</li>
+							<th:block th:each="nav:${Gk.navigatepageNums}">
+								<li th:class="${nav==Gk.pageNum}?'active':''">
+									<a th:href="@{/gaokaozixun/zixunlist/(type=${typename},pageIndex=${nav},pageSize=6)}" th:text="${nav}"></a>
+								</li>
+							</th:block>
+							<li >
+								<a th:href="@{/gaokaozixun/zixunlist/(type=${typename},pageIndex=${Gk.pageNum+1},pageSize=6)}" aria-label="Next"><span aria-hidden="true">&raquo;</span>
+								</a>
+							</li>
+						</ul>
 					</div>
 				</div>
 				
 				<!-- Sidebar Side -->
                 <div class="sidebar-side col-lg-3 col-md-12 col-sm-12">
                 	<aside class="sidebar sticky-top">
-						
-						<!-- Search -->
-						<div class="sidebar-widget search-box">
-							<form method="post" action="contact.html">
-								<div class="form-group">
-									<input type="search" name="search-field" value="" placeholder="Search" required>
-									<button type="submit"><span class="icon fa fa-search"></span></button>
-								</div>
-							</form>
-						</div>
+
 
 						
 						<!-- Links Widget -->
 						<div class="sidebar-widget links-widget">
 							<div class="sidebar-title">
-								<h4>Recent Post</h4>
+								<h4>高考政策栏</h4>
 							</div>
 							<div class="widget-content">
 								<ul class="blog-cat">
-									<li><a href="#">Business (3)</a></li>
-									<li><a href="#">Education  (03)</a></li>
-									<li><a href="#">Technology (12)</a></li>
-									<li><a href="#">News (6)</a></li>
-									<li><a href="#">Design (4)</a></li>
-									<li><a href="#">Lifestyle  News (6)</a></li>
+									<li><a href="/gaokaozixun/zixunlist/?type=录取查询">录取查询 (197)</a></li>
+									<li><a href="/gaokaozixun/zixunlist/?type=高考状元">高考状元  (224)</a></li>
+									<li><a href="/gaokaozixun/zixunlist/?type=高考大纲">高考大纲 (124)</a></li>
+									<li><a href="/gaokaozixun/zixunlist/?type=成绩查询">成绩查询 (224)</a></li>
+									<li><a href="/gaokaozixun/zixunlist/?type=高考报名">高考报名 (224)</a></li>
+									<li><a href="/gaokaozixun/zixunlist/?type=高考时间">高考时间 (224)</a></li>
+									<li><a href="/gaokaozixun/zixunlist/?type=高考体检">高考体检 (183)</a></li>
+									<li><a href="/gaokaozixun/zixunlist/?type=强基计划">强基计划 (125)</a></li>
+									<li><a href="/gaokaozixun/zixunlist/?type=高考政策">高考政策 (223)</a></li>
+									<li><a href="/gaokaozixun/zixunlist/?type=高考新闻">高考新闻 (223)</a></li>
+									<li><a href="/gaokaozixun/zixunlist/?type=高考分数线">高考分数线 (224)</a></li>
 								</ul>
 							</div>
 						</div>
 						
 						<!-- Archive Widget -->
-						
-						<!-- Popular Posts -->
-						<div class="sidebar-widget popular-tags">
-							<div class="sidebar-title">
-								<h4>Tags</h4>
-							</div>
-							<div class="widget-content">
-								<a href="#">seafood</a>
-								<a href="#">gyros</a>
-								<a href="#">chicken</a>
-								<a href="#">pizza</a>
-								<a href="#">ecommerce</a>
-								<a href="#">food</a>
-							</div>
-						</div>
+
 					</aside>
 				</div>
 			</div>
