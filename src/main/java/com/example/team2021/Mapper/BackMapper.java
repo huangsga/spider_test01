@@ -33,10 +33,6 @@ public interface BackMapper {
     @Select("select * from team01.zhijigaokao")
     List<Zhijigaokao> findAllzhenti();
 
-    // 显示需要修改的试题信息
-    @Select("select * from team01.zhijigaokao where pic_id=#{picId}" )
-    Zhijigaokao findOneCourse(Integer picId);
-
     // 删除试题信息
     @Select("delete from zhijigaokao where pic_id=#{picId}")
     Integer deleteZhenti(Integer picId);

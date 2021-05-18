@@ -109,6 +109,7 @@
                                                 <th style="min-width: 50px">类型</th>
                                                 <th style="min-width: 200px">标题</th>
                                                 <th>封面</th>
+                                                <th style="min-width: 80px">操作</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -124,8 +125,6 @@
                                                 <td th:text="${zhentiList.cover}"><a href="javascript:void(0);"><strong>info@example.com</strong></a>
                                                 </td>
                                                 <td>
-                                                    <a th:href="@{'/back/editCourse/'+${zhentiList.picId}}"
-                                                       class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
                                                     <a th:href="@{'/back/deleteZhenti/'+${zhentiList.picId}}"
                                                        class="btn btn-sm btn-danger"><i class="la la-trash-o"></i></a>
                                                 </td>

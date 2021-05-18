@@ -16,7 +16,6 @@ public interface BackService {
     Integer deleteUserinfo(Integer userid);
 
     PageInfo<Zhijigaokao> findAllzhenti(Integer pageIndex, Integer pageSize);
-    Zhijigaokao findOneCourse(Integer picId);
     Integer deleteZhenti(Integer picId);
 
 

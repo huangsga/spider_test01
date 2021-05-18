@@ -53,11 +53,6 @@ public class BackServiceImpl implements BackService {
     }
 
     @Override
-    public Zhijigaokao findOneCourse(Integer picId) {
-        return backMapper.findOneCourse(picId);
-    }
-
-    @Override
     public Integer deleteZhenti(Integer picId) {
         return backMapper.deleteZhenti(picId);
     }

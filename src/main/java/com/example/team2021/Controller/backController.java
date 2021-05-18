@@ -93,13 +93,6 @@ public class backController {
         return "all-courses_b";
     }
 
-    // 进入试题修改界面
-    @GetMapping("/editCourse/{picId}")
-    public String editCourse(@PathVariable("picId")Integer picId,Model model){
-        Zhijigaokao oneCourse = backService.findOneCourse(picId);
-        model.addAttribute("zhentiList",oneCourse);
-        return "edit-courses_b";
-    }
 
     // 删除真题
     @GetMapping("/deleteZhenti/{picId}")

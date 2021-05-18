@@ -102,19 +102,17 @@
                                                 <th>ID</th>
                                                 <th style="min-width: 100px">标题</th>
                                                 <th style="min-width: 250px">类型</th>
-                                                <!--                                                    <th style="min-width: 100px">内容</th>-->
-                                                <th style="min-width: 100px">类型</th>
+                                                <th style="min-width: 100px">操作</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <tr th:each="gaokaozixun:${gaokaozixun.list}">
                                                 <td th:text="${gaokaozixun.zixunId}"></td>
                                                 <td th:text="${gaokaozixun.zixunTitle}"></td>
-                                                <!--                                                    <td><a target="_blank" th:href="@{'/back/zixunDetail/'+${gaoakozixun.zixunId}}">查看内容</a></td>-->
                                                 <td th:text="${gaokaozixun.zixunType}"><a href="javascript:void(0);"><strong></strong></a></td>
-                                                <!--                                                    <td>-->
-                                                <!--                                                        <a th:href="@{'/back/deleteZixun/'+${gaoakozixun.zixunId}}" class="btn btn-sm btn-danger"><i class="la la-trash-o"></i></a>-->
-                                                <!--                                                    </td>-->
+                                                <td>
+                                                    <a href="#" class="btn btn-sm btn-danger"><i class="la la-trash-o"></i></a>
+                                                </td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -142,49 +140,9 @@
                                             </ul>
                                         </nav>
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
-                        <!--网格视图-->
-                        <!--                        <div id="grid-view" class="tab-pane fade col-lg-12">-->
-                        <!--                            <div class="row">-->
-                        <!--                                <div class="col-lg-4 col-md-6 col-sm-6 col-12" th:each="gaokaozixun:${gaokaozixun.list}">-->
-                        <!--                                    <div class="card card-profile">-->
-                        <!--                                        <div class="card-header justify-content-end pb-0">-->
-                        <!--                                            <div class="dropdown">-->
-                        <!--                                                <button class="btn btn-link" type="button" data-toggle="dropdown">-->
-                        <!--                                                    <span class="dropdown-dots fs&#45;&#45;1"></span>-->
-                        <!--                                                </button>-->
-                        <!--                                                <div class="dropdown-menu dropdown-menu-right border py-0">-->
-                        <!--                                                    <div class="py-2">-->
-                        <!--                                                        <a class="dropdown-item" href="javascript:void(0);">编辑</a>-->
-                        <!--                                                        <a class="dropdown-item text-danger" href="javascript:void(0);">删除</a>-->
-                        <!--                                                    </div>-->
-                        <!--                                                </div>-->
-                        <!--                                            </div>-->
-                        <!--                                        </div>-->
-                        <!--                                        <div class="card-body pt-2">-->
-                        <!--                                            <div class="text-center">-->
-                        <!--                                                <div class="profile-photo">-->
-                        <!--                                                    &lt;!&ndash;题目内容&ndash;&gt;-->
-                        <!--                                                </div>-->
-                        <!--                                                <h4 class="mt-4 mb-1" th:text="${gaokaozixun.zixunTitle}"></h4>-->
-                        <!--                                                <p style="font-size: medium" class="text-muted" th:text="${gaokaozixun.zixunType}"></p>-->
-                        <!--                                                <ul class="list-group mb-3 list-group-flush">-->
-                        <!--                                                    <li class="list-group-item px-0 d-flex justify-content-between">-->
-                        <!--                                                        <span class="mb-0">考点: </span>-->
-                        <!--                                                        <strong><span th:utext="${issuesList.shitiKaodian}"></span></strong>-->
-                        <!--                                                    </li>-->
-                        <!--                                                </ul>-->
-                        <!--                                                <a class="btn btn-outline-primary btn-rounded mt-3 px-4" target="_blank" th:href="${issuesList.shitiDaanHref}">查看答案 </a>-->
-                        <!--                                            </div>-->
-                        <!--                                        </div>-->
-                        <!--                                    </div>-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
                     </div>
                 </div>
             </div>
