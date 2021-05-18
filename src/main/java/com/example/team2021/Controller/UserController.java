@@ -1,10 +1,13 @@
 package com.example.team2021.Controller;
 
+import com.example.team2021.Entity.User;
 import com.example.team2021.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/user")
@@ -13,55 +16,31 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    /**
-     * 转发到登录页面
-     * @return
-     */
     @GetMapping("/login")
-    public String toLogin(){
+    public String toLogin(HttpSession session){
+        User user=(User)session.getAttribute("us");
+        if (user == null) {
+            return "redirect:/main/error2";
+        };
         return "login";
     }
 
-    /**
-     * 用户登录事件
-     * @param model
-     * @param request
-     * @return
-     */
-//    @PostMapping("/doLogin")
-//    public String doLogin(Model model,HttpServletRequest request){
-//
-//        return userService.doLogin(model,request);
-//    }
-
-    /**
-     * 转发到注册页面
-     * @return
-//     */
-//    @GetMapping("/register")
-//    public String toRegister(){
-//        return "register.html";
-//    }
-
-    /**
-//     * 用户注册事件
-//     * @param model
-//     * @param request
-//     * @return
-//     */
-//    @PostMapping("/doRegister")
-//    public String doRegister(Model model, HttpServletRequest request){
-//        return  userService.doRegister(model,request);
-//    }
-
-
-    @GetMapping("all")
-    public void getAllUsers(){
+    @GetMapping("/all")
+    public String getAllUsers(HttpSession session){
+        User user=(User)session.getAttribute("us");
+        if (user == null) {
+            return "redirect:/main/error2";
+        };
         userService.listAllUsers();
+        return null;
     }
 
     @GetMapping("/person")
-    public String transPerson(){
+    public String transPerson(HttpSession session){
+        User user=(User)session.getAttribute("us");
+        if (user == null) {
+            return "redirect:/main/error2";
+        };
         return "about";
     }
 }

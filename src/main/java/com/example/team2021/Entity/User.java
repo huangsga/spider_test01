@@ -2,16 +2,23 @@ package com.example.team2021.Entity;
 
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 public class User {
     private Integer userId;
     private String username;
     private String password;
-    private String userSex;
-    private String nianJiId;
+    private String user_sex;
+    private String grade;
+    private String education;
+    private String school;
+    private String power;
+    private String level;
+    private String user_img;
+    private Date creatDate;
+    private String birthday;
     private String email;
-    private String phone;
-    private String provinces;
 
     public Integer getUserId() {
         return userId;
@@ -37,44 +44,36 @@ public class User {
         this.password = password;
     }
 
-    public String getUserSex() {
-        return userSex;
+    public String getUser_sex() {
+        return user_sex;
     }
 
-    public void setUserSex(String userSex) {
-        this.userSex = userSex;
+    public void setUser_sex(String user_sex) {
+        this.user_sex = user_sex;
     }
 
-    public String getNianJiId() {
-        return nianJiId;
+    public String getGrade() {
+        return grade;
     }
 
-    public void setNianJiId(String nianJiId) {
-        this.nianJiId = nianJiId;
+    public void setGrade(String grade) {
+        this.grade = grade;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEducation() {
+        return education;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEducation(String education) {
+        this.education = education;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getSchool() {
+        return school;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getProvinces() {
-        return provinces;
-    }
-
-    public void setProvinces(String provinces) {
-        this.provinces = provinces;
+    public void setSchool(String school) {
+        this.school = school;
     }
 
     public String getPower() {
@@ -93,16 +92,35 @@ public class User {
         this.level = level;
     }
 
-    public String getUserImg() {
-        return userImg;
+    public String getUser_img() {
+        return user_img;
     }
 
-    public void setUserImg(String userImg) {
-        this.userImg = userImg;
+    public void setUser_img(String user_img) {
+        this.user_img = user_img;
     }
 
-    private String power;
-    private String level;
-    private String userImg;
+    public Date getCreatDate() {
+        return creatDate;
+    }
 
+    public void setCreatDate(Date creatDate) {
+        this.creatDate = creatDate;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

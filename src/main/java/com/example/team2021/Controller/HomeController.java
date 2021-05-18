@@ -34,22 +34,14 @@ public class HomeController {
     private UserLogService userLogService;
 
     @GetMapping("/index")
-    public String getIssue(HttpSession session, HttpServletRequest request,Model model){
-        /**
-         * 获取刷题的科目名称
-         */
-//        List<ViewIssue> kemuName = issueService.findKemuName();
-//        model.addAttribute("kemuName", kemuName);
-//        HttpSession session = request.getSession(true);
-//        Object loginState = session.getAttribute("loginState");
-//        if (loginState !=null){
-//            boolean isLogin = (boolean) loginState;
-//            if (!isLogin){
-//                session.setAttribute("loginState",false);//把用户数据保存到session对象中
-//            }
-//        }
+    public String getIssue(HttpSession session,Model model){
         User user=(User)session.getAttribute("us");
-        model.addAttribute("user",user);
+        if (user == null) {
+           model.addAttribute("Username","游客");
+        }
+        else{
+            model.addAttribute("Username",user.getUsername());
+        }
         return "index-1";
     }
     @GetMapping("/register")
