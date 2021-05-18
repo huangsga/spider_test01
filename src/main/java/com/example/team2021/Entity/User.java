@@ -9,13 +9,13 @@ public class User {
     private Integer userId;
     private String username;
     private String password;
-    private String user_sex;
+    private String usersex;
     private String grade;
     private String education;
     private String school;
     private String power;
     private String level;
-    private String user_img;
+//    private String user_img;
     private Date creatDate;
     private String birthday;
     private String email;
@@ -44,12 +44,12 @@ public class User {
         this.password = password;
     }
 
-    public String getUser_sex() {
-        return user_sex;
+    public String getUsersex() {
+        return usersex;
     }
 
-    public void setUser_sex(String user_sex) {
-        this.user_sex = user_sex;
+    public void setUser_sex(String usersex) {
+        this.usersex = usersex;
     }
 
     public String getGrade() {
@@ -92,13 +92,13 @@ public class User {
         this.level = level;
     }
 
-    public String getUser_img() {
-        return user_img;
-    }
-
-    public void setUser_img(String user_img) {
-        this.user_img = user_img;
-    }
+//    public String getUser_img() {
+//        return user_img;
+//    }
+//
+//    public void setUser_img(String user_img) {
+//        this.user_img = user_img;
+//    }
 
     public Date getCreatDate() {
         return creatDate;

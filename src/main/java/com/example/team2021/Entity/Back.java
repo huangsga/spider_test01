@@ -6,7 +6,7 @@ public class Back {
     private Integer userid;
     private String username;
     private String password;
-    private String user_sex;
+    private String usersex;
     private String grade;
     private String education;
     private String school;
@@ -15,7 +15,7 @@ public class Back {
     private String provinces;
     private String power;
     private String level;
-    private String user_img;
+    private String userimgs;
     private String birthday;
 
     public String getBirthday() {
@@ -60,12 +60,12 @@ public class Back {
         this.password = password;
     }
 
-    public String getUser_sex() {
-        return user_sex;
+    public String getUsersex() {
+        return usersex;
     }
 
-    public void setUser_sex(String user_sex) {
-        this.user_sex = user_sex;
+    public void setUsersex(String usersex) {
+        this.usersex = usersex;
     }
 
     public String getGrade() {
@@ -132,11 +132,11 @@ public class Back {
         this.level = level;
     }
 
-    public String getUser_img() {
-        return user_img;
+    public String getUserimgs() {
+        return userimgs;
     }
 
-    public void setUser_img(String user_img) {
-        this.user_img = user_img;
+    public void setUserimgs(String userimgs) {
+        this.userimgs = userimgs;
     }
 }
