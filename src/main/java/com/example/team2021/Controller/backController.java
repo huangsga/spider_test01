@@ -124,11 +124,6 @@ public class backController {
         model.addAttribute("issuesList",issuesList);
         return "all-subjects_b";
     }
-    // 进入试题添加界面
-    @GetMapping("addIssues")
-    public String addIssues(){
-        return "add-subjects_b";
-    }
     // 删除试题
     @GetMapping("/deleteIssues/{shitiId}")
     public String deleteIssues(@PathVariable("shitiId") Integer shitiId){

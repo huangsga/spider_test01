@@ -10,27 +10,11 @@
 <div class="dlabnav" th:fragment="mymenu">
     <div class="dlabnav-scroll">
         <ul class="metismenu" id="menu">
-            <li class="nav-label first">Main Menu</li>
+            <li class="nav-label first">主菜单</li>
             <li><a class="ai-icon" href="/back/index" aria-expanded="false">
                 <i class="la la-home"></i>
                 <span class="nav-text">主页面</span>
             </a>
-            </li>
-            <li><a class="ai-icon" href="event-management.html" aria-expanded="false">
-                    <i class="la la-calendar"></i>
-                    <span class="nav-text">Event Management</span>
-                </a>
-            </li>
-            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <i class="la la-user"></i>
-                    <span class="nav-text">Professors</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="all-professors.html">All Professor</a></li>
-                    <li><a href="add-professor.html">Add Professor</a></li>
-                    <li><a href="edit-professor.html">Edit Professor</a></li>
-                    <li><a href="professor-profile.html">Professor Profile</a></li>
-                </ul>
             </li>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
                     <i class="la la-users"></i>
@@ -48,7 +32,6 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="/back/courses">所有真题</a></li>
-                    <li><a href="/back/addcourses">添加真题</a></li>
                     <li><a href="/back/editcourses">编辑真题</a></li>
                     <li><a href="/back/aboutcourses">About Courses</a></li>
                 </ul>
@@ -59,7 +42,6 @@
             </a>
                 <ul aria-expanded="false">
                     <li><a href="/back/backIssues">所有试题</a></li>
-                    <li><a href="/back/addIssues">添加试题</a></li>
                     <li><a href="/back/editIssues">编辑试题</a></li>
                     <li><a href="/back/aboutIssues">About Courses</a></li>
                 </ul>
@@ -84,38 +66,6 @@
                     <li><a href="edit-departments.html">编辑资讯</a></li>
                 </ul>
             </li>
-            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <i class="la la-users"></i>
-                    <span class="nav-text">Staff</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="all-staff.html">All Staff</a></li>
-                    <li><a href="add-staff.html">Add Staff</a></li>
-                    <li><a href="edit-staff.html">Edit Staff</a></li>
-                    <li><a href="staff-profile.html">Staff Profile</a></li>
-                </ul>
-            </li>
-            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <i class="la la-gift"></i>
-                    <span class="nav-text">Holiday</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="all-holiday.html">All Holiday</a></li>
-                    <li><a href="add-holiday.html">Add Holiday</a></li>
-                    <li><a href="edit-holiday.html">Edit Holiday</a></li>
-                    <li><a href="holiday-calendar.html">Holiday Calendar</a></li>
-                </ul>
-            </li>
-            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <i class="la la-dollar"></i>
-                    <span class="nav-text">盈利</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="fees-collection.html">Fees Collection</a></li>
-                    <li><a href="add-fees.html">Add Fees</a></li>
-                    <li><a href="fees-receipt.html">Fees Receipt</a></li>
-                </ul>
-            </li>					
             <li class="nav-label">Apps</li>
             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
                     <i class="la la-users"></i>
@@ -199,50 +149,80 @@
                     <i class="la la-desktop"></i>
                     <span class="nav-text">Widget</span>
                 </a></li>
-            <li class="nav-label">Forms</li>
-            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <i class="la la-file-text"></i>
-                    <span class="nav-text">Forms</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="./form-element.html">Form Elements</a></li>
-                    <li><a href="./form-wizard.html">Wizard</a></li>
-                    <li><a href="./form-editor-summernote.html">Summernote</a></li>
-                    <li><a href="form-pickers.html">Pickers</a></li>
-                    <li><a href="form-validation-jquery.html">Jquery Validate</a></li>
-                </ul>
-            </li>
-            <li class="nav-label">Table</li>
-            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <i class="la la-table"></i>
-                    <span class="nav-text">Table</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="table-bootstrap-basic.html">Bootstrap</a></li>
-                    <li><a href="table-datatable-basic.html">Datatable</a></li>
-                </ul>
-            </li>
-            <li class="nav-label">Extra</li>
-            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <i class="la la-th-list"></i>
-                    <span class="nav-text">Pages</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="./page-register.html">Register</a></li>
-                    <li><a href="./page-login.html">Login</a></li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
-                        <ul aria-expanded="false">
-                            <li><a href="./page-error-400.html">Error 400</a></li>
-                            <li><a href="./page-error-403.html">Error 403</a></li>
-                            <li><a href="./page-error-404.html">Error 404</a></li>
-                            <li><a href="./page-error-500.html">Error 500</a></li>
-                            <li><a href="./page-error-503.html">Error 503</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="./page-lock-screen.html">Lock Screen</a></li>
-                </ul>
-            </li>
         </ul>
+    </div>
+</div>
+
+<!-- 后端侧边栏头部-->
+<div class="nav-header" th:fragment="navHeader">
+    <a href="/back/index" class="brand-logo">
+        <img class="logo-abbr" src="/back/images/logo-white.png" alt="">
+        <img class="logo-compact" src="/back/images/logo-text-white.png" alt="">
+        <img class="brand-title" src="/back/images/logo-text-white.png" alt="">
+    </a>
+
+    <div class="nav-control">
+        <div class="hamburger">
+            <span class="line"></span><span class="line"></span><span class="line"></span>
+        </div>
+    </div>
+</div>
+
+<!--后端头部-->
+
+<div class="header" th:fragment="myheader">
+    <div class="header-content">
+        <nav class="navbar navbar-expand">
+            <div class="collapse navbar-collapse justify-content-between">
+                <div class="header-left">
+                    <div class="search_bar dropdown">
+                                <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
+                                    <i class="mdi mdi-magnify"></i>
+                                </span>
+                        <div class="dropdown-menu p-0 m-0">
+                            <form>
+                                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="navbar-nav header-right">
+                    <li class="nav-item dropdown notification_dropdown">
+                        <a class="nav-link bell ai-icon" href="#" role="button" data-toggle="dropdown">
+                            <svg id="icon-user" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                            </svg>
+                            <div class="pulse-css"></div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right"></div>
+                    </li>
+                    <li class="nav-item dropdown header-profile">
+                        <a class="nav-link" href="#" role="button" data-toggle="dropdown">
+                            <img src="/back/images/profile/education/pic1.jpg" width="20" alt=""/>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a href="/main/index" class="dropdown-item ai-icon">
+                                <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                <span class="ml-2">前端 </span>
+                            </a>
+                            <a href="/user/login" class="dropdown-item ai-icon">
+                                <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                                <span class="ml-2">退出 </span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<!--后端底部-->
+<div class="footer" th:fragment="backfooter">
+    <div class="copyright">
+        <p>Copyright © Designed &amp; Developed by <a href="http://www.bootstrapmb.com/" target="_blank">team01</a> 2020</p>
     </div>
 </div>
 
