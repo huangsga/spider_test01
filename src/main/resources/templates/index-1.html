@@ -106,7 +106,14 @@
                         <!-- Content Column -->
                         <div class="content-column col-lg-6 col-md-12 col-sm-12">
                             <div class="inner-column">
-                                <div class="title">在线资源学习</div>
+                                <div class="sec-title">
+                                    <h2 th:text="${Username}">
+                                        xxx（从数据库取出名字）的个人中心
+                                    </h2>
+                                    <div class="text">
+                                        Welcome Back<br />
+                                    </div>
+                                </div>
                                 <h1>
                                     Build skills with <br />
                                     flexible online <br />
@@ -464,6 +471,10 @@
                         data-paroller-direction="horizontal"
                 ></div>
                 <div class="auto-container">
+
+                            <!-- Sec Title -->
+
+
                     <div class="sec-title centered">
                         <h2>
                             You can learn anything, Explore <br />
@@ -489,25 +500,19 @@
                                 </div>
                                 <div class="lower-content">
                                     <h4>
-                                        <a href="/ziliaozongjie/shuxue"
-                                        > 举例1 集合的含义及表示</a
+                                        <a href="/chart/show"
+                                        > 数学必修一</a
                                         >
                                     </h4>
-                                    <div class="uni-name">科目 教材 单元</div>
+                                    <div class="uni-name">集合 函数</div>
                                     <div class="rating">
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star-o"></span>
                                         <i>(70 阅读量)</i>
                                     </div>
-                                    <div class="price">$0.2 <span>$1</span></div>
                                     <div class="clearfix">
                                         <div class="pull-left">
-                                            <div class="hovers">1 total hours . All Levels</div>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="/ziliaozongjie/shuxue" class="enroll-now"
+                                            <a href="/chart/show" class="enroll-now"
                                             >详细预览</a
                                             >
                                         </div>
@@ -519,36 +524,30 @@
                         <!-- Course Column -->
                         <div class="course-block col-lg-4 col-md-6 col-sm-12">
                             <div
-                                    class="inner-box wow fadeInUp"
+                                    class="inner-box wow fadeInLeft"
                                     data-wow-delay="0ms"
                                     data-wow-duration="1500ms"
                             >
                                 <div class="image">
-                                    <a href="/ziliaozongjie/wuli"
-                                    ><img src="/images/resource/course-2.jpg" alt=""
+                                    <a href="/ziliaozongjie/shuxue"
+                                    ><img src="/images/resource/course-1.jpg" alt=""
                                     /></a>
                                 </div>
                                 <div class="lower-content">
                                     <h4>
-                                        <a href="/ziliaozongjie/wuli"
-                                        > 举例2 牛顿第一定律</a
+                                        <a href="/chart/show"
+                                        > 数学必修一</a
                                         >
                                     </h4>
-                                    <div class="uni-name">科目 教材 单元</div>
+                                    <div class="uni-name">空间 平面</div>
                                     <div class="rating">
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
                                         <i>(70 阅读量)</i>
                                     </div>
-                                    <div class="price">$0.2 <span>$1</span></div>
                                     <div class="clearfix">
                                         <div class="pull-left">
-                                            <div class="hovers">1 total hours . All Levels</div>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="/ziliaozongjie/wuli" class="enroll-now"
+                                            <a href="/chart/show" class="enroll-now"
                                             >详细预览</a
                                             >
                                         </div>
@@ -556,41 +555,34 @@
                                 </div>
                             </div>
                         </div>
-
 
                         <!-- Course Column -->
                         <div class="course-block col-lg-4 col-md-6 col-sm-12">
                             <div
-                                    class="inner-box wow fadeInRight"
+                                    class="inner-box wow fadeInLeft"
                                     data-wow-delay="0ms"
                                     data-wow-duration="1500ms"
                             >
                                 <div class="image">
-                                    <a href="/ziliaozongjie/huaxue"
-                                    ><img src="/images/resource/course-3.jpg" alt=""
+                                    <a href="/ziliaozongjie/shuxue"
+                                    ><img src="/images/resource/course-1.jpg" alt=""
                                     /></a>
                                 </div>
                                 <div class="lower-content">
                                     <h4>
-                                        <a href="/ziliaozongjie/huaxue"
-                                        >举例3 溶液和胶体</a
+                                        <a href="/chart/show"
+                                        > 数学必修一</a
                                         >
                                     </h4>
-                                    <div class="uni-name">科目 教材 单元</div>
+                                    <div class="uni-name">集合 函数</div>
                                     <div class="rating">
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star-o"></span>
                                         <i>(70 阅读量)</i>
                                     </div>
-                                    <div class="price">$0.2 <span>$1</span></div>
                                     <div class="clearfix">
                                         <div class="pull-left">
-                                            <div class="hovers">11.5 total hours . All Levels</div>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="/ziliaozongjie/huaxue" class="enroll-now"
+                                            <a href="/chart/show" class="enroll-now"
                                             >详细预览</a
                                             >
                                         </div>
@@ -598,127 +590,13 @@
                                 </div>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
             </section>
             <!-- End Courses Section -->
 
-            <!-- 个人中心 -->
-            <section class="skill-section">
-                <div
-                        class="pattern-layer"
-                        style="background-image: url(/images/background/pattern-8.png)"
-                ></div>
-                <div class="auto-container">
-                    <div class="row clearfix">
-                        <!-- Skill Column -->
-                        <div class="skill-column col-lg-7 col-md-12 col-sm-12">
-                            <div class="inner-column">
-                                <!-- Sec Title -->
-                                <div class="sec-title">
-                                    <h2 th:text="${Username}">
-                                        xxx（从数据库取出名字）的个人中心
-                                    </h2>
-                                    <div class="text">
-                                        数据中心，比你想的更懂你<br />
-                                        点击验收学习成果吧
-                                    </div>
-                                </div>
-
-                                <!-- Skills -->
-                                <div class="skills">
-                                    <!-- Skill Item -->
-                                    <div class="skill-item">
-                                        <div class="skill-header clearfix">
-                                            <div class="skill-title">刷题量</div>
-                                            <div class="skill-percentage">
-                                                <div class="count-box">
-                                                    <span
-                                                            class="count-text"
-                                                            data-speed="2000"
-                                                            data-stop="90"
-                                                    >0</span
-                                                    >%
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="skill-bar">
-                                            <div class="bar-inner">
-                                                <div
-                                                        class="bar progress-line"
-                                                        data-width="90"
-                                                ></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Skill Item -->
-                                    <div class="skill-item">
-                                        <div class="skill-header clearfix">
-                                            <div class="skill-title">资料阅读量</div>
-                                            <div class="skill-percentage">
-                                                <div class="count-box">
-                                                    <span
-                                                            class="count-text"
-                                                            data-speed="2000"
-                                                            data-stop="95"
-                                                    >0</span
-                                                    >%
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="skill-bar">
-                                            <div class="bar-inner">
-                                                <div
-                                                        class="bar progress-line"
-                                                        data-width="95"
-                                                ></div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Skill Item -->
-                                    <div class="skill-item">
-                                        <div class="skill-header clearfix">
-                                            <div class="skill-title">资讯了解量</div>
-                                            <div class="skill-percentage">
-                                                <div class="count-box">
-                                                    <span
-                                                            class="count-text"
-                                                            data-speed="2000"
-                                                            data-stop="75"
-                                                    >0</span
-                                                    >%
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="skill-bar">
-                                            <div class="bar-inner">
-                                                <div
-                                                        class="bar progress-line"
-                                                        data-width="75"
-                                                ></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Image Column -->
-                        <div class="image-column col-lg-5 col-md-12 col-sm-12">
-                            <div class="inner-column">
-                                <div class="circle-one"></div>
-                                <div class="circle-two"></div>
-                                <div class="image titlt" data-tilt data-tilt-max="4">
-                                    <img src="/images/resource/skill.png" alt="" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- End Skill Section -->
 
             <!-- 底部 -->
             <footer class="main-footer">
