@@ -1,9 +1,6 @@
 package com.example.team2021.Controller;
 
-import com.example.team2021.Entity.Back;
-import com.example.team2021.Entity.ViewIssue;
-import com.example.team2021.Entity.Zhijigaokao;
-import com.example.team2021.Entity.gaokaozixun;
+import com.example.team2021.Entity.*;
 import com.example.team2021.Service.BackService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +23,9 @@ public class backController {
     // --------------------------------------------------------------------------------
     // 进入资料管理页面
     @GetMapping("library")
-    public String library(){
+    public String library(Model model){
+        List<Ziliaohuizong> ziliaoInfo = backService.findalllibary();
+        model.addAttribute("ziliaoInfo",ziliaoInfo);
         return "all-library_b";
     }
     // 进入资料添加页面
@@ -35,9 +34,23 @@ public class backController {
         return "add-library_b";
     }
     // 进入资料编辑页面
-    @GetMapping("editlibrary")
-    public String editlibrary(){
+    @GetMapping("editlibrary/{id}")
+    public String editlibrary(@PathVariable("id") Integer ziliaoID,Model model){
+        Ziliaohuizong ziliaoInfo = backService.updatefindziliao(ziliaoID);
+        model.addAttribute("ziliaoinfo",ziliaoInfo);
         return "edit-library_b";
+    }
+    //资料更新
+    @PostMapping("editlibrary")
+    public String editliba(Ziliaohuizong ziliaohuizong){
+        backService.updateziliao(ziliaohuizong);
+        return "redirect:/back/library";
+    }
+    // 资料删除
+    @GetMapping("deletelibrary/{id}")
+    public String deletelibrary(@PathVariable("id") Integer ziliaoID){
+        backService.deleteZiliaoinfo(ziliaoID);
+        return "redirect:/back/library";
     }
     // --------------------------------------------------------------------------------
     // 进入用户管理界面

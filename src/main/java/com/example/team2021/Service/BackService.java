@@ -1,9 +1,6 @@
 package com.example.team2021.Service;
 
-import com.example.team2021.Entity.Back;
-import com.example.team2021.Entity.ViewIssue;
-import com.example.team2021.Entity.Zhijigaokao;
-import com.example.team2021.Entity.gaokaozixun;
+import com.example.team2021.Entity.*;
 import com.github.pagehelper.PageInfo;
 
 import java.util.List;
@@ -27,5 +24,9 @@ public interface BackService {
 
 
     PageInfo<gaokaozixun> findAllzixun(Integer pageIndex, Integer pageSize);
+    List<Ziliaohuizong> findalllibary();
+    Integer deleteZiliaoinfo(Integer ziliaoID);
+    Integer updateziliao(Ziliaohuizong ziliaohuizong);
+    Ziliaohuizong updatefindziliao(Integer ziliaoID);
 
 }
