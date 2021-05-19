@@ -2,11 +2,11 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta name="referrer" content="no-referrer" />
+    <meta name="referrer" content="no-referrer"/>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>真题 </title>
+    <title>高考真题 </title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/back/images/favicon.png">
     <link rel="stylesheet" href="/back/vendor/bootstrap-select/dist/css/bootstrap-select.min.css">
@@ -52,11 +52,10 @@
     <!--**********************************
         Sidebar start
     ***********************************-->
-    <div th:replace="menu::mymenu">	</div>
+    <div th:replace="menu::mymenu"></div>
     <!--**********************************
         Sidebar end
     ***********************************-->
-
 
 
     <!--**********************************
@@ -69,7 +68,7 @@
             <div class="row page-titles mx-0">
                 <div class="col-sm-6 p-md-0">
                     <div class="welcome-text">
-                        <h4>真题 </h4>
+                        <h4>高考真题 </h4>
                     </div>
                 </div>
                 <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -84,8 +83,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="nav nav-pills mb-3">
-                        <li class="nav-item"><a href="#list-view" data-toggle="tab" class="nav-link btn-primary mr-1 show active">列表视图</a></li>
-                        <li class="nav-item"><a href="#grid-view" data-toggle="tab" class="nav-link btn-primary">网格视图</a></li>
+                        <li class="nav-item"><a href="#list-view" data-toggle="tab"
+                                                class="nav-link btn-primary mr-1 show active">列表视图</a></li>
+                        <li class="nav-item"><a href="#grid-view" data-toggle="tab"
+                                                class="nav-link btn-primary">网格视图</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-12">
@@ -108,6 +109,7 @@
                                                 <th style="min-width: 50px">类型</th>
                                                 <th style="min-width: 200px">标题</th>
                                                 <th>封面</th>
+                                                <th style="min-width: 80px">操作</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -118,31 +120,38 @@
                                                 <td th:text="${zhentiList.subject}">M.COM., P.H.D.</td>
                                                 <td th:text="${zhentiList.year}">M.COM., P.H.D.</td>
                                                 <td th:text="${zhentiList.type}">M.COM., P.H.D.</td>
-                                                <td th:text="${zhentiList.title}"><a href="javascript:void(0);"><strong>123 456 789</strong></a></td>
-                                                <td th:text="${zhentiList.cover}"><a href="javascript:void(0);"><strong>info@example.com</strong></a></td>
+                                                <td th:text="${zhentiList.title}"><a href="javascript:void(0);"><strong>123
+                                                    456 789</strong></a></td>
+                                                <td th:text="${zhentiList.cover}"><a href="javascript:void(0);"><strong>info@example.com</strong></a>
+                                                </td>
                                                 <td>
-                                                    <a th:href="@{'/back/deleteZhenti/'+${zhentiList.picId}}" class="btn btn-sm btn-danger"><i class="la la-trash-o"></i></a>
+                                                    <a th:href="@{'/back/deleteZhenti/'+${zhentiList.picId}}"
+                                                       class="btn btn-sm btn-danger"><i class="la la-trash-o"></i></a>
                                                 </td>
                                             </tr>
                                             </tbody>
                                         </table>
                                     </div>
+
                                     <!--分页部分-->
                                     <div class="styled-pagination text-center" style="margin-top: 20px">
                                         <nav aria-label="Page navigation text-center">
                                             <ul class="pagination">
                                                 <li>
-                                                    <a th:href="@{/back/courses(pageIndex=${zhentiList.pageNum-1},pageSize=6)}" aria-label="Previous">
+                                                    <a th:href="@{/back/courses(pageIndex=${zhentiList.pageNum-1},pageSize=6)}"
+                                                       aria-label="Previous">
                                                         <span aria-hidden="true">&laquo;</span>
                                                     </a>
                                                 </li>
                                                 <th:block th:each="nav:${zhentiList.navigatepageNums}">
                                                     <li th:class="${nav==zhentiList.pageNum}?'active':''">
-                                                        <a th:href="@{/back/courses(pageIndex=${nav},pageSize=6)}" th:text="${nav}"></a>
+                                                        <a th:href="@{/back/courses(pageIndex=${nav},pageSize=6)}"
+                                                           th:text="${nav}"></a>
                                                     </li>
                                                 </th:block>
                                                 <li>
-                                                    <a th:href="@{/back/courses(pageIndex=${zhentiList.pageNum+1},pageSize=6)}" aria-label="Next">
+                                                    <a th:href="@{/back/courses(pageIndex=${zhentiList.pageNum+1},pageSize=6)}"
+                                                       aria-label="Next">
                                                         <span aria-hidden="true">&raquo;</span>
                                                     </a>
                                                 </li>
@@ -179,9 +188,12 @@
                                                 <p class="text-muted" th:text="${zhentiList.year}">M.COM., P.H.D.</p>
                                                 <ul class="list-group mb-3 list-group-flush">
                                                     <li class="list-group-item px-0 d-flex justify-content-between">
-                                                        <span>封面: </span><strong><span th:text="${zhentiList.cover}">02</span></strong></li>
+                                                        <span>封面: </span><strong><span
+                                                            th:text="${zhentiList.cover}">02</span></strong></li>
                                                     <li class="list-group-item px-0 d-flex justify-content-between">
-                                                        <span class="mb-0"></span><strong><span th:text="${zhentiList.title}">+01 123 456 7890</span></strong></li>
+                                                        <span class="mb-0"></span><strong><span
+                                                            th:text="${zhentiList.title}">+01 123 456 7890</span></strong>
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>

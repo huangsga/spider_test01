@@ -12,6 +12,7 @@ import java.util.Date;
  * @version: 1.0
  * @todo:
  */
+@Data
 public class ViewIssue {
     private Integer shitiId;
     private String kemuId;

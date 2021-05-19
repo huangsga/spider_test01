@@ -2,7 +2,6 @@ package com.example.team2021.Controller;
 
 import com.example.team2021.Entity.User;
 import com.example.team2021.Entity.UserLog;
-import com.example.team2021.Entity.ViewIssue;
 import com.example.team2021.Service.UserLogService;
 import com.example.team2021.Service.UserService;
 import com.example.team2021.Service.issueService;
@@ -21,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.List;
 
 @Controller
 @RequestMapping("/main")

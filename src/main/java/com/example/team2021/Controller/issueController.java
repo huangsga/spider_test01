@@ -67,7 +67,7 @@ public class issueController {
         model.addAttribute("isShow",true);
         HttpSession session = request.getSession(true);
         session.setAttribute("kemuId",kemuId);//把用户数据保存到session对象中
-        System.out.println("登录之后：="+session.getAttribute("loginState"));
+//        System.out.println("登录之后：="+session.getAttribute("loginState"));
         PageInfo<ViewIssue> issueList = issueService.findIssueList(kemuId,pageIndex,pageSize);
         long total = issueList.getTotal();
         model.addAttribute("issueSize",total);
@@ -136,10 +136,10 @@ public class issueController {
         String kemuId = issueDetails.get(0).getKemuId();
         String jiaocaiId = issueDetails.get(0).getJiaocaiId();
         String zhangjieId = issueDetails.get(0).getZhangjieId();
-        System.out.println(kemuId+"= "+jiaocaiId+" = "+zhangjieId);
+//        System.out.println(kemuId+"= "+jiaocaiId+" = "+zhangjieId);
         List<ViewIssue> issueRand = issueService.findIssueRand(kemuId, jiaocaiId, zhangjieId);
         model.addAttribute("issueRand",issueRand);
-        System.out.println(issueRand);
+//        System.out.println(issueRand);
         return "刷题详情.html";
     }
 
@@ -186,7 +186,7 @@ public class issueController {
          */
         List<zhangJie> zhangjieNames =issueService.listZhangJie();
         model.addAttribute("zhangjieNames",zhangjieNames);
-        System.out.println(viewIssues);
+//        System.out.println(viewIssues);
         return "刷题.html";
     }
 

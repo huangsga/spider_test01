@@ -11,26 +11,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("chart")
+@RequestMapping("/chart")
 public class EchartsController {
 
     @Autowired
     private EchartsService echartsService;
 
-    @GetMapping("/show11")
+    @GetMapping("/show")
     private String showData1(Model model) {
         List<Echarts> list11 = echartsService.findMath1();
         List<Echarts> list22 = echartsService.findMath2();
-        model.addAttribute("list22", list22);
+//        List<Echarts> listALL = echartsService.findALL();
         model.addAttribute("list11", list11);
+        model.addAttribute("list22", list22);
+//        model.addAttribute("listAll",listALL);
+
         return "Echarts";
 
     }
-//    @GetMapping("/show12")
-//    private String showData2(Model model) {
-//        List<Echarts> list22 = echartsService.findMath2();
-//        model.addAttribute("list22", list22);
-//        return "Echarts";
-//
-//    }
+    @GetMapping("/showPie")
+    private String showData2() {
+        return "Echart-pie";
+    }
+    @GetMapping("/showBar")
+    private String showData3() {
+        return "Echart-bar";
+    }
+
+
 }

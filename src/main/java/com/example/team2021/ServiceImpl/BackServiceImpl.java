@@ -55,13 +55,28 @@ public class BackServiceImpl implements BackService {
     }
 
 
+//    @Override
+//    public PageInfo<ViewIssue> findAllIssue(Integer pageIndex, Integer pageSize){
+//        PageHelper.startPage(pageIndex,pageSize);//一个设置
+//        List<ViewIssue> lists = backMapper.findAllIssue();
+//        PageInfo<ViewIssue> info=new PageInfo<ViewIssue>(lists);
+//        return info;
+//    }
     @Override
-    public PageInfo<ViewIssue> findAllIssue(Integer pageIndex, Integer pageSize){
-        PageHelper.startPage(pageIndex,pageSize);//一个设置
-        List<ViewIssue> lists = backMapper.findAllIssue();
-        PageInfo<ViewIssue> info=new PageInfo<ViewIssue>(lists);
-        return info;
+    public List<ViewIssue> findAllIssue(){
+        return backMapper.findAllIssue();
     }
+
+    @Override
+    public Integer editIssue(ViewIssue viewIssue) {
+        return backMapper.editIssue(viewIssue);
+    }
+
+    @Override
+    public ViewIssue findOneIssue(Integer shitiId) {
+        return backMapper.findOneIssue(shitiId);
+    }
+
 
     @Override
     public Integer deleteIssue(Integer shitiId) {

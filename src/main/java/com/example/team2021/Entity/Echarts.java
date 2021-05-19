@@ -28,6 +28,16 @@ public class Echarts {
     private String kemuName;
     private String jiaocaiType;
 
+    private Integer count;
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
     public Integer getShitiId() {
         return shitiId;
     }

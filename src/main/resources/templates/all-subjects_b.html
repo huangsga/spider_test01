@@ -93,7 +93,6 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="card-title">试题列表 </h4>
-                                    <a href="/back/adduser" class="btn btn-primary">+ 添加试题</a>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -106,12 +105,15 @@
                                                     <th style="min-width: 150px">选项</th>
                                                     <th style="min-width: 80px">答案链接</th>
                                                     <th style="min-width: 150px">考点</th>
-                                                    <th>难度</th>
-                                                    <th>时间</th>
+                                                    <th style="min-width: 50px">难度</th>
+                                                    <th style="min-width: 100px">时间</th>
+                                                    <th style="min-width: 80px">是否删除</th>
+                                                    <th style="min-width: 80px">操作</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr th:each="issuesList:${issuesList.list}">
+<!--                                                <tr th:each="issuesList:${issuesList.list}">-->
+                                                <tr th:each="issuesList:${issuesList}">
                                                     <td th:text="${issuesList.shitiId}"></td>
                                                     <td th:text="${issuesList.jiaocaiName}"></td>
                                                     <td th:utext="${issuesList.shitiTimu}"></td>
@@ -120,8 +122,10 @@
                                                     <td th:utext="${issuesList.shitiKaodian}"></td>
                                                     <td th:text="${issuesList.shitiHard}"><a href="javascript:void(0);"><strong></strong></a></td>
                                                     <td th:text="${issuesList.shitiTime}"><a href="javascript:void(0);"><strong></strong></a></td>
+                                                    <td th:text="${issuesList.isdelete}"><a href="javascript:void(0);"><strong></strong></a></td>
                                                     <td>
-                                                        <a th:href="@{'/back/deleteIssues/'+${issuesList.shitiId}}" class="btn btn-sm btn-danger"><i class="la la-trash-o"></i></a>
+                                                        <a th:href="@{'/back/editIssue/'+${issuesList.shitiId}}" class="btn btn-sm btn-primary"><i class="la la-pencil"></i></a>
+                                                        <a th:href="@{'/back/deleteIssue/'+${issuesList.shitiId}}" class="btn btn-sm btn-danger"><i class="la la-trash-o"></i></a>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -129,27 +133,27 @@
                                     </div>
 
                                     <!--分页-->
-                                    <div class="styled-pagination text-center" style="margin-top: 20px">
-                                        <nav aria-label="Page navigation text-center">
-                                            <ul class="pagination">
-                                                <li>
-                                                    <a th:href="@{/back/backIssues(pageIndex=${issuesList.pageNum-1},pageSize=6)}" aria-label="Previous">
-                                                        <span aria-hidden="true">&laquo;</span>
-                                                    </a>
-                                                </li>
-                                                <th:block th:each="nav:${issuesList.navigatepageNums}">
-                                                    <li th:class="${nav==issuesList.pageNum}?'active':''">
-                                                        <a th:href="@{/back/backIssues(pageIndex=${nav},pageSize=6)}" th:text="${nav}"></a>
-                                                    </li>
-                                                </th:block>
-                                                <li>
-                                                    <a th:href="@{/back/backIssues(pageIndex=${issuesList.pageNum+1},pageSize=6)}" aria-label="Next">
-                                                        <span aria-hidden="true">&raquo;</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                    </div>
+<!--                                    <div class="styled-pagination text-center" style="margin-top: 20px">-->
+<!--                                        <nav aria-label="Page navigation text-center">-->
+<!--                                            <ul class="pagination">-->
+<!--                                                <li>-->
+<!--                                                    <a th:href="@{/back/backIssues(pageIndex=${issuesList.pageNum-1},pageSize=6)}" aria-label="Previous">-->
+<!--                                                        <span aria-hidden="true">&laquo;</span>-->
+<!--                                                    </a>-->
+<!--                                                </li>-->
+<!--                                                <th:block th:each="nav:${issuesList.navigatepageNums}">-->
+<!--                                                    <li th:class="${nav==issuesList.pageNum}?'active':''">-->
+<!--                                                        <a th:href="@{/back/backIssues(pageIndex=${nav},pageSize=6)}" th:text="${nav}"></a>-->
+<!--                                                    </li>-->
+<!--                                                </th:block>-->
+<!--                                                <li>-->
+<!--                                                    <a th:href="@{/back/backIssues(pageIndex=${issuesList.pageNum+1},pageSize=6)}" aria-label="Next">-->
+<!--                                                        <span aria-hidden="true">&raquo;</span>-->
+<!--                                                    </a>-->
+<!--                                                </li>-->
+<!--                                            </ul>-->
+<!--                                        </nav>-->
+<!--                                    </div>-->
 
 
                                 </div>
@@ -158,7 +162,8 @@
                         <!--网格视图-->
                         <div id="grid-view" class="tab-pane fade col-lg-12">
                             <div class="row">
-                                <div class="col-lg-4 col-md-6 col-sm-6 col-12" th:each="issuesList:${issuesList.list}">
+<!--                                <div class="col-lg-4 col-md-6 col-sm-6 col-12" th:each="issuesList:${issuesList.list}">-->
+                                <div class="col-lg-4 col-md-6 col-sm-6 col-12" th:each="issuesList:${issuesList}">
                                     <div class="card card-profile">
                                         <div class="card-header justify-content-end pb-0">
                                             <div class="dropdown">
