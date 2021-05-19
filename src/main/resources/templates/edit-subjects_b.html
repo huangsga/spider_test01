@@ -93,21 +93,21 @@
 											<input type="hidden" th:value="${issuesList.shitiId}" name="shitiId">
 											<div class="form-group">
 												<label class="form-label">教材</label>
-												<input disabled type="text" class="form-control" th:value="${issuesList.jiaocaiName}" name="jiaocaiName">
+												<input type="text" class="form-control" th:value="${issuesList.jiaocaiName}" name="jiaocaiName">
 											</div>
 										</div>
 										<div class="col-lg-12 col-md-12 col-sm-12">
 											<div class="form-group">
 												<label class="form-label">题目</label>
-												<textarea disabled class="form-control" rows="5" th:text="${issuesList.shitiTimu}" name="shitiTimu"></textarea>
+												<textarea class="form-control" rows="5" th:text="${issuesList.shitiTimu}" name="shitiTimu"></textarea>
 											</div>
 										</div>
-										<div class="col-lg-12 col-md-12 col-sm-12">
-											<div class="form-group">
-												<label class="form-label">选项</label>
-												<textarea disabled class="form-control" rows="5" th:text="${issuesList.shitiOption}" name="shitiOption">Why is Early Education Essential</textarea>
-											</div>
-										</div>
+<!--										<div class="col-lg-12 col-md-12 col-sm-12">-->
+<!--											<div class="form-group">-->
+<!--												<label class="form-label">选项</label>-->
+<!--												<textarea disabled class="form-control" rows="5" th:text="${issuesList.shitiOption}" name="shitiOption">Why is Early Education Essential</textarea>-->
+<!--											</div>-->
+<!--										</div>-->
 										<div class="col-lg-6 col-md-6 col-sm-12">
 											<div class="form-group">
 												<label class="form-label">时间</label>
@@ -117,7 +117,7 @@
 										<div class="col-lg-6 col-md-6 col-sm-12">
 											<div class="form-group">
 												<label class="form-label">答案链接</label>
-												<input disabled type="text" class="form-control" th:value="${issuesList.shitiDaanHref}" name="shitiDaanHref">
+												<input type="text" class="form-control" th:value="${issuesList.shitiDaanHref}" name="shitiDaanHref">
 											</div>
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-12">

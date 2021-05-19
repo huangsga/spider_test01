@@ -151,6 +151,7 @@ public class backController {
     // 提交试题信息修改
     @PostMapping("editIssue")
     public String editIssues(ViewIssue viewIssue){
+        System.out.println(viewIssue);
         backService.editIssue(viewIssue);
         return "redirect:/back/backIssue";
     }

@@ -101,8 +101,8 @@
                                                 <tr>
                                                     <th>ID</th>
                                                     <th style="min-width: 100px">教材</th>
-                                                    <th style="min-width: 250px">题目</th>
-                                                    <th style="min-width: 150px">选项</th>
+                                                    <th style="min-width: 350px">题目</th>
+<!--                                                    <th style="min-width: 150px">选项</th>-->
                                                     <th style="min-width: 80px">答案链接</th>
                                                     <th style="min-width: 150px">考点</th>
                                                     <th style="min-width: 50px">难度</th>
@@ -117,7 +117,7 @@
                                                     <td th:text="${issuesList.shitiId}"></td>
                                                     <td th:text="${issuesList.jiaocaiName}"></td>
                                                     <td th:utext="${issuesList.shitiTimu}"></td>
-                                                    <td th:utext="${issuesList.shitiOption}"></td>
+<!--                                                    <td th:utext="${issuesList.shitiOption}"></td>-->
                                                     <td><a target="_blank" th:href="${issuesList.shitiDaanHref}">查看答案</a></td>
                                                     <td th:utext="${issuesList.shitiKaodian}"></td>
                                                     <td th:text="${issuesList.shitiHard}"><a href="javascript:void(0);"><strong></strong></a></td>
