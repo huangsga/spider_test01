@@ -1,9 +1,6 @@
 package com.example.team2021.Mapper;
 
-import com.example.team2021.Entity.Back;
-import com.example.team2021.Entity.ViewIssue;
-import com.example.team2021.Entity.Zhijigaokao;
-import com.example.team2021.Entity.gaokaozixun;
+import com.example.team2021.Entity.*;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -45,4 +42,17 @@ public interface BackMapper {
     //查找资讯表所有资讯
     @Select("select * from gaokaozixun")
     List<gaokaozixun> findAllzixun();
+
+    // 资料
+    @Select("select * from ziliao where isdelete=0")
+    List<Ziliaohuizong> findalllibary();
+    // 资料删除
+    @Select("update ziliao set isdelete=1 where ziliaoID=#{ziliaoID}")
+    Integer deleteZiliaoinfo(Integer ziliaoID);
+    // 编辑资料
+    @Select("select * from ziliao where ziliaoID=#{ziliaoID}")
+    Ziliaohuizong updatefindziliao(Integer ziliaoID);
+    // 修改资料
+    @Select("update ziliao set title=#{title},time=sysdate(),content=#{content},subject=#{subject} where ziliaoID=#{ziliaoID}")
+    Integer updateziliao(Ziliaohuizong ziliaohuizong);
 }

@@ -1,9 +1,6 @@
 package com.example.team2021.ServiceImpl;
 
-import com.example.team2021.Entity.Back;
-import com.example.team2021.Entity.ViewIssue;
-import com.example.team2021.Entity.Zhijigaokao;
-import com.example.team2021.Entity.gaokaozixun;
+import com.example.team2021.Entity.*;
 import com.example.team2021.Mapper.BackMapper;
 import com.example.team2021.Mapper.issueMapper;
 import com.example.team2021.Service.BackService;
@@ -77,6 +74,26 @@ public class BackServiceImpl implements BackService {
         List<gaokaozixun> lists=backMapper.findAllzixun();
         PageInfo<gaokaozixun> info=new PageInfo<gaokaozixun>(lists);
         return info;
+    }
+
+    @Override
+    public List<Ziliaohuizong> findalllibary() {
+        return backMapper.findalllibary();
+    }
+
+    @Override
+    public Integer deleteZiliaoinfo(Integer ziliaoID) {
+        return backMapper.deleteZiliaoinfo(ziliaoID);
+    }
+
+    @Override
+    public Integer updateziliao(Ziliaohuizong ziliaohuizong) {
+        return backMapper.updateziliao(ziliaohuizong);
+    }
+
+    @Override
+    public Ziliaohuizong updatefindziliao(Integer ziliaoID) {
+        return backMapper.updatefindziliao(ziliaoID);
     }
 
 
