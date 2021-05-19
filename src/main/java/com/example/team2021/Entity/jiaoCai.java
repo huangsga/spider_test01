@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * @className: com.example.team2021.Entity-> jiaoCai
  * @description: 教材表
- * @author: 曾豪
+ * @author: xuhang
  * @createDate: 2021-05-08 9:59
  * @version: 1.0
  * @todo:
