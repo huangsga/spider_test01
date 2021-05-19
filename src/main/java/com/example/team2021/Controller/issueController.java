@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * @className: com.example.team2021.Controller-> issueController
  * @description: 试题
- * @author: 曾豪
+ * @author: xuhang
  * @createDate: 2021-05-07 8:39
  * @version: 1.0
  * @todo:
@@ -42,7 +42,6 @@ public class issueController {
          * @return
          */
         PageInfo<ViewIssue> allIssue = issueService.findAllIssue(pageIndex,pageSize);
-//        System.out.println(allIssue);
         model.addAttribute("isShow",false);
         long total = allIssue.getTotal();
         model.addAttribute("issueSize",total);
@@ -64,10 +63,6 @@ public class issueController {
         /**
          *带科目参数获取题目
          */
-        model.addAttribute("isShow",true);
-        HttpSession session = request.getSession(true);
-        session.setAttribute("kemuId",kemuId);//把用户数据保存到session对象中
-//        System.out.println("登录之后：="+session.getAttribute("loginState"));
         PageInfo<ViewIssue> issueList = issueService.findIssueList(kemuId,pageIndex,pageSize);
         long total = issueList.getTotal();
         model.addAttribute("issueSize",total);

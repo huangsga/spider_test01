@@ -123,21 +123,25 @@ public class HomeController {
 
         User user =userService.UserLogin(username,password);
         if(user!=null){
-            log.setUserid(user.getUserId());
-            log.setIP_Address(ip);
-            log.setOS(os.getName());
-            log.setIE(browser.getName());
-            log.setLog_Content("系统登录");
-            //写入登录日志
-            Integer i = userLogService.InsertLog(log);
-            //创建用户Session信息
-            session.setAttribute("us",user);
-            return "redirect:/main/index";
+            if (user.getPower() != null && user.getPower().equals("admin")){
+                return "redirect:/back/index";
+            }
+            else {
+                log.setUserid(user.getUserId());
+                log.setIP_Address(ip);
+                log.setOS(os.getName());
+                log.setIE(browser.getName());
+                log.setLog_Content("系统登录");
+                //写入登录日志
+                Integer i = userLogService.InsertLog(log);
+                //创建用户Session信息
+                session.setAttribute("us",user);
+                return "redirect:/main/index";
+            }
         }
         else{
             return "redirect:/main/error2";
         }
-
     }
 
 }

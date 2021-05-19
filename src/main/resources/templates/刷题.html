@@ -289,17 +289,17 @@
                 <nav aria-label="Page navigation text-center">
                     <ul class="pagination">
                         <li>
-                            <a th:href="@{/issue/main(pageIndex=${issue.pageNum-1},pageSize=6)}" aria-label="Previous">
+                            <a th:href="@{/issue/main(kemuId=${kemuId},pageIndex=${issue.pageNum-1},pageSize=6)}" aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
                         <th:block th:each="nav:${issue.navigatepageNums}">
                             <li th:class="${nav==issue.pageNum}?'active':''">
-                                <a th:href="@{/issue/main(pageIndex=${nav},pageSize=6)}" th:text="${nav}"></a>
+                                <a th:href="@{/issue/main(kemuId=${kemuId},pageIndex=${nav},pageSize=6)}" th:text="${nav}"></a>
                             </li>
                         </th:block>
                         <li>
-                            <a th:href="@{/issue/main(pageIndex=${issue.pageNum+1},pageSize=6)}" aria-label="Next">
+                            <a th:href="@{/issue/main(kemuId=${kemuId},pageIndex=${issue.pageNum+1},pageSize=6)}" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                             </a>
                         </li>

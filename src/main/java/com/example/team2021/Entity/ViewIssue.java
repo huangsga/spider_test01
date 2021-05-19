@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * @className: com.example.team2021.Entity-> ViewIssue
  * @description: 多变关联查询结果实体
- * @author: 曾豪
+ * @author: xuhang
  * @createDate: 2021-05-08 9:49
  * @version: 1.0
  * @todo:
