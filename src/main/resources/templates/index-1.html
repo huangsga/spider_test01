@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8" />
+        <script src="/js/echarts.min.js"></script>
         <title>高考学霸直通车</title>
         <!-- Stylesheets -->
         <link href="/css/bootstrap.css" rel="stylesheet" />
@@ -597,6 +598,670 @@
                 </div>
             </section>
             <!-- End Courses Section -->
+
+
+
+            <!-- Contact Section图1 -->
+            <section class="contact-section">
+                <div class="pattern-layer" style="background-image:url(images/background/pattern-19.png)"></div>
+                <div class="pattern-layer-two" style="background-image:url(images/background/pattern-20.png)"></div>
+                <div class="icon-layer-two" style="background-image:url(images/icons/icon-2.png)"></div>
+                <div class="icon-layer-three" style="background-image:url(images/icons/icon-2.png)"></div>
+                <div class="auto-container">
+                    <div class="row clearfix">
+
+                        <!-- Info Column -->
+                        <div class="info-column col-lg-4 col-md-12 col-sm-12">
+                            <div class="inner-column">
+                                <div class="icon-layer" style="background-image:url(images/icons/icon-2.png)"></div>
+                                <div class="image">
+                                    <img src="/images/resource/contact.png" alt="" />
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Form Column -->
+                        <div class="form-column col-lg-8 col-md-12 col-sm-12">
+                            <div class="inner-column">
+                                <div class="color-layer"></div>
+                                <!-- Sec Title -->
+                                <div class="sec-title">
+
+                                    <!--这是数据可视化的代码-->
+                                    <div class="container" id="main2" style="width: 600px;height: 600px;"></div>
+                                    <script type="text/javascript" th:inline="javascript">
+
+                                        option = {
+                                            tooltip: {
+                                                trigger: 'item'
+                                            },
+                                            legend: {
+                                                top: '5%',
+                                                left: 'center'
+                                            },
+                                            series: [
+                                                {
+                                                    name: '数据库试题数量',
+                                                    type: 'pie',
+                                                    radius: ['40%', '70%'],
+                                                    avoidLabelOverlap: true,
+                                                    label: {
+                                                        show: false,
+                                                        position: 'center'
+                                                    },
+                                                    emphasis: {
+                                                        label: {
+                                                            show: true,
+                                                            fontSize: '40',
+                                                            fontWeight: 'bold'
+                                                        }
+                                                    },
+                                                    labelLine: {
+                                                        show: false
+                                                    },
+                                                    data: [
+                                                        {value: 13453, name: '语文'},
+                                                        {value: 227359, name: '数学'},
+                                                        {value: 31788, name: '英语'},
+                                                        {value: 79884, name: '物理'},
+                                                        {value: 644859, name: '化学'}
+                                                    ]
+                                                }
+                                            ]
+                                        };
+
+                                        var myChart = echarts.init(document.getElementById('main2'));
+
+
+
+                                        //使用指定的配置项和数据显示图表
+
+                                        myChart.setOption(option)
+
+                                    </script>
+                                    <!--这是数据可视化的代码-->
+                                    <div class="text">
+                                        数学总试题数量： 227359题<br />
+                                        语文总试题数量： 13453题<br />
+                                        英语总试题数量： 31788题<br />
+                                        物理总试题数量： 79884题<br />
+                                        化学总试题数量： 644859题<br />
+
+                                    </div>
+
+                                </div>
+
+                                <!-- Default Form -->
+
+
+                    </div>
+                </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <!-- Contact Section图2-->
+            <section class="contact-section">
+                <div class="pattern-layer" style="background-image:url(images/background/pattern-19.png)"></div>
+                <div class="pattern-layer-two" style="background-image:url(images/background/pattern-20.png)"></div>
+                <div class="icon-layer-two" style="background-image:url(images/icons/icon-2.png)"></div>
+                <div class="icon-layer-three" style="background-image:url(images/icons/icon-2.png)"></div>
+                <div class="auto-container">
+                    <div class="row clearfix">
+
+                        <!-- Info Column -->
+                        <div class="info-column col-lg-4 col-md-12 col-sm-12">
+                            <div class="inner-column">
+                                <div class="icon-layer" style="background-image:url(images/icons/icon-2.png)"></div>
+                                <div class="image">
+                                    <img src="/images/resource/contact.png" alt="" />
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Form Column -->
+                        <div class="form-column col-lg-8 col-md-12 col-sm-12">
+                            <div class="inner-column">
+                                <div class="color-layer"></div>
+                                <!-- Sec Title -->
+                                <div class="sec-title">
+
+
+                                    <!--这是数据可视化的代码-->
+                                    <div class="container" id="main" style="width: 700px;height: 600px;"></div>
+                                    <script type="text/javascript" th:inline="javascript">
+                                        var myChart = echarts.init(document.getElementById('main'));
+
+                                        option = {
+                                            title: {
+                                                text: '试题雷达图'
+                                            },
+                                            legend: {
+                                                data: ['数学必修', '化学选修']
+                                            },
+                                            radar: {
+                                                // shape: 'circle',
+                                                indicator: [
+                                                    { name: '教材一', max: 70000},
+                                                    { name: '教材二', max: 30000},
+                                                    { name: '教材三', max: 20000},
+                                                    { name: '教材四', max: 70000},
+                                                    { name: '教材五', max: 70000},
+                                                ]
+                                            },
+                                            series: [{
+                                                name: '数学 vs 化学',
+                                                type: 'radar',
+                                                data: [
+                                                    {
+                                                        value: [62098, 14677, 7108, 16047, 65109],
+                                                        name: '数学必修'
+                                                    },
+                                                    {
+                                                        value: [22015, 18043, 17071, 57921, 21527],
+                                                        name: '化学选修'
+                                                    }
+                                                ]
+                                            }]
+                                        };
+
+
+                                        //使用指定的配置项和数据显示图表
+
+                                        myChart.setOption(option)
+
+                                    </script>
+                                    <!--这是数据可视化的代码-->
+
+
+                                    <div class="text">
+                                        数学必修一： 62098题<br />
+                                        数学必修二： 14677题<br />
+                                        数学必修三： 7108题<br />
+                                        数学必修四： 16047题<br />
+                                        数学必修五： 65109题<br />
+                                        <br />
+                                        化学选修一：22015题<br />
+                                        化学选修二：18043题<br />
+                                        化学选修三：17071题<br />
+                                        化学选修四：57921题<br />
+                                        化学选修五：21527题<br />
+
+                                    </div>
+
+
+                                </div>
+
+                                <!-- Default Form -->
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Contact Section图3-->
+            <section class="contact-section">
+                <div class="pattern-layer" style="background-image:url(images/background/pattern-19.png)"></div>
+                <div class="pattern-layer-two" style="background-image:url(images/background/pattern-20.png)"></div>
+                <div class="icon-layer-two" style="background-image:url(images/icons/icon-2.png)"></div>
+                <div class="icon-layer-three" style="background-image:url(images/icons/icon-2.png)"></div>
+                <div class="auto-container">
+                    <div class="row clearfix">
+
+                        <!-- Info Column -->
+                        <div class="info-column col-lg-4 col-md-12 col-sm-12">
+                            <div class="inner-column">
+                                <div class="icon-layer" style="background-image:url(images/icons/icon-2.png)"></div>
+                                <div class="image">
+                                    <img src="/images/resource/contact.png" alt="" />
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Form Column -->
+                        <div class="form-column col-lg-8 col-md-12 col-sm-12">
+                            <div class="inner-column">
+                                <div class="color-layer"></div>
+                                <!-- Sec Title -->
+                                <div class="sec-title">
+
+                                    <div class="text">
+                                        数学每本必修教材、每个章节试题数量<br />
+                                    </div>
+                                    <br />
+
+
+                                    <!--这是数据可视化的代码-->
+                                    <div class="container" id="main3" style="width: 700px;height: 700px;"></div>
+                                    <script type="text/javascript" th:inline="javascript">
+                                        var myChart = echarts.init(document.getElementById('main3'));
+
+                                        var app = echarts.init(document.getElementById('main3'));
+
+                                        var posList = [
+                                            'left', 'right', 'top', 'bottom',
+                                            'inside',
+                                            'insideTop', 'insideLeft', 'insideRight', 'insideBottom',
+                                            'insideTopLeft', 'insideTopRight', 'insideBottomLeft', 'insideBottomRight'
+                                        ];
+
+                                        app.configParameters = {
+                                            rotate: {
+                                                min: -90,
+                                                max: 90
+                                            },
+                                            align: {
+                                                options: {
+                                                    left: 'left',
+                                                    center: 'center',
+                                                    right: 'right'
+                                                }
+                                            },
+                                            verticalAlign: {
+                                                options: {
+                                                    top: 'top',
+                                                    middle: 'middle',
+                                                    bottom: 'bottom'
+                                                }
+                                            },
+                                            position: {
+                                                options: posList.reduce(function (map, pos) {
+                                                    map[pos] = pos;
+                                                    return map;
+                                                }, {})
+                                            },
+                                            distance: {
+                                                min: 0,
+                                                max: 100
+                                            }
+                                        };
+
+                                        app.config = {
+                                            rotate: 90,
+                                            align: 'left',
+                                            verticalAlign: 'middle',
+                                            position: 'insideBottom',
+                                            distance: 15,
+                                            onChange: function () {
+                                                var labelOption = {
+                                                    normal: {
+                                                        rotate: app.config.rotate,
+                                                        align: app.config.align,
+                                                        verticalAlign: app.config.verticalAlign,
+                                                        position: app.config.position,
+                                                        distance: app.config.distance
+                                                    }
+                                                };
+                                                myChart.setOption({
+                                                    series: [{
+                                                        label: labelOption
+                                                    }, {
+                                                        label: labelOption
+                                                    }, {
+                                                        label: labelOption
+                                                    }, {
+                                                        label: labelOption
+                                                    }]
+                                                });
+                                            }
+                                        };
+
+
+                                        var labelOption = {
+                                            show: true,
+                                            position: app.config.position,
+                                            distance: app.config.distance,
+                                            align: app.config.align,
+                                            verticalAlign: app.config.verticalAlign,
+                                            rotate: app.config.rotate,
+                                            formatter: '{c}  {name|{a}}',
+                                            fontSize: 16,
+                                            rich: {
+                                                name: {
+                                                }
+                                            }
+                                        };
+
+                                        option = {
+                                            tooltip: {
+                                                trigger: 'axis',
+                                                axisPointer: {
+                                                    type: 'shadow'
+                                                }
+                                            },
+                                            legend: {
+                                                data: ['第一章', '第二章', '第三章', '第四章']
+                                            },
+                                            toolbox: {
+                                                show: true,
+                                                orient: 'vertical',
+                                                left: 'right',
+                                                top: 'center',
+                                                feature: {
+                                                    mark: {show: true},
+                                                    dataView: {show: true, readOnly: false},
+                                                    magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+                                                    restore: {show: true},
+                                                    saveAsImage: {show: true}
+                                                }
+                                            },
+                                            xAxis: [
+                                                {
+                                                    type: 'category',
+                                                    axisTick: {show: false},
+                                                    data: ['必修一', '必修二', '必修三', '必修四','必修五']
+                                                }
+                                            ],
+                                            yAxis: [
+                                                {
+                                                    type: 'value'
+                                                }
+                                            ],
+                                            series: [
+                                                {
+                                                    name: '第一章',
+                                                    type: 'bar',
+                                                    barGap: 0,
+                                                    label: labelOption,
+                                                    emphasis: {
+                                                        focus: 'series'
+                                                    },
+                                                    data:  [21451, 6475, 1781,8678,18822]
+
+                                                },
+                                                {
+                                                    name: '第二章',
+                                                    type: 'bar',
+                                                    label: labelOption,
+                                                    emphasis: {
+                                                        focus: 'series'
+                                                    },
+                                                    data:[6871, 2870, 2539,3485,23084]
+
+                                                },
+                                                {
+                                                    name: '第三章',
+                                                    type: 'bar',
+                                                    label: labelOption,
+                                                    emphasis: {
+                                                        focus: 'series'
+                                                    },
+                                                    data: [4071, 3055, 2788,3884,22767]
+
+                                                },
+                                                {
+                                                    name: '第四章',
+                                                    type: 'bar',
+                                                    label: labelOption,
+                                                    emphasis: {
+                                                        focus: 'series'
+                                                    },
+                                                    data:[0, 1982, 0, 0,436]
+
+                                                }
+                                            ]
+                                        };
+
+                                        //使用指定的配置项和数据显示图表
+
+                                        myChart.setOption(option)
+
+                                    </script>
+                                    <!--这是数据可视化的代码-->
+
+
+                                </div>
+
+                                <!-- Default Form -->
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <!-- Contact Section图4-->
+            <section class="contact-section">
+                <div class="pattern-layer" style="background-image:url(images/background/pattern-19.png)"></div>
+                <div class="pattern-layer-two" style="background-image:url(images/background/pattern-20.png)"></div>
+                <div class="icon-layer-two" style="background-image:url(images/icons/icon-2.png)"></div>
+                <div class="icon-layer-three" style="background-image:url(images/icons/icon-2.png)"></div>
+                <div class="auto-container">
+                    <div class="row clearfix">
+
+                        <!-- Info Column -->
+                        <div class="info-column col-lg-4 col-md-12 col-sm-12">
+                            <div class="inner-column">
+                                <div class="icon-layer" style="background-image:url(images/icons/icon-2.png)"></div>
+                                <div class="image">
+                                    <img src="/images/resource/contact.png" alt="" />
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Form Column -->
+                        <div class="form-column col-lg-8 col-md-12 col-sm-12">
+                            <div class="inner-column">
+                                <div class="color-layer"></div>
+                                <!-- Sec Title -->
+                                <div class="sec-title">
+
+                                    <div class="text">
+                                        化学每本必修、选修教材、每个章节试题数量<br />
+                                    </div>
+                                    <br />
+
+
+                                    <!--这是数据可视化的代码-->
+                                    <div class="container" id="main4" style="width: 700px;height: 700px;"></div>
+                                    <script type="text/javascript" th:inline="javascript">
+                                        var myChart = echarts.init(document.getElementById('main4'));
+
+                                        var app = echarts.init(document.getElementById('main4'));
+
+                                        var posList = [
+                                            'left', 'right', 'top', 'bottom',
+                                            'inside',
+                                            'insideTop', 'insideLeft', 'insideRight', 'insideBottom',
+                                            'insideTopLeft', 'insideTopRight', 'insideBottomLeft', 'insideBottomRight'
+                                        ];
+
+                                        app.configParameters = {
+                                            rotate: {
+                                                min: -90,
+                                                max: 90
+                                            },
+                                            align: {
+                                                options: {
+                                                    left: 'left',
+                                                    center: 'center',
+                                                    right: 'right'
+                                                }
+                                            },
+                                            verticalAlign: {
+                                                options: {
+                                                    top: 'top',
+                                                    middle: 'middle',
+                                                    bottom: 'bottom'
+                                                }
+                                            },
+                                            position: {
+                                                options: posList.reduce(function (map, pos) {
+                                                    map[pos] = pos;
+                                                    return map;
+                                                }, {})
+                                            },
+                                            distance: {
+                                                min: 0,
+                                                max: 100
+                                            }
+                                        };
+
+                                        app.config = {
+                                            rotate: 90,
+                                            align: 'left',
+                                            verticalAlign: 'middle',
+                                            position: 'insideBottom',
+                                            distance: 15,
+                                            onChange: function () {
+                                                var labelOption = {
+                                                    normal: {
+                                                        rotate: app.config.rotate,
+                                                        align: app.config.align,
+                                                        verticalAlign: app.config.verticalAlign,
+                                                        position: app.config.position,
+                                                        distance: app.config.distance
+                                                    }
+                                                };
+                                                myChart.setOption({
+                                                    series: [{
+                                                        label: labelOption
+                                                    }, {
+                                                        label: labelOption
+                                                    }, {
+                                                        label: labelOption
+                                                    }, {
+                                                        label: labelOption
+                                                    }]
+                                                });
+                                            }
+                                        };
+
+
+                                        var labelOption = {
+                                            show: true,
+                                            position: app.config.position,
+                                            distance: app.config.distance,
+                                            align: app.config.align,
+                                            verticalAlign: app.config.verticalAlign,
+                                            rotate: app.config.rotate,
+                                            formatter: '{c}  {name|{a}}',
+                                            fontSize: 16,
+                                            rich: {
+                                                name: {
+                                                }
+                                            }
+                                        };
+
+                                        option = {
+                                            tooltip: {
+                                                trigger: 'axis',
+                                                axisPointer: {
+                                                    type: 'shadow'
+                                                }
+                                            },
+                                            legend: {
+                                                data: ['第一章', '第二章', '第三章', '第四章']
+                                            },
+                                            toolbox: {
+                                                show: true,
+                                                orient: 'vertical',
+                                                left: 'right',
+                                                top: 'center',
+                                                feature: {
+                                                    mark: {show: true},
+                                                    dataView: {show: true, readOnly: false},
+                                                    magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+                                                    restore: {show: true},
+                                                    saveAsImage: {show: true}
+                                                }
+                                            },
+                                            xAxis: [
+                                                {
+                                                    type: 'category',
+                                                    axisTick: {show: false},
+                                                    data: ['必修一', '必修二', '选修一', '选修二','选修三']
+                                                }
+                                            ],
+                                            yAxis: [
+                                                {
+                                                    type: 'value'
+                                                }
+                                            ],
+                                            series: [
+                                                {
+                                                    name: '第一章',
+                                                    type: 'bar',
+                                                    barGap: 0,
+                                                    label: labelOption,
+                                                    emphasis: {
+                                                        focus: 'series'
+                                                    },
+                                                    data:  [28810, 54087, 5348,1308,10894]
+
+                                                },
+                                                {
+                                                    name: '第二章',
+                                                    type: 'bar',
+                                                    label: labelOption,
+                                                    emphasis: {
+                                                        focus: 'series'
+                                                    },
+                                                    data:[26565, 14058, 1385,13372,1092]
+
+                                                },
+                                                {
+                                                    name: '第三章',
+                                                    type: 'bar',
+                                                    label: labelOption,
+                                                    emphasis: {
+                                                        focus: 'series'
+                                                    },
+                                                    data: [19730, 17521, 8557,2056,5085]
+                                                },
+                                                {
+                                                    name: '第四章',
+                                                    type: 'bar',
+                                                    label: labelOption,
+                                                    emphasis: {
+                                                        focus: 'series'
+                                                    },
+                                                    data:[17766, 5867, 6725, 1307,0]
+                                                }
+                                            ]
+                                        };
+
+                                        //使用指定的配置项和数据显示图表
+
+                                        myChart.setOption(option)
+
+                                    </script>
+                                    <!--这是数据可视化的代码-->
+
+
+                                </div>
+
+                                <!-- Default Form -->
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+
 
 
             <!-- 底部 -->

@@ -253,45 +253,40 @@
                                 <div class="container" id="main2" style="width: 1000px;height: 600px;"></div>
                                 <script type="text/javascript" th:inline="javascript">
 
-
-                                    option = {
-                                        title: {
-                                            text: '试题雷达图'
-                                        },
-                                        legend: {
-                                            data: ['必修一教材', '必修二教材']
-                                        },
-                                        radar: {
-                                            // shape: 'circle',
-                                            indicator: [
-                                                { name: '语文（Chinese）', max: 6500},
-                                                { name: '数学（Math）', max: 16000},
-                                                { name: '英语（English）', max: 30000},
-                                                { name: '物理（Physics）', max: 38000},
-                                                { name: '化学（Chemistry）', max: 52000},
-                                            ]
-                                        },
-                                        series: [{
-                                            name: '预算 vs 开销（Budget vs spending）',
-                                            type: 'radar',
-                                            data: [
-                                                {
-                                                    value: [4200, 3000, 20000, 35000, 50000, 18000],
-                                                    name: '必修一教材'
-                                                },
-                                                {
-                                                    value: [5000, 14000, 28000, 26000, 42000, 21000],
-                                                    name: '必修二教材'
-                                                }
-                                            ]
-                                        }]
-                                    };
-
-
-
                                     var myChart = echarts.init(document.getElementById('main2'));
 
-
+									option = {
+										title: {
+											text: '试题雷达图'
+										},
+										legend: {
+											data: ['数学必修', '化学选修']
+										},
+										radar: {
+											// shape: 'circle',
+											indicator: [
+												{ name: '教材一', max: 70000},
+												{ name: '教材二', max: 70000},
+												{ name: '教材三', max: 70000},
+												{ name: '教材四', max: 70000},
+												{ name: '教材五', max: 70000},
+											]
+										},
+										series: [{
+											name: '数学 vs 化学',
+											type: 'radar',
+											data: [
+												{
+													value: [62098, 14677, 7108, 16047, 65109],
+													name: '数学必修'
+												},
+												{
+													value: [22015, 18043, 17071, 57921, 21527],
+													name: '化学选修'
+												}
+											]
+										}]
+									};
 
                                     //使用指定的配置项和数据显示图表
 

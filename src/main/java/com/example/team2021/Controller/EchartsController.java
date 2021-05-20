@@ -44,5 +44,8 @@ public class EchartsController {
         return "思维导图";
     }
 
-
+    @GetMapping("/show1")
+    private String show1() {
+        return "可视化1";
+    }
 }
