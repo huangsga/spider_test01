@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"><script src="/js/echarts.min.js"></script>
+    <title>可视化展示</title>
+    <!-- Stylesheets -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="/js/respond.js"></script><![endif]-->
+
+
+</head>
+
+<body class="hidden-bar-wrapper">
+
+<div class="page-wrapper">
+
+    <!-- Preloader -->
+    <div class="preloader"></div>
+
+
+    <!-- 头部-->
+    <header class="main-header">
+        <div th:replace="menu::indexmenu"></div>
+    </header>
+
+    <!-- Main Header / Header Style Two -->
+    <!-- End Main Header -->
+
+    <!-- Sidebar Cart Item -->
+    <div class="xs-sidebar-group info-group">
+        <div class="xs-overlay xs-bg-black"></div>
+        <div class="xs-sidebar-widget">
+            <div class="sidebar-widget-container">
+                <div class="widget-heading">
+                    <a href="#" class="close-side-widget">
+                        X
+                    </a>
+                </div>
+                <div class="sidebar-textwidget">
+
+                    <!-- Sidebar Info Content -->
+                    <div class="sidebar-info-contents">
+                        <div class="content-inner">
+                            <div class="logo">
+                                <a href="index.html"><img src="/images/logo-2.png" alt="" /></a>
+                            </div>
+                            <div class="content-box">
+                                <h2>About Us</h2>
+                                <p class="text">The argument in favor of using filler text goes something like this: If you use real content in the Consulting Process, anytime you reach a review point you’ll end up reviewing and negotiating the content itself and not the design.</p>
+                                <a href="#" class="theme-btn btn-style-two"><span class="txt">Consultation</span></a>
+                            </div>
+                            <div class="contact-info">
+                                <h2>Contact Info</h2>
+                                <ul class="list-style-two">
+                                    <li><span class="icon fa fa-location-arrow"></span>Chicago 12, Melborne City, USA</li>
+                                    <li><span class="icon fa fa-phone"></span>(111) 111-111-1111</li>
+                                    <li><span class="icon fa fa-envelope"></span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7e121b1c1f0c173e19131f1712501d1113">[email&#160;protected]</a></li>
+                                    <li><span class="icon fa fa-clock-o"></span>Week Days: 09.00 to 18.00 Sunday: Closed</li>
+                                </ul>
+                            </div>
+                            <!-- Social Box -->
+                            <ul class="social-box">
+                                <li class="facebook"><a href="#" class="fa fa-facebook-f"></a></li>
+                                <li class="twitter"><a href="#" class="fa fa-twitter"></a></li>
+                                <li class="linkedin"><a href="#" class="fa fa-linkedin"></a></li>
+                                <li class="instagram"><a href="#" class="fa fa-instagram"></a></li>
+                                <li class="youtube"><a href="#" class="fa fa-youtube"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END sidebar widget item -->
+
+    <!-- Banner Section Three -->
+    <section class="banner-section-three">
+        <div class="pattern-layer-two" style="background-image: url(images/background/pattern-21.png)"></div>
+        <div class="auto-container">
+            <!-- Page Breadcrumb -->
+            <ul class="page-breadcrumb">
+                <li><a href="/main/index">主页</a></li>
+                <li>个人中心</li>
+            </ul>
+
+        </div>
+    </section>
+    <!-- End Banner Section Three -->
+
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="pattern-layer" style="background-image:url(images/background/pattern-19.png)"></div>
+        <div class="pattern-layer-two" style="background-image:url(images/background/pattern-20.png)"></div>
+        <div class="icon-layer-two" style="background-image:url(images/icons/icon-2.png)"></div>
+        <div class="icon-layer-three" style="background-image:url(images/icons/icon-2.png)"></div>
+        <div class="auto-container">
+            <div class="row clearfix">
+
+                <!-- Info Column -->
+                <div class="info-column col-lg-4 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="icon-layer" style="background-image:url(images/icons/icon-2.png)"></div>
+                        <div class="image">
+                            <img src="/images/resource/contact.png" alt="" />
+                        </div>
+
+
+
+
+                        <!--这是数据可视化的代码-->
+                        <div class="container" id="main" style="width: 2000px;height: 1000px;"></div>
+                        <script type="text/javascript" th:inline="javascript">
+                            var myChart = echarts.init(document.getElementById('main'));
+                            myChart.showLoading();
+
+                            var data = {
+                                "name": "物理必修一",
+                                "children": [
+                                    {
+                                        "name": "第一章运动的描述",
+                                        "children": [
+                                            {"name": "1.1 机械运动"},
+                                            {"name": "1.2 质点的认识"},
+                                            {"name": "1.3 参考系"},
+                                            {"name": "1.4 坐标系"},
+                                            {"name": "2.1 时间与时刻"},
+                                            {"name": "2.2 位移与路程"},
+                                            {"name": "2.3 矢量和标量"},
+                                            {"name": "3.1 速度"},
+                                            {"name": "3.2 速率"},
+                                            {"name": "3.3 平均速度和瞬时速度"},
+                                            {"name": "3.5 匀速直线运动及其公式、图像"},
+                                            {"name": "4.1 电火花计时器、电磁打点计时器"},
+                                            {"name": "4.3 实验：探究小车速度随时间变化的规律"},
+                                            {"name": "5.2 加速度和速度的关系"},
+                                            ]
+                                    },
+                                    {
+                                        "name": "第二章匀变速直线运动的研究",
+                                        "children": [
+                                            {"name": "2.1 研究匀变速直线运动"},
+                                            {"name": "2.2 匀变速直线运动的速度公式"},
+                                            {"name": "2.3 v-t图像"},
+                                            {"name": "3.1 匀变速直线运动的位移公式"},
+                                            {"name": "3.4 其他运动图像"},
+                                            {"name": "4.1 匀变速直线运动的位移与速度的关系"},
+                                            {"name": "4.2 匀变速直线运动的推导公式"},
+                                            {"name": "4.3 匀变速直线运动规律的综合运用"},
+                                            {"name": "5.1 自由落体运动"},
+                                            {"name": "5.2 竖直上抛运动"},
+                                            {"name": "6.1 伽利略研究自由落体运动的实验和推理方法"}
+                                        ]
+                                    },
+                                    {
+                                        "name": "第三章相互作用",
+                                        "children": [
+                                            {"name": "1.1 力的概念及其表示方式"},
+                                            {"name": "1.3 重力"},
+                                            {"name": "1.4 重心"},
+                                            {"name": "2.1 形变和弹性形变"},
+                                            {"name": "2.2 物体的弹性和弹力"},
+                                            {"name": "2.3 弹力的产生条件"},
+                                            {"name": "2.4 弹力的种类和方向"},
+                                            {"name": "2.5 弹力的大小"},
+                                            {"name": "2.6 探究弹力和弹簧伸长的关系"},
+                                            {"name": "2.7 胡克定律"},
+                                            {"name": "3.1 静摩擦力和最大静摩擦力"},
+                                            {"name": "3.2 滑动摩擦力、动摩擦因数"},
+                                            {"name": "3.3 摩擦力的产生条件"},
+                                            {"name": "3.5 静摩擦力的计算"},
+                                            {"name": "3.6 滑动摩擦力"},
+                                            {"name": "4.1 合力和分力"},
+                                            {"name": "4.3 力的合成"},
+                                            {"name": "5.1 力的分解"}
+                                        ]
+                                    },
+                                    {
+                                        "name": "第四章牛顿运动定律",
+                                        "children": [
+                                            {"name": "1.1 对力和运动关系的探究"},
+                                            {"name": "1.2 理想实验"},
+                                            {"name": "1.3 牛顿第一定律"},
+                                            {"name": "1.4 惯性"},
+                                            {"name": "2.1 加速度与力、质量的关系式"},
+                                            {"name": "3.1 牛顿第二定律"},
+                                            {"name": "4.1 力学单位制"},
+                                            {"name": "5.1 作用力和反作用力"},
+                                            {"name": "5.2 牛顿第三定律"},
+                                            {"name": "5.3 受力分析"},
+                                            {"name": "5.4 平衡力"},
+                                            {"name": "6.1 从受力确定运动情况"},
+                                            {"name": "6.2 从运动情况确定受力"},
+                                            {"name": "7.1 共点力的平衡"},
+                                            {"name": "7.2 超重"},
+                                            {"name": "7.3 失重"},
+                                            {"name": "7.4 牛顿运动定律的应用"}
+                                        ]
+                                    }
+                                ]
+                            };
+
+                            var data2 = {
+                                "name": "物理必修二",
+                                "children": [
+                                    {
+                                        "name": "第一章曲线运动",
+                                        "children": [
+                                            {"name": "7.1 平抛运动"},
+                                            {"name": "7.2 斜抛运动"},
+                                            {"name": "8.1 实验：研究平抛运动"},
+                                            {"name": "9.1 线速度"},
+                                            {"name": "9.2 角速度"},
+                                            {"name": "9.4 周期、频率、转速"},
+                                            {"name": "9.5 匀速圆周运动"},
+                                            {"name": "10.1 向心加速度"},
+                                            {"name": "11.1 向心力"},
+                                            {"name": "12.2 拱桥"},
+                                            {"name": "12.4 离心现象"},
+                                            {"name": "12.5 单摆"},
+                                            {"name": "12.6 生活中的圆周运动"},
+                                        ]
+                                    },
+                                    {
+                                        "name": "第二章万有引力与航天",
+                                        "children": [
+                                            {"name": "1.1 开普勒第一定律"},
+                                            {"name": "1.2 开普勒第二定律"},
+                                            {"name": "1.3 开普勒第三定律"},
+                                            {"name": "2.1 万有引力定律的推导"},
+                                            {"name": "3.1 万有引力定律及其应用"},
+                                            {"name": "3.2 万有引力常量"},
+                                            {"name": "4.1 计算天体质量与密度"},
+                                            {"name": "4.2 发现未知天体"},
+                                            {"name": "4.3 地球卫星"},
+                                            {"name": "4.4 地球同步卫星"},
+                                            {"name": "5.1 第一宇宙速度、第二宇宙速度和第三宇宙速度"},
+                                            {"name": "6.1 经典力学的局限性"}
+                                        ]
+                                    },
+                                    {
+                                        "name": "第三章机械守恒定律",
+                                        "children": [
+                                            {"name": "1.1 能量守恒的探究"},
+                                            {"name": "2.1 功"},
+                                            {"name": "2.2 功的计算"},
+                                            {"name": "2.3 正功和负功的区别"},
+                                            {"name": "3.1 功率"},
+                                            {"name": "3.2 额定功率和实际功率的区别"},
+                                            {"name": "3.3 平均功率和瞬时功率"},
+                                            {"name": "4.1 重力势能"},
+                                            {"name": "5.1 弹性势能"},
+                                            {"name": "6.1 探究功与速度变化的关系"},
+                                            {"name": "7.1 动能"},
+                                            {"name": "7.2 动能定理"},
+                                            {"name": "8.1 机械能"},
+                                            {"name": "8.2 机械能守恒定律"},
+                                            {"name": "8.3 机械能守恒定律的守恒条件"},
+                                            {"name": "9.1 验证机械能守恒定律"},
+                                            {"name": "10.1 功能关系"},
+                                            {"name": "10.2 能量转化与守恒定律"}
+                                        ]
+                                    }
+                                ]
+                            };
+
+                            myChart.hideLoading();
+
+                            myChart.setOption(option = {
+                                tooltip: {
+                                    trigger: 'item',
+                                    triggerOn: 'mousemove'
+                                },
+                                legend: {
+                                    top: '2%',
+                                    left: '3%',
+                                    orient: 'vertical',
+                                    data: [{
+                                        name: '物理必修一',
+                                        icon: 'rectangle'
+                                    },
+                                        {
+                                            name: '物理必修二',
+                                            icon: 'rectangle'
+                                        }],
+                                    borderColor: '#c23531'
+                                },
+                                series:[
+                                    {
+                                        type: 'tree',
+
+                                        name: '物理必修一',
+
+                                        data: [data],
+
+                                        top: '5%',
+                                        left: '7%',
+                                        bottom: '2%',
+                                        right: '60%',
+
+                                        symbolSize: 7,
+
+                                        label: {
+                                            position: 'left',
+                                            verticalAlign: 'middle',
+                                            align: 'right'
+                                        },
+
+                                        leaves: {
+                                            label: {
+                                                position: 'right',
+                                                verticalAlign: 'middle',
+                                                align: 'left'
+                                            }
+                                        },
+
+                                        emphasis: {
+                                            focus: 'descendant'
+                                        },
+
+                                        expandAndCollapse: true,
+
+                                        animationDuration: 550,
+                                        animationDurationUpdate: 750
+
+                                    },
+                                    {
+                                        type: 'tree',
+                                        name: '物理必修二',
+                                        data: [data2],
+
+                                        top: '20%',
+                                        left: '60%',
+                                        bottom: '22%',
+                                        right: '18%',
+
+                                        symbolSize: 7,
+
+                                        label: {
+                                            position: 'left',
+                                            verticalAlign: 'middle',
+                                            align: 'right'
+                                        },
+
+                                        leaves: {
+                                            label: {
+                                                position: 'right',
+                                                verticalAlign: 'middle',
+                                                align: 'left'
+                                            }
+                                        },
+
+                                        expandAndCollapse: true,
+
+                                        emphasis: {
+                                            focus: 'descendant'
+                                        },
+
+                                        animationDuration: 550,
+                                        animationDurationUpdate: 750
+                                    }
+                                ]
+                            });
+
+
+                            //使用指定的配置项和数据显示图表
+
+                            myChart.setOption(option)
+
+                        </script>
+                        <!--这是数据可视化的代码-->
+
+
+
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="form-column col-lg-8 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="color-layer"></div>
+                        <!-- Sec Title -->
+                        <div class="sec-title">
+                            <h2> 思维导图的优点 </h2>
+                            <h5> 1、思维导图因为与大脑发散性思维关系紧密，最主要的作用是可以改善人类的记忆与发散思维。
+
+                                2、对于抽象思维能力较差的学生，思维导图独特的“图像记忆”，帮助学生更容易记住知识。
+
+                                3、可应用的范围十分广泛，曾有国外博客做过调查，总结了思维导图常用的10大领域：待办事宜、准备演示、做笔记、问题解决、项目计划、做决定、知识管理、项目管理、个人思考和写作。 </h5>
+                        </div>
+
+                        <!-- Default Form -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Contact Section -->
+
+    <!-- Main Footer -->
+    <!-- 底部 -->
+    <footer class="main-footer">
+        <div th:replace="menu::indexfooter"></div>
+    </footer>
+</div>
+
+</div>
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-up"></span></div>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/js/jquery.fancybox.js"></script>
+<script src="/js/appear.js"></script>
+<script src="/js/parallax.min.js"></script>
+<script src="/js/tilt.jquery.min.js"></script>
+<script src="/js/jquery.paroller.min.js"></script>
+<script src="/js/owl.js"></script>
+<script src="/js/wow.js"></script>
+<script src="/js/nav-tool.js"></script>
+<script src="/js/jquery-ui.js"></script>
+<script src="/js/script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+

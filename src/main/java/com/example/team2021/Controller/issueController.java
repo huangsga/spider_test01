@@ -42,7 +42,6 @@ public class issueController {
          * @return
          */
         PageInfo<ViewIssue> allIssue = issueService.findAllIssue(pageIndex,pageSize);
-        model.addAttribute("isShow",false);
         long total = allIssue.getTotal();
         model.addAttribute("issueSize",total);
         model.addAttribute("issue", allIssue);
@@ -89,6 +88,7 @@ public class issueController {
         model.addAttribute("zhangjieNames",zhangjieNames);
         return "刷题.html";
     }
+
     @GetMapping("/main/{kemuId}/{jiaocaiId}")
     public String getIssueLists(@PathVariable("kemuId") String kemuId,@PathVariable("jiaocaiId")String jiaocaiId, Model model) {
         List<ViewIssue> zhangjieName = issueService.findZhangjieName(kemuId, jiaocaiId);
