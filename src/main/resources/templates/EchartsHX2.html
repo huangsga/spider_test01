@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"><script src="/js/echarts.min.js"></script>
+    <title>可视化展示</title>
+    <!-- Stylesheets -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="/js/respond.js"></script><![endif]-->
+
+
+</head>
+
+<body class="hidden-bar-wrapper">
+
+<div class="page-wrapper">
+
+    <!-- Preloader -->
+    <div class="preloader"></div>
+
+
+    <!-- 头部-->
+    <header class="main-header">
+        <div th:replace="menu::indexmenu"></div>
+    </header>
+
+    <!-- Main Header / Header Style Two -->
+    <!-- End Main Header -->
+
+    <!-- Sidebar Cart Item -->
+    <div class="xs-sidebar-group info-group">
+        <div class="xs-overlay xs-bg-black"></div>
+        <div class="xs-sidebar-widget">
+            <div class="sidebar-widget-container">
+                <div class="widget-heading">
+                    <a href="#" class="close-side-widget">
+                        X
+                    </a>
+                </div>
+                <div class="sidebar-textwidget">
+
+                    <!-- Sidebar Info Content -->
+                    <div class="sidebar-info-contents">
+                        <div class="content-inner">
+                            <div class="logo">
+                                <a href="index.html"><img src="/images/logo-2.png" alt="" /></a>
+                            </div>
+                            <div class="content-box">
+                                <h2>About Us</h2>
+                                <p class="text">The argument in favor of using filler text goes something like this: If you use real content in the Consulting Process, anytime you reach a review point you’ll end up reviewing and negotiating the content itself and not the design.</p>
+                                <a href="#" class="theme-btn btn-style-two"><span class="txt">Consultation</span></a>
+                            </div>
+                            <div class="contact-info">
+                                <h2>Contact Info</h2>
+                                <ul class="list-style-two">
+                                    <li><span class="icon fa fa-location-arrow"></span>Chicago 12, Melborne City, USA</li>
+                                    <li><span class="icon fa fa-phone"></span>(111) 111-111-1111</li>
+                                    <li><span class="icon fa fa-envelope"></span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7e121b1c1f0c173e19131f1712501d1113">[email&#160;protected]</a></li>
+                                    <li><span class="icon fa fa-clock-o"></span>Week Days: 09.00 to 18.00 Sunday: Closed</li>
+                                </ul>
+                            </div>
+                            <!-- Social Box -->
+                            <ul class="social-box">
+                                <li class="facebook"><a href="#" class="fa fa-facebook-f"></a></li>
+                                <li class="twitter"><a href="#" class="fa fa-twitter"></a></li>
+                                <li class="linkedin"><a href="#" class="fa fa-linkedin"></a></li>
+                                <li class="instagram"><a href="#" class="fa fa-instagram"></a></li>
+                                <li class="youtube"><a href="#" class="fa fa-youtube"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END sidebar widget item -->
+
+    <!-- Banner Section Three -->
+    <section class="banner-section-three">
+        <div class="pattern-layer-two" style="background-image: url(images/background/pattern-21.png)"></div>
+        <div class="auto-container">
+            <!-- Page Breadcrumb -->
+            <ul class="page-breadcrumb">
+                <li><a href="/main/index">主页</a></li>
+                <li>个人中心</li>
+            </ul>
+
+        </div>
+    </section>
+    <!-- End Banner Section Three -->
+
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="pattern-layer" style="background-image:url(images/background/pattern-19.png)"></div>
+        <div class="pattern-layer-two" style="background-image:url(images/background/pattern-20.png)"></div>
+        <div class="icon-layer-two" style="background-image:url(images/icons/icon-2.png)"></div>
+        <div class="icon-layer-three" style="background-image:url(images/icons/icon-2.png)"></div>
+        <div class="auto-container">
+            <div class="row clearfix">
+
+                <!-- Info Column -->
+                <div class="info-column col-lg-4 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="icon-layer" style="background-image:url(images/icons/icon-2.png)"></div>
+                        <div class="image">
+                            <img src="/images/resource/contact.png" alt="" />
+                        </div>
+
+
+
+
+                        <!--这是数据可视化的代码-->
+                        <div class="container" id="main" style="width: 2000px;height: 2000px;"></div>
+                        <script type="text/javascript" th:inline="javascript">
+
+                            var myChart = echarts.init(document.getElementById('main'));
+                            myChart.showLoading();
+
+                            var data = {
+                                "name": "化学选修1",
+                                "children": [
+                                    {
+                                        "name": "第一章 从实验学化学",
+                                        "children": [
+                                            {"name": "1.2 糖类"},
+                                            {"name": "1.3 葡萄糖"},
+                                            {"name": "1.4 蔗糖"},
+                                            {"name": "1.5 麦芽糖"},
+                                            {"name": "1.6 淀粉"},
+                                            {"name": "1.7 纤维素"},
+                                            {"name": "3.1 蛋白质"},
+                                            {"name": "3.2 氨基酸"},
+                                            {"name": "4.1 维生素"},
+                                            {"name": "4.2 维生素A"},
+                                            {"name": "4.3 维生素B"},
+                                            {"name": "4.4 维生素C"},
+                                            {"name": "4.5 维生素D"},
+                                            {"name": "4.6 生活中的元素（常量元素、微量元素）"},
+                                            {"name": "4.7 微量元素——碘"},
+                                            {"name": "4.8 微量元素——铁"}
+                                        ]
+                                    },
+                                    {
+                                        "name": "第二章 化学物质及其变化",
+                                        "children": [
+
+                                            {"name": "1.1 合理膳食"},
+                                            {"name": "1.2 水在人体的作用"},
+                                            {"name": "1.3 食物酸碱性"},
+                                            {"name": "1.4 食品添加剂的使用"},
+                                            {"name": "1.8 营养强化剂"},
+                                            {"name": "2.1 正确使用药物"},
+                                            {"name": "2.2 人工合成药物"},
+                                            {"name": "2.3 天然药物"},
+                                            {"name": "2.4 毒品"}
+                                        ]
+                                    },
+                                    {
+                                        "name": "第三章 金属及其化合物",
+                                        "children": [
+                                            {"name": "1.1 合金的特点"},
+                                            {"name": "1.2 铁合金"},
+                                            {"name": "1.3 铝合金"},
+                                            {"name": "1.4 铜合金"},
+                                            {"name": "1.5 新型合金"},
+                                            {"name": "2.1 金属的化学腐蚀"},
+                                            {"name": "2.2 金属的电化学腐蚀"},
+                                            {"name": "2.3 金属的表面防护"},
+                                            {"name": "2.4 金属的电化学防护"},
+                                            {"name": "3.1 玻璃"},
+                                            {"name": "3.2 陶瓷"},
+                                            {"name": "3.3 水泥"},
+                                            {"name": "3.4 光导纤维"},
+                                            {"name": "3.5 新型材料（新型陶瓷、单晶硅等）"},
+                                            {"name": "4.1 塑料、纤维、橡胶"},
+                                            {"name": "4.2 纤维"},
+                                            {"name": "4.4 合成纤维"},
+                                            {"name": "4.5 天然橡胶"},
+                                            {"name": "4.6 合成橡胶"},
+                                            {"name": "4.7 复合材料"}
+                                        ]
+                                    },
+                                    {
+                                        "name": "第四章 非金属及其化合物",
+                                        "children": [
+                                            {"name": "1.1 大气污染、改善大气质量"},
+                                            {"name": "1.5 臭氧"},
+                                            {"name": "1.6 室内空气污染"},
+                                            {"name": "2.1 水体污染、爱护水资源"},
+                                            {"name": "2.3 水的净化与处理"},
+                                            {"name": "3.1 垃圾资源处理"}
+                                        ]
+                                    },
+                                ]
+                            };
+
+                            var data2 = {
+                                "name": "化学选修2",
+                                "children": [
+                                    {
+                                        "name": "第一章 物质结构元素周期律",
+                                        "children": [
+                                            {"name": "1.4 反应条件及设备的选择"},
+                                            {"name": "1.7 化学平衡"},
+                                            {"name": "1.8 生产中三废的处理"},
+                                            {"name": "2.1 天然固氮"},
+                                            {"name": "2.2 合成氨（人工固氮）"},
+                                            {"name": "2.3 合成氨的反应原理"},
+                                            {"name": "2.7 合成氨工业的发展——原料及原料气的净化"},
+                                            {"name": "2.8 合成氨工业的发展——催化剂的改进"},
+                                            {"name": "2.9 合成氨工业的发展——环境保护"},
+                                            {"name": "3.1 纯碱在生产生活中的应用"},
+                                            {"name": "3.5 联合制碱法——侯氏制碱法"}
+                                        ]
+                                    },
+                                    {
+                                        "name": "第二章 化学反应与能量",
+                                        "children": [
+                                            {"name": "1.1 天然水的净化——混凝沉淀"},
+                                            {"name": "1.2 天然水的净化——过滤"},
+                                            {"name": "1.3 天然水的净化——杀菌"},
+                                            {"name": "1.6 硬水软化——加热法"},
+                                            {"name": "1.7 硬水软化——药剂法"},
+                                            {"name": "1.8 硬水软化——离子交换法"},
+                                            {"name": "1.9 硬水软化——再生"},
+                                            {"name": "1.13 海水淡化——蒸馏法"},
+                                            {"name": "1.14 海水淡化——电渗析法"},
+                                            {"name": "2.1 海水制盐"},
+                                            {"name": "2.2 食盐资源的利用"},
+                                            {"name": "2.3 阳离子交换膜"},
+                                            {"name": "2.4 阴离子交换膜"},
+                                            {"name": "2.5 食盐精制"},
+                                            {"name": "2.6 海水提溴——氯化"},
+                                            {"name": "2.7 海水提溴——吹出"},
+                                            {"name": "2.8 海水提溴——吸收"},
+                                            {"name": "2.9 海水提镁"},
+                                            {"name": "2.10 从海水中提取重水——蒸馏法"},
+                                            {"name": "2.11 从海水中提取重水——电解法"},
+                                            {"name": "2.12 从海水中提取重水——化学交换法"},
+                                            {"name": "2.13 从海水中提取重水——吸附法"},
+                                            {"name": "3.1 石油的炼制和石油化工——常压蒸馏"},
+                                            {"name": "3.2 石油的炼制和石油化工——催化裂化"},
+                                            {"name": "3.3 石油的炼制和石油化工——减压蒸馏"},
+                                            {"name": "3.5 馏分"},
+                                            {"name": "3.6 裂化"},
+                                            {"name": "3.8 煤的综合利用——煤的干馏"},
+                                            {"name": "3.9 煤的综合利用——煤的气化"},
+                                            {"name": "3.10 煤的综合利用——煤的液化"}
+
+                                        ]
+                                    },
+                                    {
+                                        "name": "第三章 有机化合物",
+                                        "children": [
+                                            {"name": "1.1 玻璃、陶瓷、水泥"},
+                                            {"name": "1.4 石墨、金刚石、C60"},
+                                            {"name": "2.1 金属的冶炼"},
+                                            {"name": "2.2 冶铁"},
+                                            {"name": "2.4 铝的冶炼"},
+                                            {"name": "2.5 金属功能材料"},
+                                            {"name": "3.1 天然高分子化合物"},
+                                            {"name": "3.2 合成高分子化合物"},
+                                            {"name": "3.3 加聚反应"},
+                                            {"name": "3.6 聚合度"},
+                                            {"name": "3.9 缩聚反应"},
+                                            {"name": "3.11 塑料的改性"},
+                                            {"name": "3.12 功能高分子材料"},
+                                            {"name": "3.14 高分子材料的老化及其保护"},
+                                            {"name": "3.16 废旧高分子材料的回收利用"}
+                                        ]
+                                    },
+                                    {
+                                        "name": "第四章 化学与自然资源的开发利用",
+                                        "children": [
+                                            {"name": "1.1 氮肥"},
+                                            {"name": "1.2 磷肥"},
+                                            {"name": "1.3 钾肥"},
+                                            {"name": "1.4 复合肥料"},
+                                            {"name": "1.5 微量元素肥料"},
+                                            {"name": "1.6 玻璃微肥"},
+                                            {"name": "1.7 农药"},
+                                            {"name": "1.8 杀虫剂"},
+                                            {"name": "1.9 环境友好农药"},
+                                            {"name": "1.10 杀菌剂"},
+                                            {"name": "1.11 除草剂"},
+                                            {"name": "1.12 乙烯利"},
+                                            {"name": "1.13 化肥农药的合理使用与环境保护"},
+                                            {"name": "2.1 精细化学品的使用"},
+                                            {"name": "2.10 水污染及其治理"},
+                                            {"name": "2.4 合成洗涤剂"},
+                                            {"name": "2.5 新药的研究开发"}                                        ]
+                                    }
+                                ]
+                            };
+
+                            myChart.hideLoading();
+
+                            myChart.setOption(option = {
+                                tooltip: {
+                                    trigger: 'item',
+                                    triggerOn: 'mousemove'
+                                },
+                                legend: {
+                                    top: '2%',
+                                    left: '3%',
+                                    orient: 'vertical',
+                                    data: [{
+                                        name: '化学必修1',
+                                        icon: 'rectangle'
+                                    },
+                                        {
+                                            name: '化学必修2',
+                                            icon: 'rectangle'
+                                        }],
+                                    borderColor: '#c23531'
+                                },
+                                series:[
+                                    {
+                                        type: 'tree',
+
+                                        name: '化学必修1',
+
+                                        data: [data],
+
+                                        top: '5%',
+                                        left: '7%',
+                                        bottom: '2%',
+                                        right: '60%',
+
+                                        symbolSize: 7,
+
+                                        label: {
+                                            position: 'left',
+                                            verticalAlign: 'middle',
+                                            align: 'right'
+                                        },
+
+                                        leaves: {
+                                            label: {
+                                                position: 'right',
+                                                verticalAlign: 'middle',
+                                                align: 'left'
+                                            }
+                                        },
+
+                                        emphasis: {
+                                            focus: 'descendant'
+                                        },
+
+                                        expandAndCollapse: true,
+
+                                        animationDuration: 550,
+                                        animationDurationUpdate: 750
+
+                                    },
+                                    {
+                                        type: 'tree',
+                                        name: '化学必修2',
+                                        data: [data2],
+
+                                        top: '20%',
+                                        left: '60%',
+                                        bottom: '22%',
+                                        right: '18%',
+
+                                        symbolSize: 7,
+
+                                        label: {
+                                            position: 'left',
+                                            verticalAlign: 'middle',
+                                            align: 'right'
+                                        },
+
+                                        leaves: {
+                                            label: {
+                                                position: 'right',
+                                                verticalAlign: 'middle',
+                                                align: 'left'
+                                            }
+                                        },
+
+                                        expandAndCollapse: true,
+
+                                        emphasis: {
+                                            focus: 'descendant'
+                                        },
+
+                                        animationDuration: 550,
+                                        animationDurationUpdate: 750
+                                    }
+                                ]
+                            });
+
+
+
+
+
+
+
+                            //使用指定的配置项和数据显示图表
+
+                            myChart.setOption(option)
+
+                        </script>
+                        <!--这是数据可视化的代码-->
+
+
+
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="form-column col-lg-8 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="color-layer"></div>
+                        <!-- Sec Title -->
+                        <div class="sec-title">
+                            <h2> 思维导图的优点 </h2>
+                            <h5> 1、思维导图因为与大脑发散性思维关系紧密，最主要的作用是可以改善人类的记忆与发散思维。
+
+                                2、对于抽象思维能力较差的学生，思维导图独特的“图像记忆”，帮助学生更容易记住知识。
+
+                                3、可应用的范围十分广泛，曾有国外博客做过调查，总结了思维导图常用的10大领域：待办事宜、准备演示、做笔记、问题解决、项目计划、做决定、知识管理、项目管理、个人思考和写作。 </h5>
+                        </div>
+
+                        <!-- Default Form -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Contact Section -->
+
+    <!-- Main Footer -->
+    <!-- 底部 -->
+    <footer class="main-footer">
+        <div th:replace="menu::indexfooter"></div>
+    </footer>
+</div>
+
+</div>
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-up"></span></div>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/js/jquery.fancybox.js"></script>
+<script src="/js/appear.js"></script>
+<script src="/js/parallax.min.js"></script>
+<script src="/js/tilt.jquery.min.js"></script>
+<script src="/js/jquery.paroller.min.js"></script>
+<script src="/js/owl.js"></script>
+<script src="/js/wow.js"></script>
+<script src="/js/nav-tool.js"></script>
+<script src="/js/jquery-ui.js"></script>
+<script src="/js/script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"><script src="/js/echarts.min.js"></script>
+    <title>可视化展示</title>
+    <!-- Stylesheets -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="/js/respond.js"></script><![endif]-->
+
+
+</head>
+
+<body class="hidden-bar-wrapper">
+
+<div class="page-wrapper">
+
+    <!-- Preloader -->
+    <div class="preloader"></div>
+
+
+    <!-- 头部-->
+    <header class="main-header">
+        <div th:replace="menu::indexmenu"></div>
+    </header>
+
+    <!-- Main Header / Header Style Two -->
+    <!-- End Main Header -->
+
+    <!-- Sidebar Cart Item -->
+    <div class="xs-sidebar-group info-group">
+        <div class="xs-overlay xs-bg-black"></div>
+        <div class="xs-sidebar-widget">
+            <div class="sidebar-widget-container">
+                <div class="widget-heading">
+                    <a href="#" class="close-side-widget">
+                        X
+                    </a>
+                </div>
+                <div class="sidebar-textwidget">
+
+                    <!-- Sidebar Info Content -->
+                    <div class="sidebar-info-contents">
+                        <div class="content-inner">
+                            <div class="logo">
+                                <a href="index.html"><img src="/images/logo-2.png" alt="" /></a>
+                            </div>
+                            <div class="content-box">
+                                <h2>About Us</h2>
+                                <p class="text">The argument in favor of using filler text goes something like this: If you use real content in the Consulting Process, anytime you reach a review point you’ll end up reviewing and negotiating the content itself and not the design.</p>
+                                <a href="#" class="theme-btn btn-style-two"><span class="txt">Consultation</span></a>
+                            </div>
+                            <div class="contact-info">
+                                <h2>Contact Info</h2>
+                                <ul class="list-style-two">
+                                    <li><span class="icon fa fa-location-arrow"></span>Chicago 12, Melborne City, USA</li>
+                                    <li><span class="icon fa fa-phone"></span>(111) 111-111-1111</li>
+                                    <li><span class="icon fa fa-envelope"></span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7e121b1c1f0c173e19131f1712501d1113">[email&#160;protected]</a></li>
+                                    <li><span class="icon fa fa-clock-o"></span>Week Days: 09.00 to 18.00 Sunday: Closed</li>
+                                </ul>
+                            </div>
+                            <!-- Social Box -->
+                            <ul class="social-box">
+                                <li class="facebook"><a href="#" class="fa fa-facebook-f"></a></li>
+                                <li class="twitter"><a href="#" class="fa fa-twitter"></a></li>
+                                <li class="linkedin"><a href="#" class="fa fa-linkedin"></a></li>
+                                <li class="instagram"><a href="#" class="fa fa-instagram"></a></li>
+                                <li class="youtube"><a href="#" class="fa fa-youtube"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END sidebar widget item -->
+
+    <!-- Banner Section Three -->
+    <section class="banner-section-three">
+        <div class="pattern-layer-two" style="background-image: url(images/background/pattern-21.png)"></div>
+        <div class="auto-container">
+            <!-- Page Breadcrumb -->
+            <ul class="page-breadcrumb">
+                <li><a href="/main/index">主页</a></li>
+                <li>个人中心</li>
+            </ul>
+
+        </div>
+    </section>
+    <!-- End Banner Section Three -->
+
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="pattern-layer" style="background-image:url(images/background/pattern-19.png)"></div>
+        <div class="pattern-layer-two" style="background-image:url(images/background/pattern-20.png)"></div>
+        <div class="icon-layer-two" style="background-image:url(images/icons/icon-2.png)"></div>
+        <div class="icon-layer-three" style="background-image:url(images/icons/icon-2.png)"></div>
+        <div class="auto-container">
+            <div class="row clearfix">
+
+                <!-- Info Column -->
+                <div class="info-column col-lg-4 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="icon-layer" style="background-image:url(images/icons/icon-2.png)"></div>
+                        <div class="image">
+                            <img src="/images/resource/contact.png" alt="" />
+                        </div>
+
+
+
+
+                        <!--这是数据可视化的代码-->
+                        <div class="container" id="main" style="width: 2000px;height: 2000px;"></div>
+                        <script type="text/javascript" th:inline="javascript">
+
+                            var myChart = echarts.init(document.getElementById('main'));
+                            myChart.showLoading();
+
+                            var data = {
+                                "name": "化学选修3",
+                                "children": [
+                                    {
+                                        "name": "第一章 从实验学化学",
+                                        "children": [
+                                            {"name": "1.1 原子质量"},
+                                            {"name": "1.3 核外电子数"},
+                                            {"name": "1.4 能层和能级"},
+                                            {"name": "1.5 电子排布式"},
+                                            {"name": "1.6 轨道表示式"},
+                                            {"name": "1.7 基态与激发态、光谱"},
+                                            {"name": "1.8 构造原理"},
+                                            {"name": "1.9 能量最低原理"},
+                                            {"name": "1.10 泡利原理"},
+                                            {"name": "1.11 洪特规则"},
+                                            {"name": "1.12 电子云和原子轨道"},
+                                            {"name": "2.1 元素周期表"},
+                                            {"name": "2.2 元素周期律"},
+                                            {"name": "2.3 原子半径"},
+                                            {"name": "2.4 离子半径"},
+                                            {"name": "2.5 电离能"},
+                                            {"name": "2.6 电负性"}
+                                        ]
+                                    },
+                                    {
+                                        "name": "第二章 化学物质及其变化",
+                                        "children": [
+
+                                            {"name": "1.3 共用电子对"},
+                                            {"name": "1.5 σ键、π键"},
+                                            {"name": "1.6 键能、键长、键角"},
+                                            {"name": "1.7 等电子原理"},
+                                            {"name": "2.2 无机分子的立体结构"},
+                                            {"name": "2.3 价层电子对互斥理论"},
+                                            {"name": "2.4 杂化轨道理论（中心原子杂化方式）"},
+                                            {"name": "2.5 配合物理论"},
+                                            {"name": "3.5 溶解性"},
+                                            {"name": "3.6 手性（手性碳原子）"},
+                                            {"name": "3.7 无机含氧酸分子的酸性"}
+                                        ]
+                                    },
+                                    {
+                                        "name": "第三章 金属及其化合物",
+                                        "children": [
+                                            {"name": "1.1 晶体和非晶体"},
+                                            {"name": "1.2 晶体的自范性"},
+                                            {"name": "1.3 晶体物理性质的各向异性"},
+                                            {"name": "1.4 晶胞"},
+                                            {"name": "2.1 分子晶体及其结构特征"},
+                                            {"name": "2.2 原子晶体及其结构特征"},
+                                            {"name": "3.1 金属键及其特征"},
+                                            {"name": "3.2 金属晶体及其物理性质变化规律"},
+                                            {"name": "4.1 离子晶体及其物理性质"},
+                                            {"name": "4.3 晶格能及其应用"}
+                                        ]
+                                    },
+
+                                ]
+                            };
+
+                            var data2 = {
+                                "name": "化学选修4",
+                                "children": [
+                                    {
+                                        "name": "第一章 物质结构元素周期律",
+                                        "children": [
+                                            {"name": "1.1 焓变、反应热"},
+                                            {"name": "1.4 热化学方程式的书写及正误判断"},
+                                            {"name": "1.6 中和热的测定"},
+                                            {"name": "2.1 燃烧热"},
+                                            {"name": "2.2 燃料和能源（氢能、风能、核能、太阳能等）"},
+                                            {"name": "3.1 盖斯定律及其应用"},
+                                            {"name": "3.2 化学反应热的计算"}
+                                        ]
+                                    },
+                                    {
+                                        "name": "第二章 化学反应与能量",
+                                        "children": [
+                                            {"name": "1.1 化学反应速率的概念及简单计算"},
+                                            {"name": "1.2 化学反应速率与化学计量数之间的关系"},
+                                            {"name": "2.1 影响化学反应速率的因素"},
+                                            {"name": "2.2 催化作用"},
+                                            {"name": "2.3 催化剂的选择性"},
+                                            {"name": "2.4 活化分子、活化能、有效碰撞"},
+                                            {"name": "3.1 可逆反应与不可逆反应"},
+                                            {"name": "3.2 可逆过程"},
+                                            {"name": "3.5 勒夏特列原理及其应用"},
+                                            {"name": "3.6 平衡移动方向与反应物转化率的关系"},
+                                            {"name": "3.7 影响化学平衡的因素"},
+                                            {"name": "3.8 等效平衡"},
+                                            {"name": "3.9 化学平衡常数"},
+                                            {"name": "3.10 化学平衡常数计算"},
+                                            {"name": "3.11 合成氨条件的选择"},
+                                            {"name": "3.12 化学反应速率与化学平衡图象的综合应用"},
+                                            {"name": "4.1 熵；熵变"},
+                                            {"name": "4.3 焓；焓变"},
+                                            {"name": "4.5 化学反应进行的方向"}
+
+                                        ]
+                                    },
+                                    {
+                                        "name": "第三章 有机化合物",
+                                        "children": [
+                                            {"name": "1.1 强、弱电解质的概念"},
+                                            {"name": "1.2 弱电解质的电离"},
+                                            {"name": "1.3 弱电解质的电离度"},
+                                            {"name": "1.4 弱电解质电离的影响因素"},
+                                            {"name": "1.5 弱电解质的电离平衡"},
+                                            {"name": "1.6 电离平衡常数及其应用"},
+                                            {"name": "1.7 强酸和弱酸的比较"},
+                                            {"name": "1.8 强、弱电解质电离方程式的书写"},
+                                            {"name": "2.1 水的电离平衡和离子积的概念"},
+                                            {"name": "2.2 影响水电离的因素"},
+                                            {"name": "2.3 溶液的酸碱性与pH的关系"},
+                                            {"name": "2.4 溶液pH的计算"},
+                                            {"name": "2.5 测定溶液pH的方法"},
+                                            {"name": "2.6 pH试纸"},
+                                            {"name": "2.8 酸碱指示剂的变色范围"},
+                                            {"name": "2.9 酸碱中和滴定"},
+                                            {"name": "3.1 盐类水解的实质和规律"},
+                                            {"name": "3.2 盐类水解判断溶液酸碱性或比较溶液pH的大小"},
+                                            {"name": "3.3 粒子浓度大小的比较"},
+                                            {"name": "3.5 影响盐类水解的因素"},
+                                            {"name": "3.6 盐类水解方程式的书写"},
+                                            {"name": "3.8 双水解"},
+                                            {"name": "4.1 影响沉淀溶解平衡的因素"},
+                                            {"name": "4.4 沉淀反应的应用——沉淀的转化"},
+                                            {"name": "4.6 溶度积的有关计算"}
+                                        ]
+                                    },
+                                    {
+                                        "name": "第四章 化学与自然资源的开发利用",
+                                        "children": [
+                                            {"name": "1.1 原电池及其构成条件"},
+                                            {"name": "1.2 原电池工作原理的实验探究"},
+                                            {"name": "1.3 原电池正、负极的判断方法"},
+                                            {"name": "1.4 原电池电极反应式的书写技巧"},
+                                            {"name": "1.6 电解质溶液的离子流向"},
+                                            {"name": "1.8 原电池的设计"},
+                                            {"name": "1.9 原电池原理的应用"},
+                                            {"name": "3.1 电解池原理"},
+                                            {"name": "3.3 电解池电极反应式的书写"},
+                                            {"name": "3.4 电解饱和氯化钠溶液"},
+                                            {"name": "3.5 电镀"},
+                                            {"name": "3.6 电解精炼铜"},
+                                            {"name": "3.7 电冶金"},
+                                            {"name": "4.1 金属的腐蚀"},
+                                            {"name": "4.3 金属防护的方法"}                                   ]
+                                    }
+                                ]
+                            };
+
+                            myChart.hideLoading();
+
+                            myChart.setOption(option = {
+                                tooltip: {
+                                    trigger: 'item',
+                                    triggerOn: 'mousemove'
+                                },
+                                legend: {
+                                    top: '2%',
+                                    left: '3%',
+                                    orient: 'vertical',
+                                    data: [{
+                                        name: '化学必修1',
+                                        icon: 'rectangle'
+                                    },
+                                        {
+                                            name: '化学必修2',
+                                            icon: 'rectangle'
+                                        }],
+                                    borderColor: '#c23531'
+                                },
+                                series:[
+                                    {
+                                        type: 'tree',
+
+                                        name: '化学必修1',
+
+                                        data: [data],
+
+                                        top: '5%',
+                                        left: '7%',
+                                        bottom: '2%',
+                                        right: '60%',
+
+                                        symbolSize: 7,
+
+                                        label: {
+                                            position: 'left',
+                                            verticalAlign: 'middle',
+                                            align: 'right'
+                                        },
+
+                                        leaves: {
+                                            label: {
+                                                position: 'right',
+                                                verticalAlign: 'middle',
+                                                align: 'left'
+                                            }
+                                        },
+
+                                        emphasis: {
+                                            focus: 'descendant'
+                                        },
+
+                                        expandAndCollapse: true,
+
+                                        animationDuration: 550,
+                                        animationDurationUpdate: 750
+
+                                    },
+                                    {
+                                        type: 'tree',
+                                        name: '化学必修2',
+                                        data: [data2],
+
+                                        top: '20%',
+                                        left: '60%',
+                                        bottom: '22%',
+                                        right: '18%',
+
+                                        symbolSize: 7,
+
+                                        label: {
+                                            position: 'left',
+                                            verticalAlign: 'middle',
+                                            align: 'right'
+                                        },
+
+                                        leaves: {
+                                            label: {
+                                                position: 'right',
+                                                verticalAlign: 'middle',
+                                                align: 'left'
+                                            }
+                                        },
+
+                                        expandAndCollapse: true,
+
+                                        emphasis: {
+                                            focus: 'descendant'
+                                        },
+
+                                        animationDuration: 550,
+                                        animationDurationUpdate: 750
+                                    }
+                                ]
+                            });
+
+
+
+
+
+
+
+                            //使用指定的配置项和数据显示图表
+
+                            myChart.setOption(option)
+
+                        </script>
+                        <!--这是数据可视化的代码-->
+
+
+
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="form-column col-lg-8 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="color-layer"></div>
+                        <!-- Sec Title -->
+                        <div class="sec-title">
+                            <h2> 思维导图的优点 </h2>
+                            <h5> 1、思维导图因为与大脑发散性思维关系紧密，最主要的作用是可以改善人类的记忆与发散思维。
+
+                                2、对于抽象思维能力较差的学生，思维导图独特的“图像记忆”，帮助学生更容易记住知识。
+
+                                3、可应用的范围十分广泛，曾有国外博客做过调查，总结了思维导图常用的10大领域：待办事宜、准备演示、做笔记、问题解决、项目计划、做决定、知识管理、项目管理、个人思考和写作。 </h5>
+                        </div>
+
+                        <!-- Default Form -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Contact Section -->
+
+    <!-- Main Footer -->
+    <!-- 底部 -->
+    <footer class="main-footer">
+        <div th:replace="menu::indexfooter"></div>
+    </footer>
+</div>
+
+</div>
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-up"></span></div>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/js/jquery.fancybox.js"></script>
+<script src="/js/appear.js"></script>
+<script src="/js/parallax.min.js"></script>
+<script src="/js/tilt.jquery.min.js"></script>
+<script src="/js/jquery.paroller.min.js"></script>
+<script src="/js/owl.js"></script>
+<script src="/js/wow.js"></script>
+<script src="/js/nav-tool.js"></script>
+<script src="/js/jquery-ui.js"></script>
+<script src="/js/script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
