@@ -37,7 +37,9 @@ public class EchartsController {
     private String showData3() {
         return "Echart-bar";
     }
-    @GetMapping("/showWuli")
+    @GetMapping("/showHX1")
+    private String showHx1(){return "EchartsHX1";}
+    @GetMapping("owWuli")
     private String showWuli() {
         return "思维导图";
     }

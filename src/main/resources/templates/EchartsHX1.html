@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"><script src="/js/echarts.min.js"></script>
+    <title>可视化展示</title>
+    <!-- Stylesheets -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="/js/respond.js"></script><![endif]-->
+
+
+</head>
+
+<body class="hidden-bar-wrapper">
+
+<div class="page-wrapper">
+
+    <!-- Preloader -->
+    <div class="preloader"></div>
+
+
+    <!-- 头部-->
+    <header class="main-header">
+        <div th:replace="menu::indexmenu"></div>
+    </header>
+
+    <!-- Main Header / Header Style Two -->
+    <!-- End Main Header -->
+
+    <!-- Sidebar Cart Item -->
+    <div class="xs-sidebar-group info-group">
+        <div class="xs-overlay xs-bg-black"></div>
+        <div class="xs-sidebar-widget">
+            <div class="sidebar-widget-container">
+                <div class="widget-heading">
+                    <a href="#" class="close-side-widget">
+                        X
+                    </a>
+                </div>
+                <div class="sidebar-textwidget">
+
+                    <!-- Sidebar Info Content -->
+                    <div class="sidebar-info-contents">
+                        <div class="content-inner">
+                            <div class="logo">
+                                <a href="index.html"><img src="/images/logo-2.png" alt="" /></a>
+                            </div>
+                            <div class="content-box">
+                                <h2>About Us</h2>
+                                <p class="text">The argument in favor of using filler text goes something like this: If you use real content in the Consulting Process, anytime you reach a review point you’ll end up reviewing and negotiating the content itself and not the design.</p>
+                                <a href="#" class="theme-btn btn-style-two"><span class="txt">Consultation</span></a>
+                            </div>
+                            <div class="contact-info">
+                                <h2>Contact Info</h2>
+                                <ul class="list-style-two">
+                                    <li><span class="icon fa fa-location-arrow"></span>Chicago 12, Melborne City, USA</li>
+                                    <li><span class="icon fa fa-phone"></span>(111) 111-111-1111</li>
+                                    <li><span class="icon fa fa-envelope"></span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7e121b1c1f0c173e19131f1712501d1113">[email&#160;protected]</a></li>
+                                    <li><span class="icon fa fa-clock-o"></span>Week Days: 09.00 to 18.00 Sunday: Closed</li>
+                                </ul>
+                            </div>
+                            <!-- Social Box -->
+                            <ul class="social-box">
+                                <li class="facebook"><a href="#" class="fa fa-facebook-f"></a></li>
+                                <li class="twitter"><a href="#" class="fa fa-twitter"></a></li>
+                                <li class="linkedin"><a href="#" class="fa fa-linkedin"></a></li>
+                                <li class="instagram"><a href="#" class="fa fa-instagram"></a></li>
+                                <li class="youtube"><a href="#" class="fa fa-youtube"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END sidebar widget item -->
+
+    <!-- Banner Section Three -->
+    <section class="banner-section-three">
+        <div class="pattern-layer-two" style="background-image: url(images/background/pattern-21.png)"></div>
+        <div class="auto-container">
+            <!-- Page Breadcrumb -->
+            <ul class="page-breadcrumb">
+                <li><a href="/main/index">主页</a></li>
+                <li>个人中心</li>
+            </ul>
+
+        </div>
+    </section>
+    <!-- End Banner Section Three -->
+
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="pattern-layer" style="background-image:url(images/background/pattern-19.png)"></div>
+        <div class="pattern-layer-two" style="background-image:url(images/background/pattern-20.png)"></div>
+        <div class="icon-layer-two" style="background-image:url(images/icons/icon-2.png)"></div>
+        <div class="icon-layer-three" style="background-image:url(images/icons/icon-2.png)"></div>
+        <div class="auto-container">
+            <div class="row clearfix">
+
+                <!-- Info Column -->
+                <div class="info-column col-lg-4 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="icon-layer" style="background-image:url(images/icons/icon-2.png)"></div>
+                        <div class="image">
+                            <img src="/images/resource/contact.png" alt="" />
+                        </div>
+
+
+
+
+                        <!--这是数据可视化的代码-->
+                        <div class="container" id="main" style="width: 2000px;height: 2000px;"></div>
+                        <script type="text/javascript" th:inline="javascript">
+
+                            var myChart = echarts.init(document.getElementById('main'));
+                            myChart.showLoading();
+
+                            var data = {
+                                "name": "化学必修1",
+                                "children": [
+                                    {
+                                        "name": "第一章 从实验学化学",
+                                        "children": [
+                                            {"name": "1.1 化学实验安全"},
+                                            {"name": "1.2 化学实验室安全规则及药品的一些标识"},
+                                            {"name": "1.3 药品的取用和保存"},
+                                            {"name": "1.4 化学药品的变质"},
+                                            {"name": "1.5 化学实验常见事故的处理方法"},
+                                            {"name": "1.6 基本仪器的使用"},
+                                            {"name": "1.7 仪器装置的连接及气密性的检查"},
+                                            {"name": "1.8 过滤"},
+                                            {"name": "1.9 蒸发和结晶"},
+                                            {"name": "1.10 粗盐的提纯"},
+                                            {"name": "1.11 蒸馏"},
+                                            {"name": "1.12 实验室制取蒸馏水"},
+                                            {"name": "1.13 萃取"},
+                                            {"name": "1.14 分液"},
+                                            {"name": "1.15 溴的萃取"},
+                                            {"name": "1.16 碘的萃取"},
+                                            {"name": "1.18 离子的检验"},
+                                            {"name": "1.19 物质的检验"},
+                                            {"name": "2.1 物质的量"},
+                                            {"name": "2.2 物质的量的单位——摩尔"},
+                                            {"name": "2.3 摩尔质量"},
+                                            {"name": "2.4 阿伏加德罗常数"},
+                                            {"name": "2.5 气体摩尔体积"},
+                                            {"name": "2.6 阿伏加德罗定律"},
+                                            {"name": "2.7 物质的量浓度"},
+                                            {"name": "2.9 配制一定物质的量浓度的溶液"},
+                                            {"name": "2.10 物质的量的有关计算"}
+
+                                        ]
+                                    },
+                                    {
+                                        "name": "第二章 化学物质及其变化",
+                                        "children": [
+
+                                            {"name": "1.1 物质的简单分类"},
+                                            {"name": "1.2 化学反应基本类型的简单分类"},
+                                            {"name": "1.3 溶液及其计算"},
+                                            {"name": "1.4 胶体及其性质"},
+                                            {"name": "1.5 浊液"},
+                                            {"name": "2.1 导电性（单质、溶液、熔融状态导电）"},
+                                            {"name": "2.2 电解质、非电解质"},
+                                            {"name": "2.3 离子反应定义"},
+                                            {"name": "2.4 质量守恒定律"},
+                                            {"name": "2.6 化学方程式的书写"},
+                                            {"name": "2.7 离子方程式的书写"},
+                                            {"name": "2.8 离子共存"},
+                                            {"name": "2.9 电离方程式的书写"},
+                                            {"name": "3.1 氧化还原反应的定义"},
+                                            {"name": "3.2 氧化还原反应的配平"},
+                                            {"name": "3.3 氧化还原反应的本质和特征"},
+                                            {"name": "3.4 氧化还原反应的表示方法"},
+                                            {"name": "3.5 氧化还原反应与基本反应类型的关系"},
+                                            {"name": "3.6 元素的化合价"},
+                                            {"name": "3.7 氧化反应、还原反应"},
+                                            {"name": "3.8 氧化剂、还原剂"},
+                                            {"name": "3.9 氧化产物、还原产物"},
+                                            {"name": "3.11 氧化性、还原性强弱的比较"},
+                                            {"name": "3.13 氧化还原反应的计算"}
+
+                                        ]
+                                    },
+                                    {
+                                        "name": "第三章 金属及其化合物",
+                                        "children": [
+                                            {"name": "1.1 钠的物理性质和化学性质"},
+                                            {"name": "1.2 碱金属的性质"},
+                                            {"name": "1.3 铝的物理性质"},
+                                            {"name": "1.4 铝的化学性质和冶炼"},
+                                            {"name": "1.5 其他金属的性质"},
+                                            {"name": "1.6 金属的有关计算"},
+                                            {"name": "2.1 氧化钠的物理性质"},
+                                            {"name": "2.2 氧化钠的化学性质"},
+                                            {"name": "2.3 过氧化钠的物理性质"},
+                                            {"name": "2.4 过氧化钠的化学性质"},
+                                            {"name": "2.5 碳酸钠的物理性质"},
+                                            {"name": "2.6 碳酸钠的化学性质"},
+                                            {"name": "2.8 碳酸氢钠的物理性质"},
+                                            {"name": "2.9 碳酸氢钠的化学性质"},
+                                            {"name": "2.10 碳酸钠和碳酸氢钠的性质比较"},
+                                            {"name": "2.11 焰色反应"},
+                                            {"name": "2.12 氧化铝的应用"},
+                                            {"name": "2.13 氧化铝的物理性质"},
+                                            {"name": "2.14 氧化铝的化学性质"},
+                                            {"name": "2.15 氢氧化铝的物理性质"},
+                                            {"name": "2.16 氢氧化铝的化学性质"},
+                                            {"name": "2.17 氢氧化铝的应用"},
+                                            {"name": "2.18 氢氧化铝的制备"},
+                                            {"name": "2.20 氧化亚铁的物理性质"},
+                                            { "name": "2.21 氧化亚铁的化学性质"},
+                                            {"name": "2.22 铁的氧化物性质"},
+                                            {"name": "2.23 氧化铁的应用"},
+                                            {"name": "2.24 四氧化三铁的物理性质"},
+                                            {"name": "2.25 四氧化三铁的化学性质"},
+                                            {"name": "2.26 氢氧化亚铁的物理性质"},
+                                            {"name": "2.27 氢氧化亚铁的化学性质"},
+                                            {"name": "2.28 铁的氢氧化物性质"},
+                                            {"name": "2.29 氢氧化亚铁的制备"},
+                                            {"name": "2.30 氢氧化铁胶体的制备"},
+                                            {"name": "2.31 Fe2+和Fe3+的检验"},
+                                            {"name": "2.32 亚铁盐的物理性质"},
+                                            {"name": "2.33 亚铁盐的化学性质"},
+                                            {"name": "3.2 合金的概念"},
+                                            {"name": "3.3 合金的种类"},
+                                            {"name": "3.4 合金的性能及其应用"}
+
+                                        ]
+                                    },
+                                    {
+                                        "name": "第四章 非金属及其化合物",
+                                        "children": [
+                                            {"name": "1.1 金属资源的开采及其污染治理"},
+                                            {"name": "1.2 二氧化硅的结构与性质"},
+                                            {"name": "1.3 硅酸（原硅酸）的物理性能及其应用"},
+                                            {"name": "1.4 硅酸（原硅酸）的化学性质"},
+                                            {"name": "1.5 硅酸（原硅酸）的制取"},
+                                            {"name": "1.6 硅酸盐的物理性质"},
+                                            {"name": "1.7 硅酸盐的化学性质"},
+                                            {"name": "1.8 硅酸盐工业"},
+                                            {"name": "1.9 单质硅的应用"},
+                                            {"name": "1.10 硅的结构与性质"},
+                                            {"name": "2.1 氯气的性质"},
+                                            {"name": "2.2 氯气的应用"},
+                                            {"name": "2.3 氯水的组成与性质"},
+                                            {"name": "2.4 次氯酸的性质"},
+                                            {"name": "2.5 二氧化氯的性质及其应用"},
+                                            {"name": "2.6 臭氧的性质及其应用"},
+                                            {"name": "2.7 漂白粉、漂粉精的制取、性质及其应用"},
+                                            {"name": "3.1 氯离子的检验"},
+                                            {"name": "3.3 单质硫的同素异形体"},
+                                            {"name": "3.4 硫的性质和用途"},
+                                            {"name": "3.5 单质硫的制取"},
+                                            {"name": "3.6 二氧化硫的制取"},
+                                            {"name": "3.7 二氧化硫的性质"},
+                                            {"name": "3.8 二氧化硫的漂白性"},
+                                            {"name": "3.9 三氧化硫的物理性质"},
+                                            {"name": "3.10 三氧化硫的化学性质"},
+                                            {"name": "3.11 工业制取三氧化硫"},
+                                            {"name": "3.12 硫化氢的物理性质"},
+                                            {"name": "3.13 硫化氢的化学性质"},
+                                            {"name": "3.14 硫化氢的毒性"},
+                                            {"name": "3.15 氮的氧化物的性质"},
+                                            {"name": "4.2 氮的固定"},
+                                            {"name": "4.3 氨气的实验室制法"},
+                                            {"name": "4.4 氨气的工业制法"},
+                                            {"name": "4.5 氨气的用途"},
+                                            {"name": "4.6 氮在自然界的循环"},
+                                            {"name": "4.7 氨水的物理性质"},
+                                            {"name": "4.8 氨水的化学性质"},
+                                            {"name": "4.9 氮气在自然界的存在"},
+                                            {"name": "4.10 氮气的结构与性质"},
+                                            {"name": "4.11 氮气的应用"},
+                                            {"name": "4.12 硫酸的性质"},
+                                            {"name": "4.13 硫酸在化学工业上的应用"},
+                                            {"name": "4.14 硝酸的性质"},
+                                            {"name": "4.15 硝酸在化学工业上的应用"}
+
+                                        ]
+                                    },
+                                ]
+                            };
+
+                            var data2 = {
+                                "name": "化学必修2",
+                                "children": [
+                                    {
+                                        "name": "第一章 物质结构元素周期律",
+                                        "children": [
+                                            {"name": "1.1 原子序数"},
+                                            {"name": "1.2 周期"},
+                                            {"name": "1.3 族"},
+                                            {"name": "1.4 原子结构示意图"},
+                                            {"name": "1.5 元素的物理性质的周期性变化"},
+                                            {"name": "1.6 元素的化学性质的周期性变化"},
+                                            {"name": "1.7 元素"},
+                                            {"name": "1.8 核素"},
+                                            {"name": "2.1 同位素"},
+                                            {"name": "2.2 原子核外电子的排布规则"},
+                                            {"name": "2.3 原子半径、离子半径的大小规律"},
+                                            {"name": "2.4 元素化合价的周期性变化"},
+                                            {"name": "2.5 元素金属性的周期性变化"},
+                                            {"name": "2.6 元素非金属性的周期性变化"},
+                                            {"name": "2.7 金属最高价氧化物的水化物碱性的周期性变化"},
+                                            {"name": "2.8 非金属最高价氧化物的水化物酸性的周期性变化"},
+                                            {"name": "2.9 非金属元素氢化物稳定性的周期性变化"},
+                                            {"name": "2.10 元素的推断"},
+                                            {"name": "3.1 离子键"},
+                                            {"name": "3.2 共价键"},
+                                            {"name": "3.3 极性键、非极性键"},
+                                            {"name": "3.4 化学键"},
+                                            {"name": "3.5 极性分子、非极性分子"},
+                                            {"name": "3.6 电子式的书写"},
+                                            {"name": "3.7 离子化合物"},
+                                            {"name": "3.8 共价化合物"},
+                                            {"name": "3.9 氢键"}
+                                        ]
+                                    },
+                                    {
+                                        "name": "第二章 化学反应与能量",
+                                        "children": [
+                                            {"name": "1.1 范德华力"},
+                                            {"name": "1.2 化学键与化学反应中能量变化的关系"},
+                                            {"name": "1.3 能量的相互转化"},
+                                            {"name": "1.4 吸热反应和放热反应"},
+                                            {"name": "1.5 中和热"},
+                                            {"name": "1.6 能源开发与利用"},
+                                            {"name": "2.1 原电池"},
+                                            {"name": "2.2 一次电池"},
+                                            {"name": "2.3 二次电池"},
+                                            {"name": "2.4 燃料电池"},
+                                            {"name": "3.1 化学反应速率的概念"},
+                                            {"name": "3.2 反应速率的定量表示方法"},
+                                            {"name": "3.3 化学反应速率的影响因素"},
+                                            {"name": "3.4 催化剂"},
+                                            {"name": "3.5 化学平衡状态"},
+                                            {"name": "3.6 化学反应条件的控制"}
+                                        ]
+                                    },
+                                    {
+                                        "name": "第三章 有机化合物",
+                                        "children": [
+                                            {"name": "1.1 有机化合物及其特点"},
+                                            {"name": "1.2 烃"},
+                                            {"name": "1.3 甲烷的结构与性质"},
+                                            {"name": "1.4 烷烃的通式"},
+                                            {"name": "1.5 同分异构现象与同分异构体"},
+                                            {"name": "1.6 结构式"},
+                                            {"name": "1.7 氧化反应"},
+                                            {"name": "1.8 取代反应"},
+                                            {"name": "1.9 卤代烃的物理性质"},
+                                            {"name": "1.10 饱和烃"},
+                                            {"name": "1.11 烷烃的结构与性质"},
+                                            {"name": "1.12 烯烃的结构与性质"},
+                                            {"name": "2.2 烷烃的分解"},
+                                            {"name": "2.3 乙烯的结构与性质"},
+                                            {"name": "2.4 加成反应"},
+                                            {"name": "2.5 乙烯在生产生活中的应用"},
+                                            {"name": "2.6 苯的结构与性质"},
+                                            {"name": "2.7 芳香化合物"},
+                                            {"name": "2.8 芳香化合物对环境的影响"},
+                                            {"name": "3.2 乙醇的结构与性质"},
+                                            {"name": "3.3 乙醇的检验"},
+                                            {"name": "3.4 乙醇的应用"},
+                                            {"name": "3.6 乙酸的结构与性质"},
+                                            {"name": "3.7 乙酸在生产生活中的应用"},
+                                            {"name": "3.8 酯化反应"},
+                                            {"name": "3.9 酯的结构与性质"},
+                                            {"name": "4.3 葡萄糖、果糖的结构、性质与用途"},
+                                            {"name": "4.4 淀粉、纤维素的结构、性质与用途"},
+                                            {"name": "4.5 淀粉水解程度的判断方法"},
+                                            {"name": "4.6 蛋白质的结构与性质"},
+                                            {"name": "4.7 蛋白质的水解"},
+                                            {"name": "4.8 油脂"},
+                                            {"name": "4.10 皂化反应"}
+                                        ]
+                                    },
+                                    {
+                                        "name": "第四章 化学与自然资源的开发利用",
+                                        "children": [
+                                            {"name": "1.1 金属的冶炼（干法）"},
+                                            {"name": "1.2 金属的冶炼（湿法）"},
+                                            {"name": "1.3 金属的冶炼（电解法）"},
+                                            {"name": "1.4 铝热反应"},
+                                            {"name": "1.5 海水水资源的利用"},
+                                            {"name": "1.6 海水化学资源的利用"},
+                                            {"name": "2.2 天然气的综合利用"},
+                                            {"name": "2.3 干馏"},
+                                            {"name": "2.4 煤的综合利用"},
+                                            {"name": "2.5 分馏"},
+                                            {"name": "2.6 催化裂化"},
+                                            {"name": "2.7 裂解"},
+                                            {"name": "2.8 石油的综合利用"},
+                                            {"name": "2.9 大气污染及其治理"},
+                                            {"name": "2.10 水污染及其治理"},
+                                            {"name": "2.11 白色污染"},
+                                            {"name": "2.12 绿色化学"}                                        ]
+                                    }
+                                ]
+                            };
+
+                            myChart.hideLoading();
+
+                            myChart.setOption(option = {
+                                tooltip: {
+                                    trigger: 'item',
+                                    triggerOn: 'mousemove'
+                                },
+                                legend: {
+                                    top: '2%',
+                                    left: '3%',
+                                    orient: 'vertical',
+                                    data: [{
+                                        name: '化学必修1',
+                                        icon: 'rectangle'
+                                    },
+                                        {
+                                            name: '化学必修2',
+                                            icon: 'rectangle'
+                                        }],
+                                    borderColor: '#c23531'
+                                },
+                                series:[
+                                    {
+                                        type: 'tree',
+
+                                        name: '化学必修2',
+
+                                        data: [data],
+
+                                        top: '5%',
+                                        left: '7%',
+                                        bottom: '2%',
+                                        right: '60%',
+
+                                        symbolSize: 7,
+
+                                        label: {
+                                            position: 'left',
+                                            verticalAlign: 'middle',
+                                            align: 'right'
+                                        },
+
+                                        leaves: {
+                                            label: {
+                                                position: 'right',
+                                                verticalAlign: 'middle',
+                                                align: 'left'
+                                            }
+                                        },
+
+                                        emphasis: {
+                                            focus: 'descendant'
+                                        },
+
+                                        expandAndCollapse: true,
+
+                                        animationDuration: 550,
+                                        animationDurationUpdate: 750
+
+                                    },
+                                    {
+                                        type: 'tree',
+                                        name: 'tree2',
+                                        data: [data2],
+
+                                        top: '20%',
+                                        left: '60%',
+                                        bottom: '22%',
+                                        right: '18%',
+
+                                        symbolSize: 7,
+
+                                        label: {
+                                            position: 'left',
+                                            verticalAlign: 'middle',
+                                            align: 'right'
+                                        },
+
+                                        leaves: {
+                                            label: {
+                                                position: 'right',
+                                                verticalAlign: 'middle',
+                                                align: 'left'
+                                            }
+                                        },
+
+                                        expandAndCollapse: true,
+
+                                        emphasis: {
+                                            focus: 'descendant'
+                                        },
+
+                                        animationDuration: 550,
+                                        animationDurationUpdate: 750
+                                    }
+                                ]
+                            });
+
+
+
+
+
+
+
+                            //使用指定的配置项和数据显示图表
+
+                            myChart.setOption(option)
+
+                        </script>
+                        <!--这是数据可视化的代码-->
+
+
+
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="form-column col-lg-8 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="color-layer"></div>
+                        <!-- Sec Title -->
+                        <div class="sec-title">
+                            <h2> 思维导图的优点 </h2>
+                            <h5> 1、思维导图因为与大脑发散性思维关系紧密，最主要的作用是可以改善人类的记忆与发散思维。
+
+                                2、对于抽象思维能力较差的学生，思维导图独特的“图像记忆”，帮助学生更容易记住知识。
+
+                                3、可应用的范围十分广泛，曾有国外博客做过调查，总结了思维导图常用的10大领域：待办事宜、准备演示、做笔记、问题解决、项目计划、做决定、知识管理、项目管理、个人思考和写作。 </h5>
+                        </div>
+
+                        <!-- Default Form -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Contact Section -->
+
+    <!-- Main Footer -->
+    <!-- 底部 -->
+    <footer class="main-footer">
+        <div th:replace="menu::indexfooter"></div>
+    </footer>
+</div>
+
+</div>
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-up"></span></div>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/js/jquery.fancybox.js"></script>
+<script src="/js/appear.js"></script>
+<script src="/js/parallax.min.js"></script>
+<script src="/js/tilt.jquery.min.js"></script>
+<script src="/js/jquery.paroller.min.js"></script>
+<script src="/js/owl.js"></script>
+<script src="/js/wow.js"></script>
+<script src="/js/nav-tool.js"></script>
+<script src="/js/jquery-ui.js"></script>
+<script src="/js/script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
