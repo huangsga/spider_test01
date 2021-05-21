@@ -39,6 +39,12 @@ public class EchartsController {
     }
     @GetMapping("/showHX1")
     private String showHx1(){return "EchartsHX1";}
+    @GetMapping("/showHX2")
+    private String showHx2(){return "EchartsHX2";}
+    @GetMapping("/showHX3")
+    private String showHx3(){return "EchartsHX3";}
+    @GetMapping("/showHX4")
+    private String showHx4(){return "EchartsHX4";}
     @GetMapping("/showWuli1")
     private String showWuli1() {
         return "WLBX";
