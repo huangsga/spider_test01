@@ -250,44 +250,26 @@
 
 
                                 <!--这是数据可视化的代码-->
-                                <div class="container" id="main2" style="width: 1000px;height: 600px;"></div>
+                                <div class="container" id="main2" style="width: 1200px;height: 600px;"></div>
                                 <script type="text/javascript" th:inline="javascript">
 
                                     var myChart = echarts.init(document.getElementById('main2'));
 
 									option = {
-										title: {
-											text: '试题雷达图'
+										xAxis: {
+											type: 'category',
+											boundaryGap: false,
+											data: ['思维导图数量', '高考真题数量', '高考资讯数量','资料总结数量', ]
 										},
-										legend: {
-											data: ['数学必修', '化学选修']
-										},
-										radar: {
-											// shape: 'circle',
-											indicator: [
-												{ name: '教材一', max: 70000},
-												{ name: '教材二', max: 70000},
-												{ name: '教材三', max: 70000},
-												{ name: '教材四', max: 70000},
-												{ name: '教材五', max: 70000},
-											]
+										yAxis: {
+											type: 'value'
 										},
 										series: [{
-											name: '数学 vs 化学',
-											type: 'radar',
-											data: [
-												{
-													value: [62098, 14677, 7108, 16047, 65109],
-													name: '数学必修'
-												},
-												{
-													value: [22015, 18043, 17071, 57921, 21527],
-													name: '化学选修'
-												}
-											]
+											data: [46, 358,2594,1770],
+											type: 'line',
+											areaStyle: {}
 										}]
 									};
-
                                     //使用指定的配置项和数据显示图表
 
                                     myChart.setOption(option)
