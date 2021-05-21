@@ -63,6 +63,10 @@ public class issueController {
         /**
          *带科目参数获取题目
          */
+        model.addAttribute("isShow",true);
+        HttpSession session = request.getSession(true);
+        session.setAttribute("kemuId",kemuId);//把用户数据保存到session对象中
+        System.out.println("登录之后：="+session.getAttribute("loginState"));
         PageInfo<ViewIssue> issueList = issueService.findIssueList(kemuId,pageIndex,pageSize);
         long total = issueList.getTotal();
         model.addAttribute("issueSize",total);
