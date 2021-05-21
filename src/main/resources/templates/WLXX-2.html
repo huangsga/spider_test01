@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"><script src="/js/echarts.min.js"></script>
+    <title>可视化展示</title>
+    <!-- Stylesheets -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.png" type="image/x-icon">
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="/js/respond.js"></script><![endif]-->
+
+
+</head>
+
+<body class="hidden-bar-wrapper">
+
+<div class="page-wrapper">
+
+    <!-- Preloader -->
+    <div class="preloader"></div>
+
+
+    <!-- 头部-->
+    <header class="main-header">
+        <div th:replace="menu::indexmenu"></div>
+    </header>
+
+    <!-- Main Header / Header Style Two -->
+    <!-- End Main Header -->
+
+    <!-- Sidebar Cart Item -->
+    <div class="xs-sidebar-group info-group">
+        <div class="xs-overlay xs-bg-black"></div>
+        <div class="xs-sidebar-widget">
+            <div class="sidebar-widget-container">
+                <div class="widget-heading">
+                    <a href="#" class="close-side-widget">
+                        X
+                    </a>
+                </div>
+                <div class="sidebar-textwidget">
+
+                    <!-- Sidebar Info Content -->
+                    <div class="sidebar-info-contents">
+                        <div class="content-inner">
+                            <div class="logo">
+                                <a href="index.html"><img src="/images/logo-2.png" alt="" /></a>
+                            </div>
+                            <div class="content-box">
+                                <h2>About Us</h2>
+                                <p class="text">The argument in favor of using filler text goes something like this: If you use real content in the Consulting Process, anytime you reach a review point you’ll end up reviewing and negotiating the content itself and not the design.</p>
+                                <a href="#" class="theme-btn btn-style-two"><span class="txt">Consultation</span></a>
+                            </div>
+                            <div class="contact-info">
+                                <h2>Contact Info</h2>
+                                <ul class="list-style-two">
+                                    <li><span class="icon fa fa-location-arrow"></span>Chicago 12, Melborne City, USA</li>
+                                    <li><span class="icon fa fa-phone"></span>(111) 111-111-1111</li>
+                                    <li><span class="icon fa fa-envelope"></span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7e121b1c1f0c173e19131f1712501d1113">[email&#160;protected]</a></li>
+                                    <li><span class="icon fa fa-clock-o"></span>Week Days: 09.00 to 18.00 Sunday: Closed</li>
+                                </ul>
+                            </div>
+                            <!-- Social Box -->
+                            <ul class="social-box">
+                                <li class="facebook"><a href="#" class="fa fa-facebook-f"></a></li>
+                                <li class="twitter"><a href="#" class="fa fa-twitter"></a></li>
+                                <li class="linkedin"><a href="#" class="fa fa-linkedin"></a></li>
+                                <li class="instagram"><a href="#" class="fa fa-instagram"></a></li>
+                                <li class="youtube"><a href="#" class="fa fa-youtube"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END sidebar widget item -->
+
+    <!-- Banner Section Three -->
+    <section class="banner-section-three">
+        <div class="pattern-layer-two" style="background-image: url(images/background/pattern-21.png)"></div>
+        <div class="auto-container">
+            <!-- Page Breadcrumb -->
+            <ul class="page-breadcrumb">
+                <li><a href="/main/index">主页</a></li>
+                <li>个人中心</li>
+            </ul>
+
+        </div>
+    </section>
+    <!-- End Banner Section Three -->
+
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="pattern-layer" style="background-image:url(images/background/pattern-19.png)"></div>
+        <div class="pattern-layer-two" style="background-image:url(images/background/pattern-20.png)"></div>
+        <div class="icon-layer-two" style="background-image:url(images/icons/icon-2.png)"></div>
+        <div class="icon-layer-three" style="background-image:url(images/icons/icon-2.png)"></div>
+        <div class="auto-container">
+            <div class="row clearfix">
+
+                <!-- Info Column -->
+                <div class="info-column col-lg-4 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="icon-layer" style="background-image:url(images/icons/icon-2.png)"></div>
+                        <div class="image">
+                            <img src="/images/resource/contact.png" alt="" />
+                        </div>
+
+
+
+
+                        <!--这是数据可视化的代码-->
+                        <div class="container" id="main" style="width: 2000px;height: 1000px;"></div>
+                        <script type="text/javascript" th:inline="javascript">
+                            var myChart = echarts.init(document.getElementById('main'));
+                            myChart.showLoading();
+
+                            var data = {
+                                "name": "物理选修2-3",
+                                "children": [
+                                    {
+                                        "name": "第一章光的折射",
+                                        "children": [
+                                            {"name": "1.1 光的反射定律"},
+                                            {"name": "1.2 光的折射定律"},
+                                            {"name": "1.3 折射率"},
+                                            {"name": "1.4 实验：测定玻璃的折射率"},
+                                            {"name": "2.1 全反射，临界角"},
+                                            {"name": "2.2 光导纤维"},
+                                            {"name": "3.1 全反射棱镜"},
+                                            {"name": "3.2 透镜"},
+                                            ]
+                                    },
+                                    {
+                                        "name": "第二章光的干涉、衍射和偏振",
+                                        "children": [
+                                            {"name": "1.1 机械波的形成和传播"},
+                                            {"name": "1.2 横波与纵波"},
+                                            {"name": "1.4 波的衍射"},
+                                            {"name": "1.5 波的干涉"},
+                                            {"name": "2.2 双缝干涉"},
+                                            {"name": "2.3 双缝干涉中决定明暗条纹的条件"},
+                                            {"name": "2.4 薄膜干涉"},
+                                            {"name": "3.1 光的衍射"},
+                                            {"name": "4.1 光的偏振"}
+                                        ]
+                                    },
+                                    {
+                                        "name": "第三章光源与激光",
+                                        "children": [
+                                            {"name": "1.1 光源"},
+                                            {"name": "1.3 爱因斯坦的光子说"},
+                                            {"name": "1.4 氢原子的能级"},
+                                        ]
+                                    },
+                                    {
+                                        "name": "第四章核能与反应堆技术",
+                                        "children": [
+                                            {"name": "1.1 核反应"},
+                                            {"name": "2.1 重核的裂变"},
+                                            {"name": "3.1 轻核聚变"},
+                                        ]
+                                    }
+                                ]
+                            };
+
+                            var data2 = {
+                                "name": "物理选修3-1",
+                                "children": [
+                                    {
+                                        "name": "第一章静电场",
+                                        "children": [
+                                            {"name": "3.4 点电荷的电场强度"},
+                                            {"name": "3.5 电场强度的叠加"},
+                                            {"name": "4.2 电势能"},
+                                            {"name": "4.3 电势"},
+                                            {"name": "4.4 等势面"},
+                                            {"name": "4.5 用描迹法画出电场中平面上的等势线"},
+                                            {"name": "5.1 电势差"},
+                                            {"name": "6.1 电势差与电场强度的关系"},
+                                            {"name": "7.1 静电平衡状态、等势体"},
+                                            {"name": "7.4 静电现象"},
+                                            {"name": "8.2 电容的概念和定义式"},
+                                            {"name": "8.3 平行板电容器的电容"},
+                                            {"name": "9.1 带电粒子在电场中的加速"},
+                                            {"name": "9.2 带电粒子在电场中的偏转"},
+                                            {"name": "9.3 示波管的构造及其工作原理"},
+                                            {"name": "9.4 带电粒子在电场中运动的综合应用"}
+                                        ]
+                                    },
+                                    {
+                                        "name": "第二章恒定电流",
+                                        "children": [
+                                            {"name": "3.1 欧姆定律"},
+                                            {"name": "3.2 描绘小电珠的伏安特性曲线"},
+                                            {"name": "3.3 实验：伏安法测电阻"},
+                                            {"name": "4.1 串联电路的电流、电压和电阻"},
+                                            {"name": "4.2 并联电路的电流、电压和电阻"},
+                                            {"name": "4.3 半偏法测电表的内阻"},
+                                            {"name": "4.5 电路问题分析"},
+                                            {"name": "5.1 电功"},
+                                            {"name": "5.2 电功率"},
+                                            {"name": "6.1 实验：探究影响导体电阻的因素"},
+                                            {"name": "6.2 电阻定律"},
+                                            {"name": "6.3 电阻率"},
+                                            {"name": "6.4 测定金属的电阻率"},
+                                            {"name": "7.2 路端电压与负载的关系"},
+                                            {"name": "8.1 欧姆表的原理"},
+                                            {"name": "11.1 简单的逻辑电路"}
+
+                                        ]
+                                    },
+                                    {
+                                        "name": "第三章磁场",
+                                        "children": [
+                                            {"name": "1.1 磁性、磁极"},
+                                            {"name": "6.1 带电粒子在匀强磁场中的运动"},
+                                            {"name": "6.2 质谱仪"},
+                                            {"name": "6.3 回旋加速器"},
+                                            {"name": "6.4 带电粒子在混合场中的运动"}
+                                        ]
+                                    },
+                                    {
+                                        "name": "第四章附录：游标卡尺和螺旋测微器",
+                                        "children": [
+                                            {"name": "1.1 刻度尺、游标卡尺的使用"},
+                                            {"name": "2.1 螺旋测微器的使用"}
+                                        ]
+                                    }
+                                ]
+                            };
+
+                            myChart.hideLoading();
+
+                            myChart.setOption(option = {
+                                tooltip: {
+                                    trigger: 'item',
+                                    triggerOn: 'mousemove'
+                                },
+                                legend: {
+                                    top: '2%',
+                                    left: '3%',
+                                    orient: 'vertical',
+                                    data: [{
+                                        name: '物理选修2-3',
+                                        icon: 'rectangle'
+                                    },
+                                        {
+                                            name: '物理选修3-1',
+                                            icon: 'rectangle'
+                                        }],
+                                    borderColor: '#c23531'
+                                },
+                                series:[
+                                    {
+                                        type: 'tree',
+
+                                        name: '物理选修2-3',
+
+                                        data: [data],
+
+                                        top: '5%',
+                                        left: '7%',
+                                        bottom: '2%',
+                                        right: '60%',
+
+                                        symbolSize: 7,
+
+                                        label: {
+                                            position: 'left',
+                                            verticalAlign: 'middle',
+                                            align: 'right'
+                                        },
+
+                                        leaves: {
+                                            label: {
+                                                position: 'right',
+                                                verticalAlign: 'middle',
+                                                align: 'left'
+                                            }
+                                        },
+
+                                        emphasis: {
+                                            focus: 'descendant'
+                                        },
+
+                                        expandAndCollapse: true,
+
+                                        animationDuration: 550,
+                                        animationDurationUpdate: 750
+
+                                    },
+                                    {
+                                        type: 'tree',
+                                        name: '物理选修3-1',
+                                        data: [data2],
+
+                                        top: '20%',
+                                        left: '60%',
+                                        bottom: '22%',
+                                        right: '18%',
+
+                                        symbolSize: 7,
+
+                                        label: {
+                                            position: 'left',
+                                            verticalAlign: 'middle',
+                                            align: 'right'
+                                        },
+
+                                        leaves: {
+                                            label: {
+                                                position: 'right',
+                                                verticalAlign: 'middle',
+                                                align: 'left'
+                                            }
+                                        },
+
+                                        expandAndCollapse: true,
+
+                                        emphasis: {
+                                            focus: 'descendant'
+                                        },
+
+                                        animationDuration: 550,
+                                        animationDurationUpdate: 750
+                                    }
+                                ]
+                            });
+
+
+                            //使用指定的配置项和数据显示图表
+
+                            myChart.setOption(option)
+
+                        </script>
+                        <!--这是数据可视化的代码-->
+
+
+
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="form-column col-lg-8 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="color-layer"></div>
+                        <!-- Sec Title -->
+                        <div class="sec-title">
+                            <h2> 思维导图的优点 </h2>
+                            <h5> 1、思维导图因为与大脑发散性思维关系紧密，最主要的作用是可以改善人类的记忆与发散思维。
+
+                                2、对于抽象思维能力较差的学生，思维导图独特的“图像记忆”，帮助学生更容易记住知识。
+
+                                3、可应用的范围十分广泛，曾有国外博客做过调查，总结了思维导图常用的10大领域：待办事宜、准备演示、做笔记、问题解决、项目计划、做决定、知识管理、项目管理、个人思考和写作。 </h5>
+                        </div>
+
+                        <!-- Default Form -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Contact Section -->
+
+    <!-- Main Footer -->
+    <!-- 底部 -->
+    <footer class="main-footer">
+        <div th:replace="menu::indexfooter"></div>
+    </footer>
+</div>
+
+</div>
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-up"></span></div>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/js/jquery.fancybox.js"></script>
+<script src="/js/appear.js"></script>
+<script src="/js/parallax.min.js"></script>
+<script src="/js/tilt.jquery.min.js"></script>
+<script src="/js/jquery.paroller.min.js"></script>
+<script src="/js/owl.js"></script>
+<script src="/js/wow.js"></script>
+<script src="/js/nav-tool.js"></script>
+<script src="/js/jquery-ui.js"></script>
+<script src="/js/script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+

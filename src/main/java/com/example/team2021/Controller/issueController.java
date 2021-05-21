@@ -42,6 +42,7 @@ public class issueController {
          * @return
          */
         PageInfo<ViewIssue> allIssue = issueService.findAllIssue(pageIndex,pageSize);
+        model.addAttribute("isShow",false);
         long total = allIssue.getTotal();
         model.addAttribute("issueSize",total);
         model.addAttribute("issue", allIssue);

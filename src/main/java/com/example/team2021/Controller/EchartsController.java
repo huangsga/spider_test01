@@ -39,9 +39,29 @@ public class EchartsController {
     }
     @GetMapping("/showHX1")
     private String showHx1(){return "EchartsHX1";}
-    @GetMapping("owWuli")
-    private String showWuli() {
-        return "思维导图";
+    @GetMapping("/showWuli1")
+    private String showWuli1() {
+        return "WLBX";
+    }
+    @GetMapping("/showWuli2")
+    private String showWuli2() {
+        return "WLXX";
+    }
+    @GetMapping("/showWuli3")
+    private String showWuli3() {
+        return "WLXX-1";
+    }
+    @GetMapping("/showWuli4")
+    private String showWuli4() {
+        return "WLXX-2";
+    }
+    @GetMapping("/showWuli5")
+    private String showWuli5() {
+        return "WLXX-3";
+    }
+    @GetMapping("/showWuli6")
+    private String showWuli6() {
+        return "WLXX-4";
     }
 
     @GetMapping("/show1")
